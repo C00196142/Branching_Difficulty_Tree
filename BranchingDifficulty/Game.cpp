@@ -63,12 +63,33 @@ void Game::destroy()
 //running like a loop in the game and checking all the events that could happen during playing the game 
 void Game::update()
 {
+	nextLevel();
+	//millis since game started
+	unsigned int currentTime = LTimer::gameTime();
 
+	//time since last update
+	unsigned int deltaTime = currentTime - lastTime;
+
+	for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) 
+	{
+		(*i)->Update(deltaTime);
+	}
 }
 //calls render on all game entities
 //this function draws all the Objects in the gaming Window OR calls the drawing-functions of the gameObjects
 void Game::render()
 {
+	//Set the Background Colour
+	renderer.clear(Colour(r, g, b, a));
+
+	for (std::vector<GameObject*>::iterator i = gameObjects.begin(), e = gameObjects.end(); i != e; i++) 
+	{
+		(*i)->Render(renderer);
+	}
+
+	// display the new frame (swap buffers)
+	renderer.present();
+
 
 }
 
@@ -117,9 +138,10 @@ void Game::nextLevel()
 	{
 	case lvl1:
 		//if the player reaches the portal we set somewhere else in the code the variable changeLevel to true
-		if (changeLevel)
+		/*if (changeLevel)
 		{
-
-		}
+			gameObjects.push_back(player);
+		}*/
+		gameObjects.push_back(player);
 	}
 }

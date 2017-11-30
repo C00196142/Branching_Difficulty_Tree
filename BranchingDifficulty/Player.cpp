@@ -10,7 +10,7 @@
 //setting his start jumpTimer to 40
 Player::Player()
 {
-	col = Colour(200, 100, 255);
+	col = Colour(255, 0, 0);
 	rect = Rect(0, 0, 0.5, 1);
 	xVel = 0;
 	yVel = 0;

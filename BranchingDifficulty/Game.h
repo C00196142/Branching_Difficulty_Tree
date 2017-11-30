@@ -33,6 +33,7 @@ class Game :public EventListener
 
 	Rect collision;
 	Colour fadeColor;
+	int r, g, b, a;
 
 
 public:

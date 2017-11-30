@@ -1,7 +1,7 @@
 // PURPOSE : HEADER FILE THAT DEFINES UPDATE AND RENDER FUNCTION FOR GAMEOBJECTS
 #pragma once
 
-//#include "Renderer.h"
+#include "Renderer.h"
 #include "math.h"
 
 
@@ -15,6 +15,7 @@ public:
 	virtual ~GameObject() {};
 
 	//virtual void Render(Renderer& r) = 0;
+	virtual void Render(Renderer& r) = 0;
 	virtual void Update(unsigned int deltaTime) = 0;
 
 
