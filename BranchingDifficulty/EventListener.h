@@ -16,10 +16,8 @@ public:
 		STOP,
 		START,
 		JUMP,
-		SUPERJUMP
-		//PAUSE,
-		//QUIT,
-		//RESTART
+		SUPERJUMP,
+		QUIT
 	};
 
 

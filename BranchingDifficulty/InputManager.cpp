@@ -36,6 +36,7 @@ void InputManager::Dispatch(EventListener::Event evt)
 
 }
 
+
 //Generate events
 void InputManager::ProcessInput()
 {
@@ -56,17 +57,20 @@ void InputManager::ProcessInput()
 			}
 
 		}
-		if (start == 1)
-		{
-			switch (e.type)
-			{
+		if (start == 1) {
+			switch (e.type) {
 				// Keyboard event
 				//KEYDOWN means if you press a key
 			case SDL_KEYDOWN:
-				switch (e.key.keysym.sym)
-				{
+				switch (e.key.keysym.sym) {
 				case SDLK_SPACE:
 					Dispatch(EventListener::Event::JUMP);
+					break;
+				case SDLK_r:
+					Dispatch(EventListener::Event::REVERSE);
+					break;
+				case SDLK_ESCAPE:
+					Dispatch(EventListener::Event::QUIT);
 					break;
 				case SDLK_a:
 					Dispatch(EventListener::Event::LEFT);
@@ -94,11 +98,12 @@ void InputManager::ProcessInput()
 				break;
 				// SDL_QUIT event (window close)
 			case SDL_QUIT:
-				//Dispatch(EventListener::Event::QUIT);
+				Dispatch(EventListener::Event::QUIT);
 				break;
 			default:
 				break;
 			}
+
 		}
 		if (start == 2)
 		{
@@ -112,14 +117,7 @@ void InputManager::ProcessInput()
 					/* Keyboard event */
 				case SDL_KEYDOWN:
 					if (e.key.keysym.sym == SDLK_q) {
-						//Dispatch(EventListener::Event::QUIT);
-						break;
-					}
-					else
-					{
-						start = 0;
-						//Dispatch(EventListener::Event::RESTART);
-						keyPressed = true;
+						Dispatch(EventListener::Event::QUIT);
 						break;
 					}
 				}

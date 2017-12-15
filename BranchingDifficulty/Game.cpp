@@ -49,6 +49,7 @@ bool Game::init() {
 	inputManager.AddListener(EventListener::Event::STOP, player);
 	inputManager.AddListener(EventListener::Event::JUMP, player);
 	inputManager.AddListener(EventListener::Event::SUPERJUMP, player);
+	inputManager.AddListener(EventListener::Event::QUIT, this);
 
 
 	return true;
@@ -59,7 +60,8 @@ bool Game::init() {
 void Game::destroy()
 {
 	//empty out the game object vector before quitting
-	for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) {
+	for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) 
+	{
 		delete *i;
 	}
 	gameObjects.clear();
@@ -71,6 +73,14 @@ void Game::destroy()
 void Game::update()
 {
 	nextLevel();
+
+	player->setInAir(true);
+	player->setOnPlatform(false);
+
+	for (int i = 0; i < blocks.size(); i++)
+	{
+		player->Obstacle(blocks[i]->floor);
+	}
 	//millis since game started
 	unsigned int currentTime = LTimer::gameTime();
 
@@ -81,6 +91,9 @@ void Game::update()
 	{
 		(*i)->Update(deltaTime);
 	}
+
+	//save the curent time for next frame
+	lastTime = currentTime;
 }
 //calls render on all game entities
 //this function draws all the Objects in the gaming Window OR calls the drawing-functions of the gameObjects
@@ -111,7 +124,8 @@ void Game::loop()
 	int frameNum = 0;
 
 	//game loop
-	while (!quit) {
+	while (!quit) 
+	{
 		capTimer.start();
 
 		inputManager.ProcessInput();
@@ -133,7 +147,11 @@ void Game::loop()
 //\param[in] we give the function the event that happens
 void Game::onEvent(EventListener::Event evt)
 {
-
+	// if the event QUIT happens we quit the game
+	if (evt == EventListener::Event::QUIT) 
+	{
+		quit = true;
+	}
 }
 
 //in this function  we change the stage

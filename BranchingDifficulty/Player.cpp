@@ -11,10 +11,11 @@
 Player::Player()
 {
 	col = Colour(255, 0, 0);
-	rect = Rect(0, 0, 0.5, 1);
+	rect = Rect(-8, 0, 0.5, 1);
 	xVel = 0;
 	yVel = 0;
 	timer = 0;
+	jumpTimer = 40;
 }
 
 //Destructor of Thomas
@@ -41,12 +42,12 @@ void Player::Render(Renderer& r)
 //Function which causes the Thomas-Object to jump up
 void::Player::Jump()
 {
-	//if (onPlatform == true)
-	//{
+	if (onPlatform == true)
+	{
 		rising = true;
 		jumpTimer = 40;
 		yVel = maxXVel;
-	//}
+	}
 
 }
 
@@ -169,6 +170,45 @@ void Player::Update(unsigned int deltaTime)
 void Player::setInAir(bool airBool)
 {
 	inAir = airBool;
+}
+
+void Player::Obstacle(Rect obj)
+{
+	//if the 2 rectangles intersect
+	if ((rect.pos.x + rect.size.w) > obj.pos.x && rect.pos.x < (obj.pos.x + obj.size.w) && rect.pos.y < (obj.pos.y + obj.size.h) && (rect.pos.y + rect.size.h) > obj.pos.y)
+	{
+		//if minusing the x velocity
+		float lastXPos = rect.pos.x - xVel;
+		float lastYPos = rect.pos.y - yVel;
+		if (!((lastXPos + rect.size.w) > obj.pos.x && lastXPos < (obj.pos.x + obj.size.w)))
+		{
+			rect.pos.x = lastXPos;
+			xVel = 0;
+		}
+		else if (!(lastYPos < (obj.pos.y + obj.size.h) && (lastYPos + rect.size.h) > obj.pos.y))
+		{
+			rect.pos.y = lastYPos;
+			yVel = 0;
+
+			if (rect.pos.y >= (obj.pos.y + obj.size.h))
+			{
+				inAir = false;
+				rect.pos.y = obj.pos.y + obj.size.h;
+				onPlatform = true;
+			}
+			else
+			{
+				rising = false;
+				timer = 60;
+			}
+		}
+	}
+	float tempY = rect.pos.y - maxXVel;
+	if ((rect.pos.x + rect.size.w) > obj.pos.x && rect.pos.x < (obj.pos.x + obj.size.w) && tempY < (obj.pos.y + obj.size.h) && (tempY + rect.size.h) > obj.pos.y)
+	{
+		falling = true;
+	}
+
 }
 
 void Player::setOnPlatform(bool platBool)

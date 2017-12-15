@@ -23,6 +23,7 @@ public:
 	void CheckJumpingStatus();
 	void onEvent(EventListener::Event);
 	void ChangePos(int x, int y);
+	void Obstacle(Rect obj);
 	void setOnPlatform(bool platBool);
 	//void checkAlive();
 	void resetPlayer();
