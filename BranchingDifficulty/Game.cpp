@@ -44,6 +44,13 @@ bool Game::init() {
 	Rect vpRect(vpBottomLeft, vpSize);
 	renderer.setViewPort(vpRect);
 
+	inputManager.AddListener(EventListener::Event::LEFT, player);
+	inputManager.AddListener(EventListener::Event::RIGHT, player);
+	inputManager.AddListener(EventListener::Event::STOP, player);
+	inputManager.AddListener(EventListener::Event::JUMP, player);
+	inputManager.AddListener(EventListener::Event::SUPERJUMP, player);
+
+
 	return true;
 
 }
@@ -107,7 +114,7 @@ void Game::loop()
 	while (!quit) {
 		capTimer.start();
 
-		//inputManager.ProcessInput();
+		inputManager.ProcessInput();
 		update();
 		render();
 
@@ -138,10 +145,16 @@ void Game::nextLevel()
 	{
 	case lvl1:
 		//if the player reaches the portal we set somewhere else in the code the variable changeLevel to true
-		/*if (changeLevel)
-		{
+		//if (changeLevel)
+		//{
+			blocks = levels.level1();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+
 			gameObjects.push_back(player);
-		}*/
-		gameObjects.push_back(player);
+		//}
+
 	}
 }

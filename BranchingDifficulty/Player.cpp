@@ -41,11 +41,12 @@ void Player::Render(Renderer& r)
 //Function which causes the Thomas-Object to jump up
 void::Player::Jump()
 {
-	if (onPlatform == true)
-	{
+	//if (onPlatform == true)
+	//{
 		rising = true;
+		jumpTimer = 40;
 		yVel = maxXVel;
-	}
+	//}
 
 }
 
@@ -91,9 +92,19 @@ void::Player::CheckJumpingStatus()
 
 	//start to fall
 	//set rising to false, reset variables
-	rising = false;
-	timer = 0;
-	yVel = 0;
+	if (timer >= jumpTimer) 
+	{
+		if (isJumpPressed && jumpTimer < 60)
+		{
+			jumpTimer = 60;
+		}
+		else
+		{
+			rising = false;
+			timer = 0;
+			yVel = 0;
+		}
+	}
 
 	
 }
@@ -160,7 +171,10 @@ void Player::setInAir(bool airBool)
 	inAir = airBool;
 }
 
-
+void Player::setOnPlatform(bool platBool)
+{
+	onPlatform = platBool;
+}
 
 //Horizontal movement function
 //Function which causes the Player-Object to move left or right if the he is on the ground
@@ -233,7 +247,7 @@ void Player::Stop()
 // \param[in] evt is the event called
 void Player::onEvent(EventListener::Event evt)
 {
-	/*if (evt == EventListener::Event::LEFT)
+	if (evt == EventListener::Event::LEFT)
 	{
 		StartMove(true);
 		isMoveButton = true;
@@ -253,7 +267,11 @@ void Player::onEvent(EventListener::Event evt)
 	if (evt == EventListener::Event::JUMP)
 	{
 		isJumpPressed = true;
-	}*/
+	}
+	if (evt == EventListener::Event::SUPERJUMP)
+	{
+		isJumpPressed = false;
+	}
 }
 
 //Chenges Player's position and resets speed

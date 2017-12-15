@@ -10,14 +10,15 @@ public:
 
 	//list of possible events
 	enum Event {
-		//REVERSE,
+		REVERSE,
+		LEFT,
+		RIGHT,
+		STOP,
+		START,
+		JUMP,
+		SUPERJUMP
 		//PAUSE,
 		//QUIT,
-		//LEFT,
-		//RIGHT,
-		//STOP,
-		//START,
-		//JUMP,
 		//RESTART
 	};
 

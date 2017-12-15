@@ -11,6 +11,7 @@
 #include "InputManager.h"
 #include "EventListener.h"
 #include "Player.h"
+#include "LevelManager.h"
 
 // The game object which manages the game loop
 class Game :public EventListener
@@ -30,6 +31,9 @@ class Game :public EventListener
 	bool endMenu;
 	bool changeLevel = false;
 	Player* player = new Player();
+
+	std::vector <Platform*> blocks;
+	LevelManager levels;
 
 	Rect collision;
 	Colour fadeColor;

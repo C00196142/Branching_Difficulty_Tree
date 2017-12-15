@@ -23,6 +23,7 @@ public:
 	void CheckJumpingStatus();
 	void onEvent(EventListener::Event);
 	void ChangePos(int x, int y);
+	void setOnPlatform(bool platBool);
 	//void checkAlive();
 	void resetPlayer();
 	bool alive = true;
@@ -47,6 +48,7 @@ private:
 	bool falling = true;
 
 	int timer;
+	int jumpTimer;
 	bool hitCheck = false;
 
 };
