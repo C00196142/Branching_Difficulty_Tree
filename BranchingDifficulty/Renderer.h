@@ -1,5 +1,3 @@
-// PURPOSE : JUST TOOK THAT CLASS FROM THE PREVIOUS EXAMPLE PROJECT (IT DEFINES EVERYTHING REGARDING THE RENDERER)
-
 #pragma once
 #define SDL_MAIN_HANDLED
 #ifdef __APPLE__
@@ -7,9 +5,14 @@
 #elif defined(_WIN64) || defined(_WIN32)
 #include "SDL.h"
 #include "SDL_image.h"
+//#include "SDL_ttf.h"
 #include <string>
 #endif
+
+
 #include "BasicTypes.h"
+
+
 
 //Responsible for all drawing operations
 //abstracts away specfic SDL specific drawing functions
@@ -37,6 +40,9 @@ public:
 
 	void drawRectOutline(const Rect&, const Colour&);
 	void drawWorldRectOutline(const Rect&, const Colour&);
+	void drawText(SDL_Texture * texture, SDL_Rect rect);
+	void loadImage();
+	void loadImageEnd();
 	void present();
 	void clear(const Colour&);
 	SDL_Texture* SurfaceToTexture(SDL_Surface* surf);
@@ -44,7 +50,13 @@ public:
 	Rect worldToScreen(const Rect&);
 	bool startLoaded = true;
 	void setViewPort(const Rect&);
+	void drawRotateableImage(SDL_Texture * surface, double rotation, SDL_Point * origin, bool flip, SDL_Rect * pos);
+	SDL_Texture* image;
+	SDL_Texture* back;
+	SDL_Texture* endImage;
+	SDL_Texture* endBack;
 	SDL_Texture* background;
 	void destroy();
 	~Renderer();
 };
+

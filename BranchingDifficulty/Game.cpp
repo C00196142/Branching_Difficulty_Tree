@@ -1,11 +1,12 @@
 #include <iostream>
-#include "Game.h"
 #include "LTimer.h"
+#include "Game.h"
+using namespace std;
 
 const int SCREEN_FPS = 100;
 const int SCREEN_TICKS_PER_FRAME = 1000 / SCREEN_FPS;
 
-using namespace std;
+//The Constructor for the game
 Game::Game()
 {
 	pause = false;
@@ -13,6 +14,7 @@ Game::Game()
 }
 
 
+//The Destructor for the game
 Game::~Game()
 {
 }
@@ -27,7 +29,7 @@ bool Game::init() {
 	Size2D winSize(800, 600);
 
 	//creates our renderer, which looks after drawing and the window
-	renderer.init(winSize, "Branching Difficulty Tree");
+	renderer.init(winSize, "Simple SDL App");
 
 	//set up the viewport
 	//we want the vp centred on origin and 20 units wide
@@ -41,15 +43,33 @@ bool Game::init() {
 	Size2D vpSize(vpWidth, vpWidth / aspectRatio);
 	Point2D vpBottomLeft(-vpSize.w / 2, -vpSize.h / 2);
 
+	mainMenu = true;
 	Rect vpRect(vpBottomLeft, vpSize);
 	renderer.setViewPort(vpRect);
 
+	//setting the background colour in the mainMenu
+	r = 150;
+	g = 0;
+	b = 102;
+
+	lastTime = LTimer::gameTime();
+
+	startMenu->LoadTextStart(renderer);
+	startMenu->LoadTextEnd(renderer);
+	//All the Events we need in the game
+	//the first two are events regarding to the game (window)
+	//the other five are events regarding the main character (interaction with the keyboard for moving and jumping)
+
+
+	inputManager.AddListener(EventListener::Event::RESTART, this);
+	inputManager.AddListener(EventListener::Event::START, this);
+	inputManager.AddListener(EventListener::Event::QUIT, this);
+	inputManager.AddListener(EventListener::Event::RECORD, this);
 	inputManager.AddListener(EventListener::Event::LEFT, player);
 	inputManager.AddListener(EventListener::Event::RIGHT, player);
 	inputManager.AddListener(EventListener::Event::STOP, player);
 	inputManager.AddListener(EventListener::Event::JUMP, player);
 	inputManager.AddListener(EventListener::Event::SUPERJUMP, player);
-	inputManager.AddListener(EventListener::Event::QUIT, this);
 
 
 	return true;
@@ -60,57 +80,75 @@ bool Game::init() {
 void Game::destroy()
 {
 	//empty out the game object vector before quitting
-	for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) 
-	{
+	for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) {
 		delete *i;
 	}
 	gameObjects.clear();
 	renderer.destroy();
 }
 
+
 //calls update on all game entities
 //running like a loop in the game and checking all the events that could happen during playing the game 
 void Game::update()
 {
-	nextLevel();
+	changeStage();
+
 
 	player->setInAir(true);
 	player->setOnPlatform(false);
 
+	//these for loops check if there is any collision with gameObjects (like platforms or water) and thomas 
 	for (int i = 0; i < blocks.size(); i++)
 	{
 		player->Obstacle(blocks[i]->floor);
 	}
+
 	//millis since game started
 	unsigned int currentTime = LTimer::gameTime();
 
 	//time since last update
 	unsigned int deltaTime = currentTime - lastTime;
 
-	for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) 
+
+	//if we are not in the mainMenu we update the gameObjects
+	if (!mainMenu && !endMenu)
 	{
-		(*i)->Update(deltaTime);
+		for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) {
+			(*i)->Update(deltaTime);
+		}
 	}
 
 	//save the curent time for next frame
 	lastTime = currentTime;
 }
+
+
 //calls render on all game entities
 //this function draws all the Objects in the gaming Window OR calls the drawing-functions of the gameObjects
 void Game::render()
 {
-	//Set the Background Colour
+	// prepare for new frame
 	renderer.clear(Colour(r, g, b, a));
 
-	for (std::vector<GameObject*>::iterator i = gameObjects.begin(), e = gameObjects.end(); i != e; i++) 
+	//if we are in the mainMenu draw the mainMenu
+	if (mainMenu)
 	{
-		(*i)->Render(renderer);
+		renderer.loadImage();
+		startMenu->Render(renderer);
+	}
+
+	//if we are not in the mainMenu call the render(drawing)-function of the gameObjects
+	else
+	{
+		for (std::vector<GameObject*>::iterator i = gameObjects.begin(), e = gameObjects.end(); i != e; i++) {
+			(*i)->Render(renderer);
+		}
+
 	}
 
 	// display the new frame (swap buffers)
 	renderer.present();
-
-
 }
 
 //loop function
@@ -124,8 +162,7 @@ void Game::loop()
 	int frameNum = 0;
 
 	//game loop
-	while (!quit) 
-	{
+	while (!quit) {
 		capTimer.start();
 
 		inputManager.ProcessInput();
@@ -145,34 +182,119 @@ void Game::loop()
 //this function handles the events
 //if a specific event happens the game should react on it
 //\param[in] we give the function the event that happens
-void Game::onEvent(EventListener::Event evt)
-{
+void Game::onEvent(EventListener::Event evt) {
+
+	// if the event START happens we start the game and change the screen to the first level
+	if (evt == EventListener::Event::START) {
+		mainMenu = false;
+		stage = lvl1;
+		changeLevel = true;
+	}
+
 	// if the event QUIT happens we quit the game
-	if (evt == EventListener::Event::QUIT) 
-	{
+	if (evt == EventListener::Event::QUIT) {
 		quit = true;
 	}
+	if (evt == EventListener::Event::RESTART)
+	{
+		mainMenu = true;
+		endMenu = false;
+		stage = menu;
+
+	}
+	
+
 }
+
 
 //in this function  we change the stage
 //if the player hits the portal or leaves the mainMenu
-void Game::nextLevel()
+void Game::changeStage()
 {
 	//checking which stage we are on
 	switch (stage)
 	{
+	case menu:
+		break;
 	case lvl1:
 		//if the player reaches the portal we set somewhere else in the code the variable changeLevel to true
-		//if (changeLevel)
-		//{
+		if (changeLevel)
+		{
 			blocks = levels.level1();
+
 			for (int i = 0; i < blocks.size(); i++)
 			{
 				gameObjects.push_back(blocks[i]);
 			}
+			finish = new FinishLine(Rect(7, 0, 1, 1));
+			finish->color = Colour(255, 255, 255);
 
+			player->ChangePos(-8, 0);
+
+			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
-		//}
 
+
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+
+			changeLevel = true;
+			stage = lvl2A;
+
+		}
+		break;
+	case lvl2A:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level2A();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+			finish = new FinishLine(Rect(7, -5, 1, 1));//-5
+			finish->color = Colour(255, 255, 255);
+			player->ChangePos(0, 0);
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		break;
+	
+	//	if (!player->alive)
+	//	{
+	//		player->resetPlayer();
+	//		player->alive = true;
+	//		player->drowntimer = 0;
+	//	}
+	//	if (finish->levelComplete == true)
+	//	{
+	//		changeLevel = true;
+	//	}
+	//	break;
+
+	//	if (!player->alive)
+	//	{
+	//		player->resetPlayer();
+	//		player->alive = true;
+	//	}
+	//	if (finish->levelComplete == true)
+	//	{
+	//		inputManager.start = 2;
+	//		changeLevel = true;
+	//		stage = end;
+	//	}
+	//	break;
+	default:
+		break;
 	}
+	finish->NextLevel(player->rect);
 }
+
+

@@ -2,47 +2,33 @@
 #include "Player.h"
 #include <iostream>
 
-//Constructor of Thomas with his general attributes
-//his colour
-//he is a rectangle
-//he has no start-speed in x and y direction
-//no falling timer
-//setting his start jumpTimer to 40
 Player::Player()
 {
-	col = Colour(255, 0, 0);
+	col = Colour(255, 100, 0);
 	rect = Rect(-8, 0, 0.5, 1);
 	xVel = 0;
 	yVel = 0;
 	timer = 0;
 	jumpTimer = 40;
 }
-
-//Destructor of Thomas
 Player::~Player()
 {
 }
 
-//empty Thomas Update-function
 void Player::Update()
 {
 
 }
 
-//Rendering function
-//Rendering function for drawing the Thomas-Object
-// \param[in] the Renderer which actually should draw the Thomas-Object
 void Player::Render(Renderer& r)
 {
 	r.drawWorldRect(rect, col);
 }
 
 
-//Jumping function
-//Function which causes the Thomas-Object to jump up
 void::Player::Jump()
 {
-	if (onPlatform == true)
+	if (onPlatform == true && canJump == true)
 	{
 		rising = true;
 		jumpTimer = 40;
@@ -51,10 +37,6 @@ void::Player::Jump()
 
 }
 
-//Maximum Speed function
-//Function checks if the velocity is greater than max speed.
-//If velocity is greater than max speed it sets speed to be equal to max speed
-//If velocity is less than minus max speed it sets speed to be equal to minus max speed
 void::Player::MaxSpeed()
 {
 	if (xVel > maxXVel)
@@ -66,12 +48,6 @@ void::Player::MaxSpeed()
 		xVel = -maxXVel;
 	}
 }
-
-//Checks the status of various jumping related variables
-//Checks if the jump button is pressed
-//checks if Player is jumping up
-//checks if he is falling and calls Fall() if he is 
-//checks if he reaches the apex of the jump by seeing if the timer reaches the maxTimer value
 void::Player::CheckJumpingStatus()
 {
 	//checkAlive();
@@ -87,12 +63,10 @@ void::Player::CheckJumpingStatus()
 	}
 	if (inAir == true && rising == false)
 	{
-		//while decending
 		Fall();
 	}
 
 	//start to fall
-	//set rising to false, reset variables
 	if (timer >= jumpTimer) 
 	{
 		if (isJumpPressed && jumpTimer < 60)
@@ -110,10 +84,6 @@ void::Player::CheckJumpingStatus()
 	
 }
 
-//Moves Player horizontally
-//Checks if thomas is within the bounds of the screen, if they are the player can move left and right
-//sets the speed of Player to be 0 if he is moving too slowly
-//calls the slowdown function called Stop() if the player isn't moving
 void Player::Move()
 {
 	if (rect.pos.x <= 9.5 && rect.pos.x >= -10)
@@ -147,11 +117,6 @@ void Player::Move()
 	}
 }
 
-//Update Player loop
-//Calls the CheckJumpingStatus, Move and MaxSpeed functions
-//adds yVelocity to position
-//sets falling to true
-// \param[in] deltaTime is used to know how long has passed since the last frame
 void Player::Update(unsigned int deltaTime)
 {
 	CheckJumpingStatus();
@@ -159,14 +124,9 @@ void Player::Update(unsigned int deltaTime)
 	rect.pos.y += yVel;
 	Move();
 
-	//falling is set to true at the end of update
-	//when collisions are called if Player collides with the top of any object falling is set to false
-	//falling is set to true every update so he will fall of platforms if he walks off them
 	falling = true;
 }
 
-//Sets the inAir bool
-// \param[in] airBool is the value to be set
 void Player::setInAir(bool airBool)
 {
 	inAir = airBool;
@@ -216,10 +176,11 @@ void Player::setOnPlatform(bool platBool)
 	onPlatform = platBool;
 }
 
-//Horizontal movement function
-//Function which causes the Player-Object to move left or right if the he is on the ground
-//if he is in the air and falling he can move left or right but at a slower pace
-// \param[in] left is the bool to say if the player is moving left or right
+void Player::setCanJump(bool jumpBool)
+{
+	canJump = jumpBool;
+}
+
 void Player::StartMove(bool left)
 {
 	if (!rising)
@@ -251,9 +212,6 @@ void Player::StartMove(bool left)
 		}
 	}
 }
-
-//Falling Function
-//decrements Player' yVelovity
 void Player::Fall()
 {
 
@@ -261,8 +219,6 @@ void Player::Fall()
 
 }
 
-//Stopping Function
-//decrements Thomas' xVelovity if he isnt rising
 void Player::Stop()
 {
 	if (!rising)
@@ -278,13 +234,6 @@ void Player::Stop()
 	}
 }
 
-//Event handler
-//Sets variables when it recieves input
-//sets move left if left is pressed, move right if right is pressed
-//starts jump if jump is pressed
-//sets stop if left or right is released
-//sets superjump if jump button is held
-// \param[in] evt is the event called
 void Player::onEvent(EventListener::Event evt)
 {
 	if (evt == EventListener::Event::LEFT)
@@ -313,10 +262,6 @@ void Player::onEvent(EventListener::Event evt)
 		isJumpPressed = false;
 	}
 }
-
-//Chenges Player's position and resets speed
-// \param[in] x is the X position to move Player to
-// \param[in] y is the Y position to move Player to
 void Player::ChangePos(int x, int y)
 {
 	rect.pos.x = x;

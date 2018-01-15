@@ -5,6 +5,7 @@
 #include "EventListener.h"
 #include "Renderer.h"
 
+
 class Player :public GameObject, public EventListener
 {
 public:
@@ -24,6 +25,7 @@ public:
 	void onEvent(EventListener::Event);
 	void ChangePos(int x, int y);
 	void Obstacle(Rect obj);
+	void setCanJump(bool jumpBool);
 	void setOnPlatform(bool platBool);
 	//void checkAlive();
 	void resetPlayer();
@@ -50,7 +52,7 @@ private:
 
 	int timer;
 	int jumpTimer;
+	bool canJump = true;
 	bool hitCheck = false;
 
 };
-

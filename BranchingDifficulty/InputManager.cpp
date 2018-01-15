@@ -1,5 +1,6 @@
 #include "InputManager.h"
 
+
 InputManager::InputManager()
 {
 }
@@ -78,6 +79,9 @@ void InputManager::ProcessInput()
 				case SDLK_d:
 					Dispatch(EventListener::Event::RIGHT);
 					break;
+				case SDLK_i:
+					Dispatch(EventListener::Event::RECORD);
+					break;
 				}
 				break;
 
@@ -118,6 +122,13 @@ void InputManager::ProcessInput()
 				case SDL_KEYDOWN:
 					if (e.key.keysym.sym == SDLK_q) {
 						Dispatch(EventListener::Event::QUIT);
+						break;
+					}
+					else
+					{
+						start = 0;
+						Dispatch(EventListener::Event::RESTART);
+						keyPressed = true;
 						break;
 					}
 				}

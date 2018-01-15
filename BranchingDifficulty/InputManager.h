@@ -7,11 +7,13 @@
 #include "SDL.h"
 #endif
 
+
 #include<map>
 #include<vector>
 #include "EventListener.h"
 #include <iostream>
 
+//Convert input into logical events
 class InputManager
 {
 	//dictionary holding a list of litener objs for each event type

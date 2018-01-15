@@ -1,4 +1,4 @@
-// PURPOSE : HEADER FILE FOR DEFINING BASIC 2D GRAPHICS.
+
 #pragma once
 #include <cmath>
 

@@ -1,4 +1,3 @@
-// PURPOSE : HEADER FILE FOR DEFINING ALL THE POSSIBLE EVENTS THAT CAN HAPPEN.
 #pragma once
 
 //Used as an interface for the event dispatcher
@@ -11,15 +10,19 @@ public:
 	//list of possible events
 	enum Event {
 		REVERSE,
+		PAUSE,
+		QUIT,
 		LEFT,
 		RIGHT,
 		STOP,
 		START,
 		JUMP,
 		SUPERJUMP,
-		QUIT
+		RESTART,
+		RECORD
 	};
 
 
 	virtual void onEvent(Event) = 0;
 };
+
