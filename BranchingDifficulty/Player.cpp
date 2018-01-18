@@ -1,11 +1,12 @@
 
 #include "Player.h"
 #include <iostream>
+using namespace std;
 
 Player::Player()
 {
 	col = Colour(255, 100, 0);
-	rect = Rect(-8, 0, 0.5, 1);
+	rect = Rect(-9, 0, 0.5, 1);
 	xVel = 0;
 	yVel = 0;
 	timer = 0;
@@ -123,6 +124,10 @@ void Player::Update(unsigned int deltaTime)
 	MaxSpeed();
 	rect.pos.y += yVel;
 	Move();
+	if (rect.pos.y < -8)
+	{
+		alive = false;
+	}
 
 	falling = true;
 }
@@ -144,6 +149,7 @@ void Player::Obstacle(Rect obj)
 		{
 			rect.pos.x = lastXPos;
 			xVel = 0;
+		
 		}
 		else if (!(lastYPos < (obj.pos.y + obj.size.h) && (lastYPos + rect.size.h) > obj.pos.y))
 		{
@@ -268,9 +274,10 @@ void Player::ChangePos(int x, int y)
 	rect.pos.y = y;
 	xVel = 0;
 	yVel = 0;
+	
 }
 
-void Player::resetPlayer()
+void Player::resetPlayer(int resetX, int resetY)
 {
 	ChangePos(resetX, resetY);
 	alive = true;

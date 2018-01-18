@@ -28,12 +28,9 @@ public:
 	void setCanJump(bool jumpBool);
 	void setOnPlatform(bool platBool);
 	//void checkAlive();
-	void resetPlayer();
+	void resetPlayer(int resetX, int resetY);
 	bool alive = true;
 	Rect rect;
-
-	int resetX;
-	int resetY;
 
 private:
 

@@ -226,10 +226,10 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(blocks[i]);
 			}
-			finish = new FinishLine(Rect(7, 0, 1, 1));
+			finish = new FinishLine(Rect(9, -6, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			player->ChangePos(-8, 0);
+			player->ChangePos(-9.5, 0);
 
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
@@ -237,12 +237,14 @@ void Game::changeStage()
 
 			changeLevel = false;
 		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-9.5, 0);
+		}
 		if (finish->levelComplete == true)
 		{
-
 			changeLevel = true;
 			stage = lvl2A;
-
 		}
 		break;
 	case lvl2A:
@@ -254,9 +256,65 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(blocks[i]);
 			}
-			finish = new FinishLine(Rect(7, -5, 1, 1));//-5
+			finish = new FinishLine(Rect(9, -1.5, 1, 1));//-5
 			finish->color = Colour(255, 255, 255);
-			player->ChangePos(0, 0);
+
+			player->ChangePos(-10, 0);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-10, 0);
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		break;
+	case lvl2B:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level2B();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+			finish = new FinishLine(Rect(9, -1.5, 1, 1));//-5
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-10, 0);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-10, 0);
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		break;
+	case lvl3A:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level3A();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+			finish = new FinishLine(Rect(9, 5, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-8, 4);
+
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -266,31 +324,7 @@ void Game::changeStage()
 			changeLevel = true;
 		}
 		break;
-	
-	//	if (!player->alive)
-	//	{
-	//		player->resetPlayer();
-	//		player->alive = true;
-	//		player->drowntimer = 0;
-	//	}
-	//	if (finish->levelComplete == true)
-	//	{
-	//		changeLevel = true;
-	//	}
-	//	break;
 
-	//	if (!player->alive)
-	//	{
-	//		player->resetPlayer();
-	//		player->alive = true;
-	//	}
-	//	if (finish->levelComplete == true)
-	//	{
-	//		inputManager.start = 2;
-	//		changeLevel = true;
-	//		stage = end;
-	//	}
-	//	break;
 	default:
 		break;
 	}
