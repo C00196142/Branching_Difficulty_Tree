@@ -187,7 +187,7 @@ void Game::onEvent(EventListener::Event evt) {
 	// if the event START happens we start the game and change the screen to the first level
 	if (evt == EventListener::Event::START) {
 		mainMenu = false;
-		stage = lvl1;
+		stage = lvl3E;
 		changeLevel = true;
 	}
 
@@ -322,6 +322,120 @@ void Game::changeStage()
 		if (finish->levelComplete == true)
 		{
 			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-8, 4);
+		}
+		break;
+	case lvl3B:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level3B();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+			finish = new FinishLine(Rect(9, 5, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-8, 4);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-8, 4);
+		}
+		break;
+
+	case lvl3C:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level3C();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+			finish = new FinishLine(Rect(9, 5, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-8, 4);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-8, 4);
+		}
+		break;
+	case lvl3D:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level3D();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+			finish = new FinishLine(Rect(9, 5, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-8, 4);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-8, 4);
+		}
+		break;
+
+	case lvl3E:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level3E();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+			finish = new FinishLine(Rect(9, 5, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-8, 4);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-8, 4);
 		}
 		break;
 

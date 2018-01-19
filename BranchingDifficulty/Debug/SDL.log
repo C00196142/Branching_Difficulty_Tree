@@ -1,3 +1,5 @@
 ﻿  LevelManager.cpp
+c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(328): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(331): warning C4305: 'argument': truncation from 'double' to 'float'
   SDL.vcxproj -> C:\Users\gameuser\Documents\Project\BranchingDifficulty\Debug\SDL.exe
   SDL.vcxproj -> C:\Users\gameuser\Documents\Project\BranchingDifficulty\Debug\SDL.pdb (Partial PDB)
