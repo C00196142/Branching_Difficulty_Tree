@@ -187,7 +187,7 @@ void Game::onEvent(EventListener::Event evt) {
 	// if the event START happens we start the game and change the screen to the first level
 	if (evt == EventListener::Event::START) {
 		mainMenu = false;
-		stage = lvl3E;
+		stage = lvl4E_enemy;
 		changeLevel = true;
 	}
 
@@ -436,6 +436,90 @@ void Game::changeStage()
 		if (!player->alive)
 		{
 			player->resetPlayer(-8, 4);
+		}
+		break;
+	case lvl3F:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level3F();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+
+			finish = new FinishLine(Rect(9, 5, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-8, 4);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-8, 4);
+		}
+		break;
+	case lvl3G:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level3G();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+
+			finish = new FinishLine(Rect(9, 5, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-8, 4);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-8, 4);
+		}
+		break;
+	case lvl4E_enemy:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level4E_enemy();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+
+			finish = new FinishLine(Rect(9, -1, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-10, 0);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-10, 0);
 		}
 		break;
 
