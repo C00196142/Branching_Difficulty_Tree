@@ -1,17 +1,11 @@
-﻿  Game.cpp
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(102): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(225): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(232): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(242): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(255): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(282): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(309): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(336): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(364): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(391): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(419): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(446): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(474): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\documents\project\branchingdifficulty\game.cpp(502): warning C4018: '<': signed/unsigned mismatch
+﻿  LevelManager.cpp
+c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(328): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(331): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(393): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(396): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(465): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(468): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(529): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(532): warning C4305: 'argument': truncation from 'double' to 'float'
   SDL.vcxproj -> C:\Users\gameuser\Documents\Project\BranchingDifficulty\Debug\SDL.exe
   SDL.vcxproj -> C:\Users\gameuser\Documents\Project\BranchingDifficulty\Debug\SDL.pdb (Partial PDB)

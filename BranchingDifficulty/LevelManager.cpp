@@ -584,3 +584,231 @@ std::vector<Platform*> LevelManager::level4E_enemy()
 	return block;
 }
 
+std::vector<Platform*> LevelManager::level4E_fall()
+{
+	block.clear();
+
+	Platform* floor1 = new Platform(Rect(-10, -4, 1, 3));
+	floor1->color = Colour(200, 0, 200);
+
+	Platform* floor2 = new Platform(Rect(-8, -4, 1, 3));
+	floor2->color = Colour(200, 0, 200);
+
+	Platform* floor3 = new Platform(Rect(-6, -4, 1, 3));
+	floor3->color = Colour(200, 0, 200);
+
+	Platform* floor4 = new Platform(Rect(0, -4, 1, 3));
+	floor4->color = Colour(200, 0, 200);
+
+	Platform* floor5 = new Platform(Rect(2, -4, 1, 3));
+	floor5->color = Colour(200, 0, 200);
+
+	Platform* floor6 = new Platform(Rect(4, -4, 1, 4));
+	floor6->color = Colour(200, 0, 200);
+
+	Platform* floor7 = new Platform(Rect(6, -4, 1, 5));
+	floor7->color = Colour(200, 0, 200);
+
+	Platform* floor8 = new Platform(Rect(9, 1, 1, 1));
+	floor8->color = Colour(200, 0, 200);
+
+	block.push_back(floor1);
+	block.push_back(floor2);
+	block.push_back(floor3);
+	block.push_back(floor4);
+	block.push_back(floor5);
+	block.push_back(floor6);
+	block.push_back(floor7);
+	block.push_back(floor8);
+
+	return block;
+}
+
+std::vector<Platform*> LevelManager::level4E_time()
+{
+	block.clear();
+
+	Platform* wall = new Platform(Rect(-7, -4, 0.5, 12));
+	wall->color = Colour(200, 0, 200);
+
+	Platform* ground = new Platform(Rect(-10, -8, 20, 1));
+	ground->color = Colour(200, 0, 200);
+
+	Platform* floor1 = new Platform(Rect(-10, 3, 1.5, 2));
+	floor1->color = Colour(200, 0, 200);
+
+	Platform* floor2 = new Platform(Rect(-8.5, -0.5, 1.5, 2));
+	floor2->color = Colour(200, 0, 200);
+
+	Platform* floor3 = new Platform(Rect(-10, -4, 1.5, 2));
+	floor3->color = Colour(200, 0, 200);
+
+	Platform* floor4 = new Platform(Rect(-10, -8, 3, 2));
+	floor4->color = Colour(200, 0, 200);
+
+	Platform* floor5 = new Platform(Rect(-3, -3, 10, 1));
+	floor5->color = Colour(200, 0, 200);
+
+	Platform* floor6 = new Platform(Rect(-2, -7, 1, 1.5));
+	floor6->color = Colour(200, 0, 200);
+
+	Platform* floor7 = new Platform(Rect(-1, -1, 2, 1));
+	floor7->color = Colour(200, 0, 200);
+
+	Platform* floor8 = new Platform(Rect(2, 0, 2, 1));
+	floor8->color = Colour(200, 0, 200);
+
+	Platform* floor9 = new Platform(Rect(6, 1, 2, 1));
+	floor9->color = Colour(200, 0, 200);
+
+	Platform* floor10 = new Platform(Rect(9, 3, 2, 1));
+	floor10->color = Colour(200, 0, 200);
+
+	block.push_back(wall);
+	block.push_back(ground);
+	block.push_back(floor1);
+	block.push_back(floor2);
+	block.push_back(floor3);
+	block.push_back(floor4);
+	block.push_back(floor5);
+	block.push_back(floor6);
+	block.push_back(floor7);
+	block.push_back(floor8);
+	block.push_back(floor9);
+	block.push_back(floor10);
+
+	return block;
+}
+
+std::vector<Platform*> LevelManager::level4H_enemy()
+{
+	block.clear();
+
+	Platform* floor1 = new Platform(Rect(-10, -2, 4, 1));
+	floor1->color = Colour(200, 0, 200);
+
+	Platform* floor2 = new Platform(Rect(-5, -2, 6, 1));
+	floor2->color = Colour(200, 0, 200);
+
+	Platform* floor3 = new Platform(Rect(2, -2, 5, 1));
+	floor3->color = Colour(200, 0, 200);
+
+	Platform* floor4 = new Platform(Rect(8, -2, 2, 1));
+	floor4->color = Colour(200, 0, 200);
+
+	block.push_back(floor1);
+	block.push_back(floor2);
+	block.push_back(floor3);
+	block.push_back(floor4);
+
+	return block;
+}
+
+std::vector<Platform*> LevelManager::level4H_fall()
+{
+	block.clear();
+
+	Platform* floor1 = new Platform(Rect(-10, -4, 1, 3));
+	floor1->color = Colour(200, 0, 200);
+
+	Platform* floor2 = new Platform(Rect(-8, -4, 0.5, 3));
+	floor2->color = Colour(200, 0, 200);
+
+	Platform* floor3 = new Platform(Rect(-6, -4, 0.5, 3));
+	floor3->color = Colour(200, 0, 200);
+
+	Platform* floor4 = new Platform(Rect(0, -4, 0.5, 3));
+	floor4->color = Colour(200, 0, 200);
+
+	Platform* floor5 = new Platform(Rect(2, -4, 0.5, 3));
+	floor5->color = Colour(200, 0, 200);
+
+	Platform* floor6 = new Platform(Rect(4, -4, 0.5, 4));
+	floor6->color = Colour(200, 0, 200);
+
+	Platform* floor7 = new Platform(Rect(6, -4, 0.5, 5));
+	floor7->color = Colour(200, 0, 200);
+
+	Platform* floor8 = new Platform(Rect(9, 1, 1, 1));
+	floor8->color = Colour(200, 0, 200);
+
+	block.push_back(floor1);
+	block.push_back(floor2);
+	block.push_back(floor3);
+	block.push_back(floor4);
+	block.push_back(floor5);
+	block.push_back(floor6);
+	block.push_back(floor7);
+	block.push_back(floor8);
+
+	return block;
+}
+
+std::vector<Platform*> LevelManager::level4H_time()
+{
+	block.clear();
+
+	Platform* wall = new Platform(Rect(-7, -4, 0.5, 12));
+	wall->color = Colour(200, 0, 200);
+
+	Platform* ground = new Platform(Rect(-10, -8, 20, 1));
+	ground->color = Colour(200, 0, 200);
+
+	Platform* floor1 = new Platform(Rect(-10, 3, 1.5, 2));
+	floor1->color = Colour(200, 0, 200);
+
+	Platform* floor2 = new Platform(Rect(-8.5, -0.5, 1.5, 2));
+	floor2->color = Colour(200, 0, 200);
+
+	Platform* floor3 = new Platform(Rect(-10, -4, 1.5, 2));
+	floor3->color = Colour(200, 0, 200);
+
+	Platform* floor4 = new Platform(Rect(-10, -8, 3, 2));
+	floor4->color = Colour(200, 0, 200);
+
+	Platform* floor5 = new Platform(Rect(-3, -2, 10, 1));
+	floor5->color = Colour(200, 0, 200);
+
+	Platform* floor6 = new Platform(Rect(-2, -7, 1, 1.5));
+	floor6->color = Colour(200, 0, 200);
+
+	Platform* floor7 = new Platform(Rect(-1, 0, 2, 1));
+	floor7->color = Colour(200, 0, 200);
+
+	Platform* floor8 = new Platform(Rect(2, 1, 2, 1));
+	floor8->color = Colour(200, 0, 200);
+
+	Platform* floor9 = new Platform(Rect(6, 2, 2, 1));
+	floor9->color = Colour(200, 0, 200);
+
+	Platform* floor10 = new Platform(Rect(9, 4, 2, 1));
+	floor10->color = Colour(200, 0, 200);
+
+	Platform* floor11 = new Platform(Rect(7, -4, 3, 0.5));
+	floor11->color = Colour(200, 0, 200);
+
+	Platform* floor12 = new Platform(Rect(8, -3, 2, 0.5));
+	floor12->color = Colour(200, 0, 200);
+
+	Platform* floor13 = new Platform(Rect(9, -2, 1, 0.5));
+	floor13->color = Colour(200, 0, 200);
+
+	block.push_back(wall);
+	block.push_back(ground);
+	block.push_back(floor1);
+	block.push_back(floor2);
+	block.push_back(floor3);
+	block.push_back(floor4);
+	block.push_back(floor5);
+	block.push_back(floor6);
+	block.push_back(floor7);
+	block.push_back(floor8);
+	block.push_back(floor9);
+	block.push_back(floor10);
+	block.push_back(floor11);
+	block.push_back(floor12);
+	block.push_back(floor13);
+
+	return block;
+}
+

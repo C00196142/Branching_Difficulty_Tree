@@ -187,7 +187,7 @@ void Game::onEvent(EventListener::Event evt) {
 	// if the event START happens we start the game and change the screen to the first level
 	if (evt == EventListener::Event::START) {
 		mainMenu = false;
-		stage = lvl4E_enemy;
+		stage = lvl4H_time;
 		changeLevel = true;
 	}
 
@@ -520,6 +520,146 @@ void Game::changeStage()
 		if (!player->alive)
 		{
 			player->resetPlayer(-10, 0);
+		}
+		break;
+	case lvl4E_fall:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level4E_fall();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+
+			finish = new FinishLine(Rect(9, 2, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-10, 0);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-10, 0);
+		}
+		break;
+	case lvl4E_time:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level4E_time();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+
+			finish = new FinishLine(Rect(9, 4, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-10, 6);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-10, 6);
+		}
+		break;
+	case lvl4H_enemy:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level4H_enemy();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+
+			finish = new FinishLine(Rect(9, -1, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-10, 0);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-10, 0);
+		}
+		break;
+	case lvl4H_fall:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level4H_fall();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+
+			finish = new FinishLine(Rect(9, 2, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-10, 0);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-10, 0);
+		}
+		break;
+	case lvl4H_time:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			blocks = levels.level4H_time();
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+
+			finish = new FinishLine(Rect(9, 5, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-10, 6);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+			changeLevel = false;
+		}
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-10, 6);
 		}
 		break;
 

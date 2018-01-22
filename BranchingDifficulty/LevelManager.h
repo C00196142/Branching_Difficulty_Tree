@@ -24,5 +24,11 @@ public:
 	std::vector<Platform*> level3G();
 
 	std::vector<Platform*> level4E_enemy();
+	std::vector<Platform*> level4E_fall();
+	std::vector<Platform*> level4E_time();
+
+	std::vector<Platform*> level4H_enemy();
+	std::vector<Platform*> level4H_fall();
+	std::vector<Platform*> level4H_time();
 };
 
