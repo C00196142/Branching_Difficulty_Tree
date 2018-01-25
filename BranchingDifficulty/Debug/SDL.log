@@ -1,11 +1,38 @@
-﻿  LevelManager.cpp
-c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(328): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(331): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(393): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(396): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(465): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(468): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(529): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\gameuser\documents\project\branchingdifficulty\levelmanager.cpp(532): warning C4305: 'argument': truncation from 'double' to 'float'
-  SDL.vcxproj -> C:\Users\gameuser\Documents\Project\BranchingDifficulty\Debug\SDL.exe
-  SDL.vcxproj -> C:\Users\gameuser\Documents\Project\BranchingDifficulty\Debug\SDL.pdb (Partial PDB)
+﻿  Skipping... (no relevant changes detected)
+  Renderer.cpp
+  Player.cpp
+  Platform.cpp
+  Menu.cpp
+  Main.cpp
+  LTimer.cpp
+  LevelManager.cpp
+  InputManager.cpp
+  Game.cpp
+  FinishLine.cpp
+Game.obj : error LNK2019: unresolved external symbol _SDL_GetTicks referenced in function "public: static unsigned int __cdecl LTimer::gameTime(void)" (?gameTime@LTimer@@SAIXZ)
+LTimer.obj : error LNK2001: unresolved external symbol _SDL_GetTicks
+Game.obj : error LNK2019: unresolved external symbol _SDL_Delay referenced in function "public: void __thiscall Game::loop(void)" (?loop@Game@@QAEXXZ)
+InputManager.obj : error LNK2019: unresolved external symbol _SDL_GetKeyboardState referenced in function "public: void __thiscall InputManager::ProcessInput(void)" (?ProcessInput@InputManager@@QAEXXZ)
+InputManager.obj : error LNK2019: unresolved external symbol _SDL_PollEvent referenced in function "public: void __thiscall InputManager::ProcessInput(void)" (?ProcessInput@InputManager@@QAEXXZ)
+Menu.obj : error LNK2019: unresolved external symbol _SDL_QueryTexture referenced in function "public: void __thiscall Menu::LoadTextStart(class Renderer &)" (?LoadTextStart@Menu@@QAEXAAVRenderer@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_GetError referenced in function "public: bool __thiscall Renderer::init(class Size2D const &,char const *)" (?init@Renderer@@QAE_NABVSize2D@@PBD@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_FreeSurface referenced in function "public: struct SDL_Texture * __thiscall Renderer::SurfaceToTexture(struct SDL_Surface *)" (?SurfaceToTexture@Renderer@@QAEPAUSDL_Texture@@PAUSDL_Surface@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_CreateWindow referenced in function "public: bool __thiscall Renderer::init(class Size2D const &,char const *)" (?init@Renderer@@QAE_NABVSize2D@@PBD@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_DestroyWindow referenced in function "public: void __thiscall Renderer::destroy(void)" (?destroy@Renderer@@QAEXXZ)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_CreateRenderer referenced in function "public: bool __thiscall Renderer::init(class Size2D const &,char const *)" (?init@Renderer@@QAE_NABVSize2D@@PBD@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_CreateTextureFromSurface referenced in function "public: struct SDL_Texture * __thiscall Renderer::SurfaceToTexture(struct SDL_Surface *)" (?SurfaceToTexture@Renderer@@QAEPAUSDL_Texture@@PAUSDL_Surface@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_SetRenderDrawColor referenced in function "public: void __thiscall Renderer::clear(class Colour const &)" (?clear@Renderer@@QAEXABVColour@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_SetRenderDrawBlendMode referenced in function "public: bool __thiscall Renderer::init(class Size2D const &,char const *)" (?init@Renderer@@QAE_NABVSize2D@@PBD@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderClear referenced in function "public: void __thiscall Renderer::clear(class Colour const &)" (?clear@Renderer@@QAEXABVColour@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderDrawRect referenced in function "public: void __thiscall Renderer::drawRectOutline(class Rect const &,class Colour const &)" (?drawRectOutline@Renderer@@QAEXABVRect@@ABVColour@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderFillRect referenced in function "public: void __thiscall Renderer::drawRect(class Rect const &,class Colour const &)" (?drawRect@Renderer@@QAEXABVRect@@ABVColour@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderCopy referenced in function "public: void __thiscall Renderer::drawText(struct SDL_Texture *,struct SDL_Rect)" (?drawText@Renderer@@QAEXPAUSDL_Texture@@USDL_Rect@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderCopyEx referenced in function "public: void __thiscall Renderer::drawRotateableImage(struct SDL_Texture *,double,struct SDL_Point *,bool,struct SDL_Rect *)" (?drawRotateableImage@Renderer@@QAEXPAUSDL_Texture@@NPAUSDL_Point@@_NPAUSDL_Rect@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderPresent referenced in function "public: void __thiscall Renderer::present(void)" (?present@Renderer@@QAEXXZ)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_DestroyRenderer referenced in function "public: void __thiscall Renderer::destroy(void)" (?destroy@Renderer@@QAEXXZ)
+Renderer.obj : error LNK2019: unresolved external symbol _SDL_Init referenced in function "public: bool __thiscall Renderer::init(class Size2D const &,char const *)" (?init@Renderer@@QAE_NABVSize2D@@PBD@Z)
+Renderer.obj : error LNK2019: unresolved external symbol _IMG_LoadTexture referenced in function "public: bool __thiscall Renderer::init(class Size2D const &,char const *)" (?init@Renderer@@QAE_NABVSize2D@@PBD@Z)
+SDL2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+SDL2_image.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+SDL2main.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\theto\Desktop\temp\Branching_Difficulty_Tree\BranchingDifficulty\Debug\SDL.exe : fatal error LNK1120: 22 unresolved externals
