@@ -576,6 +576,7 @@ std::vector<Platform*> LevelManager::level4E_enemy()
 	Platform* floor4 = new Platform(Rect(8, -2, 2, 1));
 	floor4->color = Colour(200, 0, 200);
 
+
 	block.push_back(floor1);
 	block.push_back(floor2);
 	block.push_back(floor3);
@@ -664,6 +665,11 @@ std::vector<Platform*> LevelManager::level4E_time()
 	Platform* floor10 = new Platform(Rect(9, 3, 2, 1));
 	floor10->color = Colour(200, 0, 200);
 
+	//Platform* moving = new Platform(Rect(-5, 0, 1, 0.5));
+	//moving->color = Colour(200, 0, 200);
+
+	//blockMoveUp(moving->floor.pos.y);
+
 	block.push_back(wall);
 	block.push_back(ground);
 	block.push_back(floor1);
@@ -676,6 +682,7 @@ std::vector<Platform*> LevelManager::level4E_time()
 	block.push_back(floor8);
 	block.push_back(floor9);
 	block.push_back(floor10);
+	//block.push_back(moving);
 
 	return block;
 }
@@ -793,6 +800,11 @@ std::vector<Platform*> LevelManager::level4H_time()
 	Platform* floor13 = new Platform(Rect(9, -2, 1, 0.5));
 	floor13->color = Colour(200, 0, 200);
 
+	Platform* moving = new Platform(Rect(1, 0, 1, 0.5));
+	moving->color = Colour(200, 0, 200);
+
+	blockMoveUp(moving->floor.pos.y);
+
 	block.push_back(wall);
 	block.push_back(ground);
 	block.push_back(floor1);
@@ -808,7 +820,27 @@ std::vector<Platform*> LevelManager::level4H_time()
 	block.push_back(floor11);
 	block.push_back(floor12);
 	block.push_back(floor13);
+	block.push_back(moving);
 
 	return block;
 }
 
+void LevelManager::blockMoveUp(float posY)
+{
+	if (moveUp == true)
+	{
+		posY++;
+		if (posY >= 8)
+		{
+			moveUp = false;
+		}
+	}
+	else if (moveUp == false)
+	{
+		posY--;
+		if (posY <= -8)
+		{
+			moveUp = true;
+		}
+	}
+}

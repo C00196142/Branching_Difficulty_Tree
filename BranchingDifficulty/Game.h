@@ -13,6 +13,7 @@
 #include "LevelManager.h"
 #include "FinishLine.h"
 #include "Menu.h"
+#include "MovingPlatform.h"
 
 // The game object which manages the game loop
 class Game :public EventListener
@@ -37,7 +38,12 @@ class Game :public EventListener
 	LevelManager levels;
 	FinishLine* finish = new FinishLine(Rect(0, 0, 0, 0));
 
+	MovingPlatform* mover = new MovingPlatform(Rect(0, 0, 0, 0));
+
 	int r, g, b, a;
+
+	bool moveUp = true;
+	bool moveRight = false;
 
 public:
 	enum gameStage { menu, lvl1, lvl2A, lvl2B, 
