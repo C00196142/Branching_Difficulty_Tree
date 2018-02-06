@@ -14,6 +14,7 @@
 #include "FinishLine.h"
 #include "Menu.h"
 #include "MovingPlatform.h"
+#include "Enemy.h"
 
 // The game object which manages the game loop
 class Game :public EventListener
@@ -39,6 +40,8 @@ class Game :public EventListener
 	FinishLine* finish = new FinishLine(Rect(0, 0, 0, 0));
 
 	MovingPlatform* mover = new MovingPlatform(Rect(0, 0, 0, 0));
+
+	Enemy* enemy = new Enemy(Rect(0, 0, 0, 0));
 
 	int r, g, b, a;
 

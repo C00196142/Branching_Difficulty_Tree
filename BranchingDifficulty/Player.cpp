@@ -137,6 +137,16 @@ void Player::setInAir(bool airBool)
 	inAir = airBool;
 }
 
+void Player::enemyCollision(Rect obj)
+{
+	//if the 2 rectangles intersect
+	if ((rect.pos.x + rect.size.w) > obj.pos.x && rect.pos.x < (obj.pos.x + obj.size.w) && rect.pos.y < (obj.pos.y + obj.size.h) && (rect.pos.y + rect.size.h) > obj.pos.y)
+	{
+		alive = false;
+	}
+
+}
+
 void Player::Obstacle(Rect obj)
 {
 	//if the 2 rectangles intersect

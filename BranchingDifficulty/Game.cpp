@@ -128,6 +128,8 @@ void Game::update()
 		player->Obstacle(blocks[i]->floor);
 	}
 	player->Obstacle(mover->mover);
+
+	player->enemyCollision(enemy->enemy);
 	//millis since game started
 	unsigned int currentTime = LTimer::gameTime();
 
@@ -211,7 +213,7 @@ void Game::onEvent(EventListener::Event evt) {
 	// if the event START happens we start the game and change the screen to the first level
 	if (evt == EventListener::Event::START) {
 		mainMenu = false;
-		stage = lvl4E_time;
+		stage = lvl3A;
 		//stage = lvl1;
 		changeLevel = true;
 	}
@@ -338,8 +340,12 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
+			enemy = new Enemy(Rect(6, -2, 1, 1));
+			enemy->color = Colour(244, 66, 66);
+
 			player->ChangePos(-8, 4);
 
+			gameObjects.push_back(enemy);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
