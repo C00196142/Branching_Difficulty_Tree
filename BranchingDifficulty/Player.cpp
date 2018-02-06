@@ -20,6 +20,16 @@ void Player::Update()
 {
 
 }
+void Player::Update(unsigned int deltaTime)
+{
+	CheckJumpingStatus();
+	MaxSpeed();
+	rect.pos.y += yVel;
+	Move();
+
+	checkFallDeath();
+	falling = true;
+}
 
 void Player::Render(Renderer& r)
 {
@@ -118,33 +128,9 @@ void Player::Move()
 	}
 }
 
-void Player::Update(unsigned int deltaTime)
-{
-	CheckJumpingStatus();
-	MaxSpeed();
-	rect.pos.y += yVel;
-	Move();
-	if (rect.pos.y < -8)
-	{
-		alive = false;
-	}
-
-	falling = true;
-}
-
 void Player::setInAir(bool airBool)
 {
 	inAir = airBool;
-}
-
-void Player::enemyCollision(Rect obj)
-{
-	//if the 2 rectangles intersect
-	if ((rect.pos.x + rect.size.w) > obj.pos.x && rect.pos.x < (obj.pos.x + obj.size.w) && rect.pos.y < (obj.pos.y + obj.size.h) && (rect.pos.y + rect.size.h) > obj.pos.y)
-	{
-		alive = false;
-	}
-
 }
 
 void Player::Obstacle(Rect obj)
@@ -278,20 +264,36 @@ void Player::onEvent(EventListener::Event evt)
 		isJumpPressed = false;
 	}
 }
+
+void Player::checkFallDeath()
+{
+	if (rect.pos.y < -8)
+	{
+		alive = false;
+		std::cout << "Fell to Death" << std::endl;
+	}
+}
+void Player::enemyCollision(Rect obj)
+{
+	//if the 2 rectangles intersect
+	if ((rect.pos.x + rect.size.w) > obj.pos.x && rect.pos.x < (obj.pos.x + obj.size.w) && rect.pos.y < (obj.pos.y + obj.size.h) && (rect.pos.y + rect.size.h) > obj.pos.y)
+	{
+		alive = false;
+		std::cout << "Killed by Enemy" << std::endl;
+	}
+}
+
 void Player::ChangePos(int x, int y)
 {
 	rect.pos.x = x;
 	rect.pos.y = y;
 	xVel = 0;
-	yVel = 0;
-	
+	yVel = 0;	
 }
-
 void Player::resetPlayer(int resetX, int resetY)
 {
 	ChangePos(resetX, resetY);
 	alive = true;
-	std::cout << "DEAD" << std::endl;
 }
 
 

@@ -19,19 +19,22 @@ void Enemy::Render(Renderer & r)
 void Enemy::Update(unsigned int deltaTime)
 {
 	Point2D p = enemy.pos;
+}
 
+void Enemy::Move(float xMin, float xMax, float speed)
+{
 	if (moveRight == true)
 	{
-		enemy.pos.x = enemy.pos.x + 0.015;
-		if (enemy.pos.x >= 7)
+		enemy.pos.x = enemy.pos.x + speed;
+		if (enemy.pos.x >= xMax)
 		{
 			moveRight = false;
 		}
 	}
 	else if (moveRight == false)
 	{
-		enemy.pos.x = enemy.pos.x - 0.015;
-		if (enemy.pos.x <= 4)
+		enemy.pos.x = enemy.pos.x - speed;
+		if (enemy.pos.x <= xMin)
 		{
 			moveRight = true;
 		}

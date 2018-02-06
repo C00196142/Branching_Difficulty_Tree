@@ -250,10 +250,10 @@ std::vector<Platform*> LevelManager::level3C()
 	Platform* floor1 = new Platform(Rect(-9, 2, 2, 1));
 	floor1->color = Colour(200, 0, 200);
 
-	Platform* floor2 = new Platform(Rect(-6, 1, 2, 1));
+	Platform* floor2 = new Platform(Rect(-6, 1, 3, 1));
 	floor2->color = Colour(200, 0, 200);
 
-	Platform* floor3 = new Platform(Rect(-4, -1, 2, 1));
+	Platform* floor3 = new Platform(Rect(-5, -1, 4, 1));
 	floor3->color = Colour(200, 0, 200);
 
 	Platform* floor4 = new Platform(Rect(-2, 1, 2, 1));

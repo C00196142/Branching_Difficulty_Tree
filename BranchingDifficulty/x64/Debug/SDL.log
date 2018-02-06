@@ -1,28 +1,11 @@
-﻿  Player.cpp
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(36): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(45): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(49): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(182): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(210): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(214): warning C4244: '-=': conversion from 'const double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(222): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(226): warning C4244: '+=': conversion from 'const double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(234): warning C4305: '-=': truncation from 'double' to 'float'
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(244): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(248): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(283): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\player.cpp(284): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Game.cpp
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\game.cpp(105): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\game.cpp(113): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\game.cpp(259): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\game.cpp(269): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Enemy.cpp
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\enemy.cpp(25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\enemy.cpp(33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-  Compiling...
-  Main.cpp
-  Generating Code...
+﻿  LevelManager.cpp
+c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(328): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(331): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(393): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(396): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(465): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(468): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(529): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\project\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(532): warning C4305: 'argument': truncation from 'double' to 'float'
   SDL.vcxproj -> C:\Users\gameuser\Documents\Project\Branching_Difficulty_Tree\BranchingDifficulty\x64\Debug\SDL.exe
   SDL.vcxproj -> C:\Users\gameuser\Documents\Project\Branching_Difficulty_Tree\BranchingDifficulty\x64\Debug\SDL.pdb (Partial PDB)

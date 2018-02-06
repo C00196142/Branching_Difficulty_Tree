@@ -2,7 +2,7 @@
 using namespace std;
 #include "Game.h"
 //Create and initialises an instance of game, and clean up when the game is closed
-
+//"Thomas is NOT Alone (Except for the first 2 levels in which he is in fact alone)"
 int main()
 {
 	Game game;

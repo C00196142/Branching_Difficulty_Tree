@@ -93,6 +93,8 @@ void Game::destroy()
 void Game::update()
 {
 	changeStage();
+	moveEnemy();
+
 	/*if (stage == lvl4E_time)
 	{
 		finish->finish.pos.y = finish->finish.pos.y - 0.025;
@@ -129,7 +131,10 @@ void Game::update()
 	}
 	player->Obstacle(mover->mover);
 
-	player->enemyCollision(enemy->enemy);
+	player->enemyCollision(enemy1->enemy);
+	player->enemyCollision(enemy2->enemy);
+	player->enemyCollision(enemy3->enemy);
+	player->enemyCollision(enemy4->enemy);
 	//millis since game started
 	unsigned int currentTime = LTimer::gameTime();
 
@@ -213,7 +218,7 @@ void Game::onEvent(EventListener::Event evt) {
 	// if the event START happens we start the game and change the screen to the first level
 	if (evt == EventListener::Event::START) {
 		mainMenu = false;
-		stage = lvl3A;
+		stage = lvl3C;
 		//stage = lvl1;
 		changeLevel = true;
 	}
@@ -340,12 +345,12 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			enemy = new Enemy(Rect(6, -2, 1, 1));
-			enemy->color = Colour(244, 66, 66);
+			enemy1 = new Enemy(Rect(6, -2, 1, 1));
+			enemy1->color = Colour(244, 66, 66);
 
 			player->ChangePos(-8, 4);
 
-			gameObjects.push_back(enemy);
+			gameObjects.push_back(enemy1);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -371,8 +376,16 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
+			enemy1 = new Enemy(Rect(6, -2, 1, 1));
+			enemy1->color = Colour(244, 66, 66);
+
+			enemy2 = new Enemy(Rect(-2, 2, 1, 1));
+			enemy2->color = Colour(244, 66, 66);
+
 			player->ChangePos(-8, 4);
 
+			gameObjects.push_back(enemy1);
+			gameObjects.push_back(enemy2);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -399,7 +412,24 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
+			enemy1 = new Enemy(Rect(6, -2, 1, 1));
+			enemy1->color = Colour(244, 66, 66);
+
+			enemy2 = new Enemy(Rect(-2, 2, 1, 1));
+			enemy2->color = Colour(244, 66, 66);
+
+			enemy3 = new Enemy(Rect(-3, 0, 1, 1));
+			enemy3->color = Colour(244, 66, 66);
+
+			enemy4 = new Enemy(Rect(-5, 2, 1, 1));
+			enemy4->color = Colour(244, 66, 66);
+
 			player->ChangePos(-8, 4);
+
+			gameObjects.push_back(enemy1);
+			gameObjects.push_back(enemy2);
+			gameObjects.push_back(enemy3);
+			gameObjects.push_back(enemy4);
 
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
@@ -702,6 +732,27 @@ void Game::changeStage()
 		break;
 	}
 	finish->NextLevel(player->rect);
+}
+
+void Game::moveEnemy()
+{
+	if (stage == lvl3A)
+	{
+				//(xMin, xMax, speed)
+		enemy1->Move(4, 7, 0.015);
+	}
+	else if (stage == lvl3B)
+	{
+		enemy1->Move(4, 7, 0.015);
+		enemy2->Move(-2, -1, 0.015);
+	}
+	else if (stage == lvl3C)
+	{
+		enemy1->Move(3, 7, 0.010);
+		enemy2->Move(-2, -1, 0.015);
+		enemy3->Move(-5, -2, 0.010);
+		enemy4->Move(-6, -5, 0.015);
+	}
 }
 
 

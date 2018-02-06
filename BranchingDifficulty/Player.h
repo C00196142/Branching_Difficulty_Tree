@@ -28,7 +28,8 @@ public:
 	void enemyCollision(Rect obj);
 	void setCanJump(bool jumpBool);
 	void setOnPlatform(bool platBool);
-	//void checkAlive();
+	
+	void checkFallDeath();
 	void resetPlayer(int resetX, int resetY);
 	bool alive = true;
 	Rect rect;

@@ -15,6 +15,7 @@ public:
 	Enemy(Rect r) : enemy(r) {};
 	void Render(Renderer & r);
 	void Update(unsigned int deltaTime);
+	void Move(float xMin, float xMax, float speed);
 
 	Rect enemy;
 	Colour color;

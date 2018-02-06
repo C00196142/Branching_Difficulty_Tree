@@ -15,6 +15,7 @@
 #include "Menu.h"
 #include "MovingPlatform.h"
 #include "Enemy.h"
+#include <time.h>
 
 // The game object which manages the game loop
 class Game :public EventListener
@@ -41,7 +42,10 @@ class Game :public EventListener
 
 	MovingPlatform* mover = new MovingPlatform(Rect(0, 0, 0, 0));
 
-	Enemy* enemy = new Enemy(Rect(0, 0, 0, 0));
+	Enemy* enemy1 = new Enemy(Rect(0, 0, 0, 0));
+	Enemy* enemy2 = new Enemy(Rect(0, 0, 0, 0));
+	Enemy* enemy3 = new Enemy(Rect(0, 0, 0, 0));
+	Enemy* enemy4 = new Enemy(Rect(0, 0, 0, 0));
 
 	int r, g, b, a;
 
@@ -63,4 +67,5 @@ public:
 	void loop();
 	void changeStage();
 	void onEvent(EventListener::Event);
+	void moveEnemy();
 };
