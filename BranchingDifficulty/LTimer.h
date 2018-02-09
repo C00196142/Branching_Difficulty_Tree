@@ -6,9 +6,6 @@
 #include "SDL.h"
 #endif
 
-//from  http://lazyfoo.net/tutorials/SDL/23_advanced_timers/
-// will be used for regulating FPS
-
 
 class LTimer
 {

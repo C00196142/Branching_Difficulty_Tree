@@ -53,6 +53,7 @@ bool Game::init() {
 	b = 102;
 
 	lastTime = LTimer::gameTime();
+	//time = 0;
 
 	startMenu->LoadTextStart(renderer);
 	startMenu->LoadTextEnd(renderer);
@@ -94,6 +95,7 @@ void Game::update()
 {
 	changeStage();
 	moveEnemy();
+	timer();
 
 	/*if (stage == lvl4E_time)
 	{
@@ -218,8 +220,9 @@ void Game::onEvent(EventListener::Event evt) {
 	// if the event START happens we start the game and change the screen to the first level
 	if (evt == EventListener::Event::START) {
 		mainMenu = false;
-		stage = lvl3C;
-		//stage = lvl1;
+		//stage = lvl3C;
+		stage = lvl1;
+		//stage = lvl2A;
 		changeLevel = true;
 	}
 
@@ -266,17 +269,25 @@ void Game::changeStage()
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 
-
 			changeLevel = false;
 		}
 		if (!player->alive)
 		{
 			player->resetPlayer(-9.5, 0);
 		}
-		if (finish->levelComplete == true)
+		if (finish->levelComplete == true && duration > 15)
 		{
 			changeLevel = true;
 			stage = lvl2A;
+			cout << "Level 2A" << endl;
+			start = clock();
+		}
+		else if (finish->levelComplete == true && duration <= 15)
+		{
+			changeLevel = true;
+			stage = lvl2B;
+			cout << "Level 2B" << endl;
+			start = clock();
 		}
 		break;
 	case lvl2A:
@@ -752,6 +763,25 @@ void Game::moveEnemy()
 		enemy2->Move(-2, -1, 0.015);
 		enemy3->Move(-5, -2, 0.010);
 		enemy4->Move(-6, -5, 0.015);
+	}
+}
+
+void Game::timer()
+{
+	if (stage == lvl1)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+	}
+	if (stage == lvl2A)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+	}
+	if (stage == lvl2B)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
 	}
 }
 

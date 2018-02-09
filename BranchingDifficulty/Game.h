@@ -27,6 +27,7 @@ class Game :public EventListener
 
 	//time of last update;
 	unsigned int lastTime;
+	float time;
 
 	bool record = false;
 	bool pause;
@@ -52,6 +53,9 @@ class Game :public EventListener
 	bool moveUp = true;
 	bool moveRight = false;
 
+	clock_t start;
+	int duration;
+
 public:
 	enum gameStage { menu, lvl1, lvl2A, lvl2B, 
 					lvl3A, lvl3B, lvl3C, lvl3D, lvl3E, lvl3F, lvl3G,
@@ -68,4 +72,5 @@ public:
 	void changeStage();
 	void onEvent(EventListener::Event);
 	void moveEnemy();
+	void timer();
 };
