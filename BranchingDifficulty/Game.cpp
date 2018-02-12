@@ -220,10 +220,11 @@ void Game::onEvent(EventListener::Event evt) {
 	// if the event START happens we start the game and change the screen to the first level
 	if (evt == EventListener::Event::START) {
 		mainMenu = false;
-		//stage = lvl3C;
-		stage = lvl1;
+		stage = lvl3C;
+		//stage = lvl1;
 		//stage = lvl2A;
 		changeLevel = true;
+		start = clock();
 	}
 
 	// if the event QUIT happens we quit the game
@@ -237,10 +238,8 @@ void Game::onEvent(EventListener::Event evt) {
 		stage = menu;
 
 	}
-	
 
 }
-
 
 //in this function  we change the stage
 //if the player hits the portal or leaves the mainMenu

@@ -31,10 +31,5 @@ public:
 	std::vector<Platform*> level4H_fall();
 	std::vector<Platform*> level4H_time();
 
-	void blockMoveUp(float posY);
-
-private:
-	bool moveUp = true;
-	bool moveRight = false;
 };
 

@@ -803,8 +803,6 @@ std::vector<Platform*> LevelManager::level4H_time()
 	Platform* moving = new Platform(Rect(1, 0, 1, 0.5));
 	moving->color = Colour(200, 0, 200);
 
-	blockMoveUp(moving->floor.pos.y);
-
 	block.push_back(wall);
 	block.push_back(ground);
 	block.push_back(floor1);
@@ -825,22 +823,3 @@ std::vector<Platform*> LevelManager::level4H_time()
 	return block;
 }
 
-void LevelManager::blockMoveUp(float posY)
-{
-	if (moveUp == true)
-	{
-		posY++;
-		if (posY >= 8)
-		{
-			moveUp = false;
-		}
-	}
-	else if (moveUp == false)
-	{
-		posY--;
-		if (posY <= -8)
-		{
-			moveUp = true;
-		}
-	}
-}
