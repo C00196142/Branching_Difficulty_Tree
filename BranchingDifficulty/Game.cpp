@@ -220,9 +220,9 @@ void Game::onEvent(EventListener::Event evt) {
 	// if the event START happens we start the game and change the screen to the first level
 	if (evt == EventListener::Event::START) {
 		mainMenu = false;
-		stage = lvl3A;
 		//stage = lvl1;
-		//stage = lvl2A;
+		//stage = lvl2B;
+		stage = lvl3D;
 		changeLevel = true;
 		start = clock();
 	}
@@ -279,6 +279,7 @@ void Game::changeStage()
 		{
 			changeLevel = true;
 			stage = lvl2A;
+			cout << "Time Taken: " << duration << " seconds out of 15" << endl;
 			cout << "Level 2A" << endl;
 			start = clock();
 		}
@@ -286,6 +287,7 @@ void Game::changeStage()
 		{
 			changeLevel = true;
 			stage = lvl2B;
+			cout << "Time Taken: " << duration << " seconds out of 15" <<  endl;
 			cout << "Level 2B" << endl;
 			start = clock();
 		}
@@ -535,17 +537,13 @@ void Game::changeStage()
 			enemy1 = new Enemy(Rect(6, -2, 1, 1));
 			enemy1->color = Colour(244, 66, 66);
 
-			enemy2 = new Enemy(Rect(-2, 2, 1, 1));
+			enemy2 = new Enemy(Rect(-3, 0, 1, 1));
 			enemy2->color = Colour(244, 66, 66);
 
-			enemy3 = new Enemy(Rect(-3, 0, 1, 1));
-			enemy3->color = Colour(244, 66, 66);
-
 			player->ChangePos(-8, 4);
-			//Continue
+
 			gameObjects.push_back(enemy1);
-			//gameObjects.push_back(enemy2);
-			//gameObjects.push_back(enemy3);
+			gameObjects.push_back(enemy2);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -572,8 +570,17 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
+			enemy1 = new Enemy(Rect(6, -2, 1, 1));
+			enemy1->color = Colour(244, 66, 66);
+
+			enemy2 = new Enemy(Rect(-3, 0, 1, 1));
+			enemy2->color = Colour(244, 66, 66);
+
+
 			player->ChangePos(-8, 4);
 
+			gameObjects.push_back(enemy1);
+			gameObjects.push_back(enemy2);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -600,8 +607,16 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
+			enemy1 = new Enemy(Rect(6, -2, 1, 1));
+			enemy1->color = Colour(244, 66, 66);
+
+			enemy2 = new Enemy(Rect(-3, 0, 1, 1));
+			enemy2->color = Colour(244, 66, 66);
+
 			player->ChangePos(-8, 4);
 
+			gameObjects.push_back(enemy1);
+			gameObjects.push_back(enemy2);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -838,12 +853,23 @@ void Game::moveEnemy()
 	{
 		enemy1->Move(3, 7, 0.010);
 		enemy2->Move(-2, -1, 0.015);
-		enemy3->Move(-5, -2, 0.010);
+		enemy3->Move(-4, 0, 0.010);
 		enemy4->Move(-6, -5, 0.015);
 	}
-	else if (stage == lvl3C)
+	else if (stage == lvl3D)
 	{
-
+		enemy1->Move(5, 8, 0.010);
+		enemy2->Move(-4, -3, 0.010);
+	}
+	else if (stage == lvl3E)
+	{
+		enemy1->Move(3, 7, 0.015);
+		enemy2->Move(-4, -3, 0.010);
+	}
+	else if (stage == lvl3F)
+	{
+		enemy1->Move(3, 7, 0.015);
+		enemy2->Move(-4, -3, 0.015);
 	}
 }
 
@@ -857,7 +883,7 @@ void Game::timer()
 	else if (stage == lvl2A)
 	{
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
-		//cout << duration << endl;
+		cout << duration << endl;
 	}
 	else if (stage == lvl2B)
 	{

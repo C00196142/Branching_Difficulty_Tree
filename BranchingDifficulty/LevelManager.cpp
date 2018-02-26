@@ -14,34 +14,34 @@ std::vector<Platform*> LevelManager::level1() //Complete
 {
 	block.clear();
 
-	Platform* floor1 = new Platform(Rect(-10, -8, 2.5, 5));
-	floor1->color = Colour(200, 0, 0);
+	Platform* floor11 = new Platform(Rect(-10, -8, 2.5, 5));
+	floor11->color = Colour(200, 0, 0);
 
-	Platform* floor2 = new Platform(Rect(-7, -8, 2, 5));
-	floor2->color = Colour(200, 0, 0);
+	Platform* floor12 = new Platform(Rect(-7, -8, 2, 5));
+	floor12->color = Colour(200, 0, 0);
 
-	Platform* floor3 = new Platform(Rect(-4, -8, 3, 5));
-	floor3->color = Colour(200, 0, 0);
+	Platform* floor13 = new Platform(Rect(-4, -8, 3, 5));
+	floor13->color = Colour(200, 0, 0);
 
-	Platform* floor4 = new Platform(Rect(0, -8, 2, 6));
-	floor4->color = Colour(200, 0, 0);
+	Platform* floor14 = new Platform(Rect(0, -8, 2, 6));
+	floor14->color = Colour(200, 0, 0);
 
-	Platform* floor5 = new Platform(Rect(3, -8, 2, 7.5));
-	floor5->color = Colour(200, 0, 0);
+	Platform* floor15 = new Platform(Rect(3, -8, 2, 7.5));
+	floor15->color = Colour(200, 0, 0);
 
-	Platform* floor6 = new Platform(Rect(5.5, -8, 1, 2));
-	floor6->color = Colour(200, 0, 0);
+	Platform* floor16 = new Platform(Rect(5.5, -8, 1, 2));
+	floor16->color = Colour(200, 0, 0);
 
-	Platform* floor7 = new Platform(Rect(8, -8, 2, 2));
-	floor7->color = Colour(200, 0, 0);
+	Platform* floor17 = new Platform(Rect(8, -8, 2, 2));
+	floor17->color = Colour(200, 0, 0);
 
-	block.push_back(floor1);
-	block.push_back(floor2);
-	block.push_back(floor3);
-	block.push_back(floor4);
-	block.push_back(floor5);
-	block.push_back(floor6);
-	block.push_back(floor7);
+	block.push_back(floor11);
+	block.push_back(floor12);
+	block.push_back(floor13);
+	block.push_back(floor14);
+	block.push_back(floor15);
+	block.push_back(floor16);
+	block.push_back(floor17);
 
 	return block;
 }
@@ -50,46 +50,46 @@ std::vector<Platform*> LevelManager::level2A()
 {
 	block.clear();
 
-	Platform* floor1 = new Platform(Rect(-10, -8, 1, 5));
-	floor1->color = Colour(200, 0, 200);
+	Platform* floor2A1 = new Platform(Rect(-10, -8, 1, 5));
+	floor2A1->color = Colour(200, 0, 200);
 
-	Platform* floor2 = new Platform(Rect(-7, -8, 2, 5));
-	floor2->color = Colour(200, 0, 200);
+	Platform* floor2A2 = new Platform(Rect(-8, -8, 2, 6));
+	floor2A2->color = Colour(200, 0, 200);
 
-	Platform* floor3 = new Platform(Rect(-3, -8, 2, 6));
-	floor3->color = Colour(200, 0, 200);
+	Platform* floor2A3 = new Platform(Rect(-5.5, -1, 2, 1));
+	floor2A3->color = Colour(200, 0, 200);
 
-	Platform* floor4 = new Platform(Rect(3, -8, 2, 6.5));
-	floor4->color = Colour(200, 0, 200);
+	Platform* floor2A4 = new Platform(Rect(-3.5, 1, 2, 1));
+	floor2A4->color = Colour(200, 0, 200);
 
-	Platform* floor5 = new Platform(Rect(8, -8, 2, 6.5));
-	floor5->color = Colour(200, 0, 200);
+	Platform* floor2A5 = new Platform(Rect(-1.5, 3, 3, 1));
+	floor2A5->color = Colour(200, 0, 200);
 
-	Platform* floor6 = new Platform(Rect(0.5, -2, 2, 1));
-	floor6->color = Colour(200, 0, 200);
+	Platform* floor2A6 = new Platform(Rect(2, 4, 2, 1));
+	floor2A6->color = Colour(200, 0, 200);
 
-	Platform* floor7 = new Platform(Rect(6, -2, 1.5, 1));
-	floor7->color = Colour(200, 0, 200);
+	Platform* floor2A7 = new Platform(Rect(4, 2, 2, 1));
+	floor2A7->color = Colour(200, 0, 200);
 
-	Platform* floor8 = new Platform(Rect(-8, 0.5, 2, 1));
-	floor8->color = Colour(200, 0, 200);
+	Platform* floor2A8 = new Platform(Rect(6, 4, 2, 1));
+	floor2A8->color = Colour(200, 0, 200);
 
-	Platform* floor9 = new Platform(Rect(-5, 2.5, 2, 1));
-	floor9->color = Colour(200, 0, 200);
+	Platform* floor2A9 = new Platform(Rect(8, -8, 2, 6.5));
+	floor2A9->color = Colour(200, 0, 200);
 
-	Platform* floor10 = new Platform(Rect(-2.5, 0.5, 2, 1));
-	floor10->color = Colour(200, 0, 200);
+	Platform* floor2A10 = new Platform(Rect(-10, 1, 2, 1));
+	floor2A10->color = Colour(200, 0, 200);
 
-	block.push_back(floor1);
-	block.push_back(floor2);
-	block.push_back(floor3);
-	block.push_back(floor4);
-	block.push_back(floor5);
-	block.push_back(floor6);
-	block.push_back(floor7);
-	block.push_back(floor8);
-	block.push_back(floor9);
-	block.push_back(floor10);
+	block.push_back(floor2A1);
+	block.push_back(floor2A2);
+	block.push_back(floor2A3);
+	block.push_back(floor2A4);
+	block.push_back(floor2A5);
+	block.push_back(floor2A6);
+	block.push_back(floor2A7);
+	block.push_back(floor2A8);
+	block.push_back(floor2A9);
+	block.push_back(floor2A10);
 
 	return block;
 }
@@ -98,47 +98,46 @@ std::vector<Platform*> LevelManager::level2B()
 {
 	block.clear();
 
-	Platform* floor1 = new Platform(Rect(-10, -8, 1, 5));
-	floor1->color = Colour(200, 0, 200);
+	Platform* floor2B1 = new Platform(Rect(-10, -8, 1, 5));
+	floor2B1->color = Colour(200, 0, 200);
 
-	Platform* floor2 = new Platform(Rect(-7, -8, 2, 5));
-	floor2->color = Colour(200, 0, 200);
+	Platform* floor2B2 = new Platform(Rect(-8, -8, 2, 6));
+	floor2B2->color = Colour(200, 0, 200);
 
-	Platform* floor3 = new Platform(Rect(-3, -8, 2, 6));
-	floor3->color = Colour(200, 0, 200);
+	Platform* floor2B3 = new Platform(Rect(-5.5, -1, 2, 1));
+	floor2B3->color = Colour(200, 0, 200);
 
-	Platform* floor4 = new Platform(Rect(3, -8, 2, 6.5));
-	floor4->color = Colour(200, 0, 200);
+	Platform* floor2B4 = new Platform(Rect(-3.5, 1, 6, 1));
+	floor2B4->color = Colour(200, 0, 200);
 
-	Platform* floor5 = new Platform(Rect(8, -8, 2, 6.5));
-	floor5->color = Colour(200, 0, 200);
+	Platform* floor2B5 = new Platform(Rect(-1.5, 3, 3, 1));
+	floor2B5->color = Colour(200, 0, 200);
 
-	Platform* floor6 = new Platform(Rect(0.5, -2, 2, 1));
-	floor6->color = Colour(200, 0, 200);
+	Platform* floor2B6 = new Platform(Rect(2, 4, 2, 1));
+	floor2B6->color = Colour(200, 0, 200);
 
-	Platform* floor7 = new Platform(Rect(5, 0, 1.5, 1)); 
-	floor7->color = Colour(200, 0, 200);
+	Platform* floor2B7 = new Platform(Rect(4, -1, 2, 1));
+	floor2B7->color = Colour(200, 0, 200);
 
-	Platform* floor8 = new Platform(Rect(-2.5, 0.5, 2, 1));
-	floor8->color = Colour(200, 0, 200);
+	Platform* floor2B8 = new Platform(Rect(6, 4, 2, 1));
+	floor2B8->color = Colour(200, 0, 200);
 
-	Platform* floor9 = new Platform(Rect(-6, 2.5, 2, 1)); 
-	floor9->color = Colour(200, 0, 200);
+	Platform* floor2B9 = new Platform(Rect(8, -8, 2, 6.5));
+	floor2B9->color = Colour(200, 0, 200);
 
-	Platform* floor10 = new Platform(Rect(8, 2, 1.5, 1));
-	floor10->color = Colour(200, 0, 200);
+	Platform* floor2B10 = new Platform(Rect(-10, 1, 2, 1));
+	floor2B10->color = Colour(200, 0, 200);
 
-
-	block.push_back(floor1);
-	block.push_back(floor2);
-	block.push_back(floor3);
-	block.push_back(floor4);
-	block.push_back(floor5);
-	block.push_back(floor6);
-	block.push_back(floor7);
-	block.push_back(floor8);
-	block.push_back(floor9);
-	block.push_back(floor10);
+	block.push_back(floor2B1);
+	block.push_back(floor2B2);
+	block.push_back(floor2B3);
+	block.push_back(floor2B4);
+	block.push_back(floor2B5);
+	block.push_back(floor2B6);
+	block.push_back(floor2B7);
+	block.push_back(floor2B8);
+	block.push_back(floor2B9);
+	block.push_back(floor2B10);
 
 	return block;
 }
@@ -147,50 +146,50 @@ std::vector<Platform*> LevelManager::level3A()
 {
 	block.clear();
 
-	Platform* floor1 = new Platform(Rect(-9, 2, 2, 1));
-	floor1->color = Colour(200, 0, 200);
+	Platform* floor3A1 = new Platform(Rect(-9, 2, 2, 1));
+	floor3A1->color = Colour(200, 0, 200);
 
-	Platform* floor2 = new Platform(Rect(-6, 1, 2, 1));
-	floor2->color = Colour(200, 0, 200);
+	Platform* floor3A2 = new Platform(Rect(-6, 1, 2, 1));
+	floor3A2->color = Colour(200, 0, 200);
 
-	Platform* floor3 = new Platform(Rect(-4, -1, 2, 1));
-	floor3->color = Colour(200, 0, 200);
+	Platform* floor3A3 = new Platform(Rect(-4, -1, 2, 1));
+	floor3A3->color = Colour(200, 0, 200);
 
-	Platform* floor4 = new Platform(Rect(-2, 1, 2, 1));
-	floor4->color = Colour(200, 0, 200);
+	Platform* floor3A4 = new Platform(Rect(-2, 1, 2, 1));
+	floor3A4->color = Colour(200, 0, 200);
 
-	Platform* floor5 = new Platform(Rect(0, 2, 1, 1));
-	floor5->color = Colour(200, 0, 200);
+	Platform* floor3A5 = new Platform(Rect(0, 2, 1, 1));
+	floor3A5->color = Colour(200, 0, 200);
 
-	Platform* floor6 = new Platform(Rect(1, 1, 1, 1));
-	floor6->color = Colour(200, 0, 200);
+	Platform* floor3A6 = new Platform(Rect(1, 1, 1, 1));
+	floor3A6->color = Colour(200, 0, 200);
 
-	Platform* floor7 = new Platform(Rect(3, -1, 1, 1));
-	floor7->color = Colour(200, 0, 200);
+	Platform* floor3A7 = new Platform(Rect(3, -1, 1, 1));
+	floor3A7->color = Colour(200, 0, 200);
 
-	Platform* floor8 = new Platform(Rect(3, -8, 5, 6));
-	floor8->color = Colour(200, 0, 200);
+	Platform* floor3A8 = new Platform(Rect(3, -8, 5, 6));
+	floor3A8->color = Colour(200, 0, 200);
 
-	Platform* floor9 = new Platform(Rect(7, 3, 5, 2));
-	floor9->color = Colour(200, 0, 200);
+	Platform* floor3A9 = new Platform(Rect(7, 3, 5, 2));
+	floor3A9->color = Colour(200, 0, 200);
 
-	Platform* floor10 = new Platform(Rect(4, 2, 1, 1));
-	floor10->color = Colour(200, 0, 200);
+	Platform* floor3A10 = new Platform(Rect(4, 2, 1, 1));
+	floor3A10->color = Colour(200, 0, 200);
 
-	Platform* floor11 = new Platform(Rect(6, 3, 1, 1));
-	floor11->color = Colour(200, 0, 200);
+	Platform* floor3A11 = new Platform(Rect(6, 3, 1, 1));
+	floor3A11->color = Colour(200, 0, 200);
 
-	block.push_back(floor1);
-	block.push_back(floor2);
-	block.push_back(floor3);
-	block.push_back(floor4);
-	block.push_back(floor5);
-	block.push_back(floor6);
-	block.push_back(floor7);
-	block.push_back(floor8);
-	block.push_back(floor9);
-	block.push_back(floor10);
-	block.push_back(floor11);
+	block.push_back(floor3A1);
+	block.push_back(floor3A2);
+	block.push_back(floor3A3);
+	block.push_back(floor3A4);
+	block.push_back(floor3A5);
+	block.push_back(floor3A6);
+	block.push_back(floor3A7);
+	block.push_back(floor3A8);
+	block.push_back(floor3A9);
+	block.push_back(floor3A10);
+	block.push_back(floor3A11);
 
 	return block;
 }
@@ -199,46 +198,46 @@ std::vector<Platform*> LevelManager::level3B()
 {
 	block.clear();
 
-	Platform* floor1 = new Platform(Rect(-9, 2, 2, 1));
-	floor1->color = Colour(200, 0, 200);
+	Platform* floor3B1 = new Platform(Rect(-9, 2, 2, 1));
+	floor3B1->color = Colour(200, 0, 200);
 
-	Platform* floor2 = new Platform(Rect(-6, 1, 2, 1));
-	floor2->color = Colour(200, 0, 200);
+	Platform* floor3B2 = new Platform(Rect(-6, 1, 2, 1));
+	floor3B2->color = Colour(200, 0, 200);
 
-	Platform* floor3 = new Platform(Rect(-4, -1, 2, 1));
-	floor3->color = Colour(200, 0, 200);
+	Platform* floor3B3 = new Platform(Rect(-4, -1, 2, 1));
+	floor3B3->color = Colour(200, 0, 200);
 
-	Platform* floor4 = new Platform(Rect(-2, 1, 2, 1));
-	floor4->color = Colour(200, 0, 200);
+	Platform* floor3B4 = new Platform(Rect(-2, 1, 2, 1));
+	floor3B4->color = Colour(200, 0, 200);
 
-	Platform* floor5 = new Platform(Rect(1, 1, 1, 1));
-	floor5->color = Colour(200, 0, 200);
+	Platform* floor3B5 = new Platform(Rect(1, 1, 1, 1));
+	floor3B5->color = Colour(200, 0, 200);
 
-	Platform* floor6 = new Platform(Rect(3, -1, 1, 1));
-	floor6->color = Colour(200, 0, 200);
+	Platform* floor3B6 = new Platform(Rect(3, -1, 1, 1));
+	floor3B6->color = Colour(200, 0, 200);
 
-	Platform* floor7 = new Platform(Rect(3, -8, 5, 6));
-	floor7->color = Colour(200, 0, 200);
+	Platform* floor3B7 = new Platform(Rect(3, -8, 5, 6));
+	floor3B7->color = Colour(200, 0, 200);
 
-	Platform* floor8 = new Platform(Rect(7, 3, 5, 2));
-	floor8->color = Colour(200, 0, 200);
+	Platform* floor3B8 = new Platform(Rect(7, 3, 5, 2));
+	floor3B8->color = Colour(200, 0, 200);
 
-	Platform* floor9 = new Platform(Rect(4, 2, 1, 1));
-	floor9->color = Colour(200, 0, 200);
+	Platform* floor3B9 = new Platform(Rect(4, 2, 1, 1));
+	floor3B9->color = Colour(200, 0, 200);
 
-	Platform* floor10 = new Platform(Rect(6, 3, 1, 1));
-	floor10->color = Colour(200, 0, 200);
+	Platform* floor3B10 = new Platform(Rect(6, 3, 1, 1));
+	floor3B10->color = Colour(200, 0, 200);
 
-	block.push_back(floor1);
-	block.push_back(floor2);
-	block.push_back(floor3);
-	block.push_back(floor4);
-	block.push_back(floor5);
-	block.push_back(floor6);
-	block.push_back(floor7);
-	block.push_back(floor8);
-	block.push_back(floor9);
-	block.push_back(floor10);
+	block.push_back(floor3B1);
+	block.push_back(floor3B2);
+	block.push_back(floor3B3);
+	block.push_back(floor3B4);
+	block.push_back(floor3B5);
+	block.push_back(floor3B6);
+	block.push_back(floor3B7);
+	block.push_back(floor3B8);
+	block.push_back(floor3B9);
+	block.push_back(floor3B10);
 
 	return block;
 }
@@ -247,46 +246,46 @@ std::vector<Platform*> LevelManager::level3C()
 {
 	block.clear();
 
-	Platform* floor1 = new Platform(Rect(-9, 2, 2, 1));
-	floor1->color = Colour(200, 0, 200);
+	Platform* floor3C1 = new Platform(Rect(-9, 2, 2, 1));
+	floor3C1->color = Colour(200, 0, 200);
 
-	Platform* floor2 = new Platform(Rect(-6, 1, 3, 1));
-	floor2->color = Colour(200, 0, 200);
+	Platform* floor3C2 = new Platform(Rect(-6, 1, 3, 1));
+	floor3C2->color = Colour(200, 0, 200);
 
-	Platform* floor3 = new Platform(Rect(-5, -1, 4, 1));
-	floor3->color = Colour(200, 0, 200);
+	Platform* floor3C3 = new Platform(Rect(-5, -1, 6, 1));
+	floor3C3->color = Colour(200, 0, 200);
 
-	Platform* floor4 = new Platform(Rect(-2, 1, 2, 1));
-	floor4->color = Colour(200, 0, 200);
+	Platform* floor3C4 = new Platform(Rect(-2, 1, 2, 1));
+	floor3C4->color = Colour(200, 0, 200);
 
-	Platform* floor5 = new Platform(Rect(1, 1, 1, 1));
-	floor5->color = Colour(200, 0, 200);
+	Platform* floor3C5 = new Platform(Rect(1, 1, 1, 1));
+	floor3C5->color = Colour(200, 0, 200);
 
-	Platform* floor6 = new Platform(Rect(3, -1, 1, 1));
-	floor6->color = Colour(200, 0, 200);
+	Platform* floor3C6 = new Platform(Rect(3, -1, 1, 1));
+	floor3C6->color = Colour(200, 0, 200);
 
-	Platform* floor7 = new Platform(Rect(3, -8, 5, 6));
-	floor7->color = Colour(200, 0, 200);
+	Platform* floor3C7 = new Platform(Rect(3, -8, 5, 6));
+	floor3C7->color = Colour(200, 0, 200);
 
-	Platform* floor8 = new Platform(Rect(7, 3, 5, 2));
-	floor8->color = Colour(200, 0, 200);
+	Platform* floor3C8 = new Platform(Rect(7, 3, 5, 2));
+	floor3C8->color = Colour(200, 0, 200);
 
-	Platform* floor9 = new Platform(Rect(4, 2, 1, 1));
-	floor9->color = Colour(200, 0, 200);
+	Platform* floor3C9 = new Platform(Rect(4, 2, 1, 1));
+	floor3C9->color = Colour(200, 0, 200);
 
-	Platform* floor10 = new Platform(Rect(6, 3, 1, 1));
-	floor10->color = Colour(200, 0, 200);
+	Platform* floor3C10 = new Platform(Rect(6, 3, 1, 1));
+	floor3C10->color = Colour(200, 0, 200);
 
-	block.push_back(floor1);
-	block.push_back(floor2);
-	block.push_back(floor3);
-	block.push_back(floor4);
-	block.push_back(floor5);
-	block.push_back(floor6);
-	block.push_back(floor7);
-	block.push_back(floor8);
-	block.push_back(floor9);
-	block.push_back(floor10);
+	block.push_back(floor3C1);
+	block.push_back(floor3C2);
+	block.push_back(floor3C3);
+	block.push_back(floor3C4);
+	block.push_back(floor3C5);
+	block.push_back(floor3C6);
+	block.push_back(floor3C7);
+	block.push_back(floor3C8);
+	block.push_back(floor3C9);
+	block.push_back(floor3C10);
 
 	return block;
 }
@@ -295,135 +294,134 @@ std::vector<Platform*> LevelManager::level3D()
 {
 	block.clear();
 
-	Platform* floor1 = new Platform(Rect(-9, 2, 2, 1));
-	floor1->color = Colour(200, 0, 200);
+	Platform* floor3D1 = new Platform(Rect(-9, 2, 2, 1));
+	floor3D1->color = Colour(200, 0, 200);
 
-	Platform* floor2 = new Platform(Rect(-7, -1, 2, 1));
-	floor2->color = Colour(200, 0, 200);
+	Platform* floor3D2 = new Platform(Rect(-7, -1, 2, 1));
+	floor3D2->color = Colour(200, 0, 200);
 
-	Platform* floor3 = new Platform(Rect(-4, -1, 2, 1));
-	floor3->color = Colour(200, 0, 200);
+	Platform* floor3D3 = new Platform(Rect(-4, -1, 2, 1));
+	floor3D3->color = Colour(200, 0, 200);
 
-	Platform* floor4 = new Platform(Rect(1, -8, 2, 2));
-	floor4->color = Colour(200, 0, 200);
+	Platform* floor3D4 = new Platform(Rect(1, -8, 2, 2));
+	floor3D4->color = Colour(200, 0, 200);
 
-	Platform* floor5 = new Platform(Rect(1, 1, 1, 1));
-	floor5->color = Colour(200, 0, 200);
+	Platform* floor3D5 = new Platform(Rect(1, 1, 1, 1));
+	floor3D5->color = Colour(200, 0, 200);
 
-	Platform* floor6 = new Platform(Rect(4, -1, 1, 1));
-	floor6->color = Colour(200, 0, 200);
+	Platform* floor3D6 = new Platform(Rect(4, -1, 1, 1));
+	floor3D6->color = Colour(200, 0, 200);
 
-	Platform* floor7 = new Platform(Rect(3, -8, 7, 6));
-	floor7->color = Colour(200, 0, 200);
+	Platform* floor3D7 = new Platform(Rect(3, -8, 7, 6));
+	floor3D7->color = Colour(200, 0, 200);
 
-	Platform* floor8 = new Platform(Rect(7, 3, 5, 2));
-	floor8->color = Colour(200, 0, 200);
+	Platform* floor3D8 = new Platform(Rect(7, 3, 5, 2));
+	floor3D8->color = Colour(200, 0, 200);
 
-	Platform* floor9 = new Platform(Rect(4, 2, 1, 1));
-	floor9->color = Colour(200, 0, 200);
+	Platform* floor3D9 = new Platform(Rect(4, 2, 1, 1));
+	floor3D9->color = Colour(200, 0, 200);
 
-	Platform* floor10 = new Platform(Rect(6, 3, 1, 1));
-	floor10->color = Colour(200, 0, 200);
+	Platform* floor3D10 = new Platform(Rect(6, 3, 1, 1));
+	floor3D10->color = Colour(200, 0, 200);
 
-	Platform* floor11 = new Platform(Rect(1, -3, 1, 0.1));
-	floor11->color = Colour(200, 0, 200);
+	Platform* floor3D11 = new Platform(Rect(1, -3, 1, 0.1));
+	floor3D11->color = Colour(200, 0, 200);
 
-	Platform* floor12 = new Platform(Rect(0, -5, 1, 0.1));
-	floor12->color = Colour(200, 0, 200);
+	Platform* floor3D12 = new Platform(Rect(0, -5, 1, 0.1));
+	floor3D12->color = Colour(200, 0, 200);
 
-	Platform* floor13 = new Platform(Rect(-2, -8, 1, 3));
-	floor13->color = Colour(200, 0, 200);
+	Platform* floor3D13 = new Platform(Rect(-2, -8, 1, 3));
+	floor3D13->color = Colour(200, 0, 200);
 
-	Platform* floor14 = new Platform(Rect(-4, -8, 1, 2));
-	floor14->color = Colour(200, 0, 200);
+	Platform* floor3D14 = new Platform(Rect(-4, -8, 1, 2));
+	floor3D14->color = Colour(200, 0, 200);
 
-	block.push_back(floor1);
-	block.push_back(floor2);
-	block.push_back(floor3);
-	block.push_back(floor4);
-	block.push_back(floor5);
-	block.push_back(floor6);
-	block.push_back(floor7);
-	block.push_back(floor8);
-	block.push_back(floor9);
-	block.push_back(floor10);
-	block.push_back(floor11);
-	block.push_back(floor12);
-	block.push_back(floor13);
-	block.push_back(floor14);
+	block.push_back(floor3D1);
+	block.push_back(floor3D2);
+	block.push_back(floor3D3);
+	block.push_back(floor3D4);
+	block.push_back(floor3D5);
+	block.push_back(floor3D6);
+	block.push_back(floor3D7);
+	block.push_back(floor3D8);
+	block.push_back(floor3D9);
+	block.push_back(floor3D10);
+	block.push_back(floor3D11);
+	block.push_back(floor3D12);
+	block.push_back(floor3D13);
+	block.push_back(floor3D14);
 
 	return block;
 }
 
-std::vector<Platform*> LevelManager::level3E() 
-											
+std::vector<Platform*> LevelManager::level3E() 											
 {
 	block.clear();
 
-	Platform* floor1 = new Platform(Rect(-9, 2, 2, 1));
-	floor1->color = Colour(200, 0, 200);
+	Platform* floor3E1 = new Platform(Rect(-9, 2, 2, 1));
+	floor3E1->color = Colour(200, 0, 200);
 
-	Platform* floor2 = new Platform(Rect(-7, -1, 2, 1));
-	floor2->color = Colour(200, 0, 200);
+	Platform* floor3E2 = new Platform(Rect(-7, -1, 2, 1));
+	floor3E2->color = Colour(200, 0, 200);
 
-	Platform* floor3 = new Platform(Rect(-4, -1, 2, 1));
-	floor3->color = Colour(200, 0, 200);
+	Platform* floor3E3 = new Platform(Rect(-4, -1, 2, 1));
+	floor3E3->color = Colour(200, 0, 200);
 
-	Platform* floor4 = new Platform(Rect(1, -8, 2, 2));
-	floor4->color = Colour(200, 0, 200);
+	Platform* floor3E4 = new Platform(Rect(1, -8, 2, 2));
+	floor3E4->color = Colour(200, 0, 200);
 
-	Platform* floor5 = new Platform(Rect(1, 1, 1, 1));
-	floor5->color = Colour(200, 0, 200);
+	Platform* floor3E5 = new Platform(Rect(1, 1, 1, 1));
+	floor3E5->color = Colour(200, 0, 200);
 
-	Platform* floor6 = new Platform(Rect(4, -1, 1, 1));
-	floor6->color = Colour(200, 0, 200);
+	Platform* floor3E6 = new Platform(Rect(4, -1, 1, 1));
+	floor3E6->color = Colour(200, 0, 200);
 
-	Platform* floor7 = new Platform(Rect(3, -8, 5, 6));
-	floor7->color = Colour(200, 0, 200);
+	Platform* floor3E7 = new Platform(Rect(3, -8, 5, 6));
+	floor3E7->color = Colour(200, 0, 200);
 
-	Platform* floor8 = new Platform(Rect(7, 3, 5, 2));
-	floor8->color = Colour(200, 0, 200);
+	Platform* floor3E8 = new Platform(Rect(7, 3, 5, 2));
+	floor3E8->color = Colour(200, 0, 200);
 
-	Platform* floor9 = new Platform(Rect(4, 2, 1, 1));
-	floor9->color = Colour(200, 0, 200);
+	Platform* floor3E9 = new Platform(Rect(4, 2, 1, 1));
+	floor3E9->color = Colour(200, 0, 200);
 
-	Platform* floor10 = new Platform(Rect(6, 3, 1, 1));
-	floor10->color = Colour(200, 0, 200);
+	Platform* floor3E10 = new Platform(Rect(6, 3, 1, 1));
+	floor3E10->color = Colour(200, 0, 200);
 
-	Platform* floor11 = new Platform(Rect(1, -3, 1, 0.1));
-	floor11->color = Colour(200, 0, 200);
+	Platform* floor3E11 = new Platform(Rect(1, -3, 1, 0.1));
+	floor3E11->color = Colour(200, 0, 200);
 
-	Platform* floor12 = new Platform(Rect(0, -5, 1, 0.1));
-	floor12->color = Colour(200, 0, 200);
+	Platform* floor3E12 = new Platform(Rect(0, -5, 1, 0.1));
+	floor3E12->color = Colour(200, 0, 200);
 
-	Platform* floor13 = new Platform(Rect(-2, -8, 1, 3));
-	floor13->color = Colour(200, 0, 200);
+	Platform* floor3E13 = new Platform(Rect(-2, -8, 1, 3));
+	floor3E13->color = Colour(200, 0, 200);
 
-	Platform* floor14 = new Platform(Rect(-4, -8, 1, 2));
-	floor14->color = Colour(200, 0, 200);
+	Platform* floor3E14 = new Platform(Rect(-4, -8, 1, 2));
+	floor3E14->color = Colour(200, 0, 200);
 
-	Platform* floor15 = new Platform(Rect(-7, -8, 2, 3));
-	floor15->color = Colour(200, 0, 200);
+	Platform* floor3E15 = new Platform(Rect(-7, -8, 2, 3));
+	floor3E15->color = Colour(200, 0, 200);
 
-	Platform* floor16 = new Platform(Rect(-10, -8, 1, 3));
-	floor16->color = Colour(200, 0, 200);
+	Platform* floor3E16 = new Platform(Rect(-10, -8, 1, 3));
+	floor3E16->color = Colour(200, 0, 200);
 
-	block.push_back(floor1);
-	block.push_back(floor2);
-	block.push_back(floor3);
-	block.push_back(floor4);
-	block.push_back(floor5);
-	block.push_back(floor6);
-	block.push_back(floor7);
-	block.push_back(floor8);
-	block.push_back(floor9);
-	block.push_back(floor10);
-	block.push_back(floor11);
-	block.push_back(floor12);
-	block.push_back(floor13);
-	block.push_back(floor14);
-	block.push_back(floor15);
-	block.push_back(floor16);
+	block.push_back(floor3E1);
+	block.push_back(floor3E2);
+	block.push_back(floor3E3);
+	block.push_back(floor3E4);
+	block.push_back(floor3E5);
+	block.push_back(floor3E6);
+	block.push_back(floor3E7);
+	block.push_back(floor3E8);
+	block.push_back(floor3E9);
+	block.push_back(floor3E10);
+	block.push_back(floor3E11);
+	block.push_back(floor3E12);
+	block.push_back(floor3E13);
+	block.push_back(floor3E14);
+	block.push_back(floor3E15);
+	block.push_back(floor3E16);
 
 	return block;
 }
@@ -432,62 +430,62 @@ std::vector<Platform*> LevelManager::level3F()
 {
 	block.clear();
 
-	Platform* floor1 = new Platform(Rect(-9, 2, 2, 1));
-	floor1->color = Colour(200, 0, 200);
+	Platform* floor3F1 = new Platform(Rect(-9, 2, 2, 1));
+	floor3F1->color = Colour(200, 0, 200);
 
-	Platform* floor2 = new Platform(Rect(-7, -1, 2, 1));
-	floor2->color = Colour(200, 0, 200);
+	Platform* floor3F2 = new Platform(Rect(-7, -1, 2, 1));
+	floor3F2->color = Colour(200, 0, 200);
 
-	Platform* floor3 = new Platform(Rect(-4, -1, 2, 1));
-	floor3->color = Colour(200, 0, 200);
+	Platform* floor3F3 = new Platform(Rect(-4, -1, 2, 1));
+	floor3F3->color = Colour(200, 0, 200);
 
-	Platform* floor4 = new Platform(Rect(1, -8, 2, 2));
-	floor4->color = Colour(200, 0, 200);
+	Platform* floor3F4 = new Platform(Rect(1, -8, 2, 2));
+	floor3F4->color = Colour(200, 0, 200);
 
-	Platform* floor5 = new Platform(Rect(1, 1, 1, 1));
-	floor5->color = Colour(200, 0, 200);
+	Platform* floor3F5 = new Platform(Rect(1, 1, 1, 1));
+	floor3F5->color = Colour(200, 0, 200);
 
-	Platform* floor6 = new Platform(Rect(4, -1, 1, 1));
-	floor6->color = Colour(200, 0, 200);
+	Platform* floor3F6 = new Platform(Rect(4, -1, 1, 1));
+	floor3F6->color = Colour(200, 0, 200);
 
-	Platform* floor7 = new Platform(Rect(3, -8, 7, 6));
-	floor7->color = Colour(200, 0, 200);
+	Platform* floor3F7 = new Platform(Rect(3, -8, 7, 6));
+	floor3F7->color = Colour(200, 0, 200);
 
-	Platform* floor8 = new Platform(Rect(7, 3, 5, 2));
-	floor8->color = Colour(200, 0, 200);
+	Platform* floor3F8 = new Platform(Rect(7, 3, 5, 2));
+	floor3F8->color = Colour(200, 0, 200);
 
-	Platform* floor9 = new Platform(Rect(4, 2, 1, 1));
-	floor9->color = Colour(200, 0, 200);
+	Platform* floor3F9 = new Platform(Rect(4, 2, 1, 1));
+	floor3F9->color = Colour(200, 0, 200);
 
-	Platform* floor10 = new Platform(Rect(6, 3, 1, 1));
-	floor10->color = Colour(200, 0, 200);
+	Platform* floor3F10 = new Platform(Rect(6, 3, 1, 1));
+	floor3F10->color = Colour(200, 0, 200);
 
-	Platform* floor11 = new Platform(Rect(1, -3, 1, 0.1));
-	floor11->color = Colour(200, 0, 200);
+	Platform* floor3F11 = new Platform(Rect(1, -3, 1, 0.1));
+	floor3F11->color = Colour(200, 0, 200);
 
-	Platform* floor12 = new Platform(Rect(0, -5, 1, 0.1));
-	floor12->color = Colour(200, 0, 200);
+	Platform* floor3F12 = new Platform(Rect(0, -5, 1, 0.1));
+	floor3F12->color = Colour(200, 0, 200);
 
-	Platform* floor13 = new Platform(Rect(-2, -8, 1, 3));
-	floor13->color = Colour(200, 0, 200);
+	Platform* floor3F13 = new Platform(Rect(-2, -8, 1, 3));
+	floor3F13->color = Colour(200, 0, 200);
 
-	Platform* floor14 = new Platform(Rect(-4, -8, 1, 2));
-	floor14->color = Colour(200, 0, 200);
+	Platform* floor3F14 = new Platform(Rect(-4, -8, 1, 2));
+	floor3F14->color = Colour(200, 0, 200);
 
-	block.push_back(floor1);
-	block.push_back(floor2);
-	block.push_back(floor3);
-	block.push_back(floor4);
-	block.push_back(floor5);
-	block.push_back(floor6);
-	block.push_back(floor7);
-	block.push_back(floor8);
-	block.push_back(floor9);
-	block.push_back(floor10);
-	block.push_back(floor11);
-	block.push_back(floor12);
-	block.push_back(floor13);
-	block.push_back(floor14);
+	block.push_back(floor3F1);
+	block.push_back(floor3F2);
+	block.push_back(floor3F3);
+	block.push_back(floor3F4);
+	block.push_back(floor3F5);
+	block.push_back(floor3F6);
+	block.push_back(floor3F7);
+	block.push_back(floor3F8);
+	block.push_back(floor3F9);
+	block.push_back(floor3F10);
+	block.push_back(floor3F11);
+	block.push_back(floor3F12);
+	block.push_back(floor3F13);
+	block.push_back(floor3F14);
 
 	return block;
 }
@@ -496,66 +494,66 @@ std::vector<Platform*> LevelManager::level3G()
 {
 	block.clear();
 
-	Platform* floor1 = new Platform(Rect(-9, 2, 2, 1));
-	floor1->color = Colour(200, 0, 200);
+	Platform* floor3G1 = new Platform(Rect(-9, 2, 2, 1));
+	floor3G1->color = Colour(200, 0, 200);
 
-	Platform* floor2 = new Platform(Rect(-7, -1, 2, 1));
-	floor2->color = Colour(200, 0, 200);
+	Platform* floor3G2 = new Platform(Rect(-7, -1, 2, 1));
+	floor3G2->color = Colour(200, 0, 200);
 
-	Platform* floor3 = new Platform(Rect(-4, -1, 2, 1));
-	floor3->color = Colour(200, 0, 200);
+	Platform* floor3G3 = new Platform(Rect(-4, -1, 2, 1));
+	floor3G3->color = Colour(200, 0, 200);
 
-	Platform* floor4 = new Platform(Rect(1, -8, 2, 2));
-	floor4->color = Colour(200, 0, 200);
+	Platform* floor3G4 = new Platform(Rect(1, -8, 2, 2));
+	floor3G4->color = Colour(200, 0, 200);
 
-	Platform* floor5 = new Platform(Rect(1, 1, 1, 1));
-	floor5->color = Colour(200, 0, 200);
+	Platform* floor3G5 = new Platform(Rect(1, 1, 1, 1));
+	floor3G5->color = Colour(200, 0, 200);
 
-	Platform* floor6 = new Platform(Rect(4, -1, 1, 1));
-	floor6->color = Colour(200, 0, 200);
+	Platform* floor3G6 = new Platform(Rect(4, -1, 1, 1));
+	floor3G6->color = Colour(200, 0, 200);
 
-	Platform* floor7 = new Platform(Rect(3, -8, 7, 6));
-	floor7->color = Colour(200, 0, 200);
+	Platform* floor3G7 = new Platform(Rect(3, -8, 7, 6));
+	floor3G7->color = Colour(200, 0, 200);
 
-	Platform* floor8 = new Platform(Rect(7, 3, 5, 2));
-	floor8->color = Colour(200, 0, 200);
+	Platform* floor3G8 = new Platform(Rect(7, 3, 5, 2));
+	floor3G8->color = Colour(200, 0, 200);
 
-	Platform* floor9 = new Platform(Rect(4, 2, 1, 1));
-	floor9->color = Colour(200, 0, 200);
+	Platform* floor3G9 = new Platform(Rect(4, 2, 1, 1));
+	floor3G9->color = Colour(200, 0, 200);
 
-	Platform* floor10 = new Platform(Rect(6, 3, 1, 1));
-	floor10->color = Colour(200, 0, 200);
+	Platform* floor3G10 = new Platform(Rect(6, 3, 1, 1));
+	floor3G10->color = Colour(200, 0, 200);
 
-	Platform* floor11 = new Platform(Rect(1, -3, 1, 0.1));
-	floor11->color = Colour(200, 0, 200);
+	Platform* floor3G11 = new Platform(Rect(1, -3, 1, 0.1));
+	floor3G11->color = Colour(200, 0, 200);
 
-	Platform* floor12 = new Platform(Rect(0, -5, 1, 0.1));
-	floor12->color = Colour(200, 0, 200);
+	Platform* floor3G12 = new Platform(Rect(0, -5, 1, 0.1));
+	floor3G12->color = Colour(200, 0, 200);
 
-	Platform* floor13 = new Platform(Rect(-2, -8, 1, 3));
-	floor13->color = Colour(200, 0, 200);
+	Platform* floor3G13 = new Platform(Rect(-2, -8, 1, 3));
+	floor3G13->color = Colour(200, 0, 200);
 
-	Platform* floor14 = new Platform(Rect(-4, -8, 1, 2));
-	floor14->color = Colour(200, 0, 200);
+	Platform* floor3G14 = new Platform(Rect(-4, -8, 1, 2));
+	floor3G14->color = Colour(200, 0, 200);
 
-	Platform* floor15 = new Platform(Rect(-10, -8, 1, 2));
-	floor15->color = Colour(200, 0, 200);
+	Platform* floor3G15 = new Platform(Rect(-10, -8, 1, 2));
+	floor3G15->color = Colour(200, 0, 200);
 
-	block.push_back(floor1);
-	block.push_back(floor2);
-	block.push_back(floor3);
-	block.push_back(floor4);
-	block.push_back(floor5);
-	block.push_back(floor6);
-	block.push_back(floor7);
-	block.push_back(floor8);
-	block.push_back(floor9);
-	block.push_back(floor10);
-	block.push_back(floor11);
-	block.push_back(floor12);
-	block.push_back(floor13);
-	block.push_back(floor14);
-	block.push_back(floor15);
+	block.push_back(floor3G1);
+	block.push_back(floor3G2);
+	block.push_back(floor3G3);
+	block.push_back(floor3G4);
+	block.push_back(floor3G5);
+	block.push_back(floor3G6);
+	block.push_back(floor3G7);
+	block.push_back(floor3G8);
+	block.push_back(floor3G9);
+	block.push_back(floor3G10);
+	block.push_back(floor3G11);
+	block.push_back(floor3G12);
+	block.push_back(floor3G13);
+	block.push_back(floor3G14);
+	block.push_back(floor3G15);
 
 	return block;
 }
