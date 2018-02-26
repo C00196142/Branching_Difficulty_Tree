@@ -220,7 +220,7 @@ void Game::onEvent(EventListener::Event evt) {
 	// if the event START happens we start the game and change the screen to the first level
 	if (evt == EventListener::Event::START) {
 		mainMenu = false;
-		stage = lvl3C;
+		stage = lvl3A;
 		//stage = lvl1;
 		//stage = lvl2A;
 		changeLevel = true;
@@ -274,6 +274,7 @@ void Game::changeStage()
 		{
 			player->resetPlayer(-9.5, 0);
 		}
+		//Change to SECOND level
 		if (finish->levelComplete == true && duration > 15)
 		{
 			changeLevel = true;
@@ -311,9 +312,34 @@ void Game::changeStage()
 		{
 			player->resetPlayer(-10, 0);
 		}
-		if (finish->levelComplete == true)
+		//Change to THIRD level
+		if (finish->levelComplete == true && duration > 25 && player->fallDeaths > 3)
 		{
 			changeLevel = true;
+			stage = lvl3A;
+			cout << "Level 3A" << endl;
+			start = clock();
+		}
+		else if (finish->levelComplete == true && duration > 25 && player->fallDeaths <= 3)
+		{
+			changeLevel = true;
+			stage = lvl3B;
+			cout << "Level 3B" << endl;
+			start = clock();
+		}
+		else if (finish->levelComplete == true && duration <= 25 && player->fallDeaths > 3)
+		{
+			changeLevel = true;
+			stage = lvl3C;
+			cout << "Level 3C" << endl;
+			start = clock();
+		}
+		else if (finish->levelComplete == true && duration <= 25 && player->fallDeaths <= 3)
+		{
+			changeLevel = true;
+			stage = lvl3D;
+			cout << "Level 3D" << endl;
+			start = clock();
 		}
 		break;
 	case lvl2B:
@@ -338,9 +364,34 @@ void Game::changeStage()
 		{
 			player->resetPlayer(-10, 0);
 		}
-		if (finish->levelComplete == true)
+		//Change to THIRD level
+		if (finish->levelComplete == true && duration > 35 && player->fallDeaths > 3)
 		{
 			changeLevel = true;
+			stage = lvl3D;
+			cout << "Level 3D" << endl;
+			start = clock();
+		}
+		else if (finish->levelComplete == true && duration > 35 && player->fallDeaths <= 3)
+		{
+			changeLevel = true;
+			stage = lvl3E;
+			cout << "Level 3E" << endl;
+			start = clock();
+		}
+		else if (finish->levelComplete == true && duration <= 35 && player->fallDeaths > 3)
+		{
+			changeLevel = true;
+			stage = lvl3F;
+			cout << "Level 3F" << endl;
+			start = clock();
+		}
+		else if (finish->levelComplete == true && duration <= 35 && player->fallDeaths <= 3)
+		{
+			changeLevel = true;
+			stage = lvl3G;
+			cout << "Level 3G" << endl;
+			start = clock();
 		}
 		break;
 	case lvl3A:
@@ -365,9 +416,24 @@ void Game::changeStage()
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
-		if (finish->levelComplete == true)
+		//Change to FINAL level
+		if (finish->levelComplete == true && player->enemyDeaths <= 2)
 		{
 			changeLevel = true;
+			stage = lvl4E_enemy;
+			cout << "Level 4E_Enemy" << endl;
+		}
+		else if (finish->levelComplete == true && player->fallDeaths <= 2 && player->enemyDeaths > 2)
+		{
+			changeLevel = true;
+			stage = lvl4E_fall;
+			cout << "Level 4E_fall" << endl;
+		}
+		else if (finish->levelComplete == true && duration <= 20 && player->fallDeaths > 2 && player->enemyDeaths > 2)
+		{
+			changeLevel = true;
+			stage = lvl4E_fall;
+			cout << "Level 4E_fall" << endl;
 		}
 		if (!player->alive)
 		{
@@ -466,8 +532,20 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			player->ChangePos(-8, 4);
+			enemy1 = new Enemy(Rect(6, -2, 1, 1));
+			enemy1->color = Colour(244, 66, 66);
 
+			enemy2 = new Enemy(Rect(-2, 2, 1, 1));
+			enemy2->color = Colour(244, 66, 66);
+
+			enemy3 = new Enemy(Rect(-3, 0, 1, 1));
+			enemy3->color = Colour(244, 66, 66);
+
+			player->ChangePos(-8, 4);
+			//Continue
+			gameObjects.push_back(enemy1);
+			//gameObjects.push_back(enemy2);
+			//gameObjects.push_back(enemy3);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -763,6 +841,10 @@ void Game::moveEnemy()
 		enemy3->Move(-5, -2, 0.010);
 		enemy4->Move(-6, -5, 0.015);
 	}
+	else if (stage == lvl3C)
+	{
+
+	}
 }
 
 void Game::timer()
@@ -772,12 +854,47 @@ void Game::timer()
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
 		cout << duration << endl;
 	}
-	if (stage == lvl2A)
+	else if (stage == lvl2A)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		//cout << duration << endl;
+	}
+	else if (stage == lvl2B)
 	{
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
 		cout << duration << endl;
 	}
-	if (stage == lvl2B)
+	else if (stage == lvl3A)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+	}
+	else if (stage == lvl3B)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+	}
+	else if (stage == lvl3C)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+	}
+	else if (stage == lvl3D)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+	}
+	else if (stage == lvl3E)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+	}
+	else if (stage == lvl3F)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+	}
+	else if (stage == lvl3G)
 	{
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
 		cout << duration << endl;

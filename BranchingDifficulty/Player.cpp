@@ -11,6 +11,9 @@ Player::Player()
 	yVel = 0;
 	timer = 0;
 	jumpTimer = 40;
+
+	fallDeaths = 0;
+	enemyDeaths = 0;
 }
 Player::~Player()
 {
@@ -271,6 +274,9 @@ void Player::checkFallDeath()
 	{
 		alive = false;
 		std::cout << "Fell to Death" << std::endl;
+
+		fallDeaths++;
+		cout << "Fall Deaths: " << fallDeaths << endl;
 	}
 }
 void Player::enemyCollision(Rect obj)
@@ -280,6 +286,9 @@ void Player::enemyCollision(Rect obj)
 	{
 		alive = false;
 		std::cout << "Killed by Enemy" << std::endl;
+
+		enemyDeaths++;
+		cout << "Enemy Deaths: " << enemyDeaths << endl;
 	}
 }
 

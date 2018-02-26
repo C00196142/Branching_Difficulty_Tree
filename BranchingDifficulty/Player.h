@@ -34,6 +34,9 @@ public:
 	bool alive = true;
 	Rect rect;
 
+	int fallDeaths;
+	int enemyDeaths;
+
 private:
 
 	Colour col;
