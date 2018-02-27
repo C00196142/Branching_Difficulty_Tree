@@ -16,6 +16,7 @@ public:
 	void Render(Renderer & r);
 	void Update(unsigned int deltaTime);
 
+
 	Rect mover;
 	Colour color;
 

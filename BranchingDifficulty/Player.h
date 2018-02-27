@@ -24,7 +24,8 @@ public:
 	void CheckJumpingStatus();
 	void onEvent(EventListener::Event);
 	void ChangePos(int x, int y);
-	void Obstacle(Rect obj);
+	void PlatformCollision(Rect obj);
+	void MovingPlatformCollision(Rect obj);
 	void enemyCollision(Rect obj);
 	void setCanJump(bool jumpBool);
 	void setOnPlatform(bool platBool);

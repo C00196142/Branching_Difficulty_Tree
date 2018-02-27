@@ -129,9 +129,9 @@ void Game::update()
 	//these for loops check if there is any collision with gameObjects (like platforms or water) and thomas 
 	for (int i = 0; i < blocks.size(); i++)
 	{
-		player->Obstacle(blocks[i]->floor);
+		player->PlatformCollision(blocks[i]->floor);
 	}
-	player->Obstacle(mover->mover);
+	player->MovingPlatformCollision(mover->mover);
 
 	player->enemyCollision(enemy1->enemy);
 	player->enemyCollision(enemy2->enemy);
@@ -184,6 +184,7 @@ void Game::render()
 	renderer.present();
 }
 
+
 //loop function
 //it loops the whole game and includes the
 //update and render game entities
@@ -222,7 +223,8 @@ void Game::onEvent(EventListener::Event evt) {
 		mainMenu = false;
 		//stage = lvl1;
 		//stage = lvl2B;
-		stage = lvl3B;
+		//stage = lvl3B;
+		stage = lvl4E_time;
 		changeLevel = true;
 		start = clock();
 	}
@@ -837,7 +839,24 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, -1, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
+			enemy1 = new Enemy(Rect(-7, -1, 1, 1));
+			enemy1->color = Colour(244, 66, 66);
+
+			enemy2 = new Enemy(Rect(-5, -1, 1, 1));
+			enemy2->color = Colour(244, 66, 66);
+
+			enemy3 = new Enemy(Rect(0, -1, 1, 1));
+			enemy3->color = Colour(244, 66, 66);
+
+			enemy4 = new Enemy(Rect(5, -1, 1, 1));
+			enemy4->color = Colour(244, 66, 66);
+
 			player->ChangePos(-10, 0);
+
+			gameObjects.push_back(enemy1);
+			gameObjects.push_back(enemy2);
+			gameObjects.push_back(enemy3);
+			gameObjects.push_back(enemy4);
 
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
@@ -1044,6 +1063,13 @@ void Game::moveEnemy()
 		enemy2->Move(-4, -1, 0.015);
 		enemy3->Move(-8, -5, 0.015);
 	}
+	else if (stage == lvl4E_enemy)
+	{
+		enemy1->Move(-9, -7, 0.010);
+		enemy2->Move(-5, -3, 0.010);
+		enemy3->Move(-2, 0, 0.010);
+		enemy4->Move(2, 6, 0.010);
+	}
 }
 
 void Game::timer()
@@ -1094,6 +1120,16 @@ void Game::timer()
 		cout << duration << endl;
 	}
 	else if (stage == lvl3G)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+	}
+	else if (stage == lvl4E_time)
+	{
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+	}
+	else if (stage == lvl4H_time)
 	{
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
 		cout << duration << endl;

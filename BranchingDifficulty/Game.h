@@ -17,12 +17,15 @@
 #include "Enemy.h"
 #include <time.h>
 
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
+
 // The game object which manages the game loop
 class Game :public EventListener
 {
 	InputManager inputManager;
 	Renderer renderer;
-
 	std::vector<GameObject*> gameObjects;
 
 	//time of last update;
