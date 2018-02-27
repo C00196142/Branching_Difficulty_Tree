@@ -222,7 +222,7 @@ void Game::onEvent(EventListener::Event evt) {
 		mainMenu = false;
 		//stage = lvl1;
 		//stage = lvl2B;
-		stage = lvl3D;
+		stage = lvl3B;
 		changeLevel = true;
 		start = clock();
 	}
@@ -275,20 +275,22 @@ void Game::changeStage()
 			player->resetPlayer(-9.5, 0);
 		}
 		//Change to SECOND level
-		if (finish->levelComplete == true && duration > 15)
+		if (finish->levelComplete == true && duration > 25)
 		{
 			changeLevel = true;
 			stage = lvl2A;
-			cout << "Time Taken: " << duration << " seconds out of 15" << endl;
+			cout << "Time Taken: " << duration << " seconds out of 25" << endl;
 			cout << "Level 2A" << endl;
+			player->fallDeaths = 0;
 			start = clock();
 		}
-		else if (finish->levelComplete == true && duration <= 15)
+		else if (finish->levelComplete == true && duration <= 25)
 		{
 			changeLevel = true;
 			stage = lvl2B;
-			cout << "Time Taken: " << duration << " seconds out of 15" <<  endl;
+			cout << "Time Taken: " << duration << " seconds out of 25" <<  endl;
 			cout << "Level 2B" << endl;
+			player->fallDeaths = 0;
 			start = clock();
 		}
 		break;
@@ -315,32 +317,40 @@ void Game::changeStage()
 			player->resetPlayer(-10, 0);
 		}
 		//Change to THIRD level
-		if (finish->levelComplete == true && duration > 25 && player->fallDeaths > 3)
+		if (finish->levelComplete == true && duration > 35 && player->fallDeaths > 3)
 		{
 			changeLevel = true;
 			stage = lvl3A;
 			cout << "Level 3A" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 			start = clock();
 		}
-		else if (finish->levelComplete == true && duration > 25 && player->fallDeaths <= 3)
+		else if (finish->levelComplete == true && duration > 35 && player->fallDeaths <= 3)
 		{
 			changeLevel = true;
 			stage = lvl3B;
 			cout << "Level 3B" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 			start = clock();
 		}
-		else if (finish->levelComplete == true && duration <= 25 && player->fallDeaths > 3)
+		else if (finish->levelComplete == true && duration <= 35 && player->fallDeaths > 3)
 		{
 			changeLevel = true;
 			stage = lvl3C;
 			cout << "Level 3C" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 			start = clock();
 		}
-		else if (finish->levelComplete == true && duration <= 25 && player->fallDeaths <= 3)
+		else if (finish->levelComplete == true && duration <= 35 && player->fallDeaths <= 3)
 		{
 			changeLevel = true;
 			stage = lvl3D;
 			cout << "Level 3D" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 			start = clock();
 		}
 		break;
@@ -372,6 +382,8 @@ void Game::changeStage()
 			changeLevel = true;
 			stage = lvl3D;
 			cout << "Level 3D" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 			start = clock();
 		}
 		else if (finish->levelComplete == true && duration > 35 && player->fallDeaths <= 3)
@@ -379,6 +391,8 @@ void Game::changeStage()
 			changeLevel = true;
 			stage = lvl3E;
 			cout << "Level 3E" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 			start = clock();
 		}
 		else if (finish->levelComplete == true && duration <= 35 && player->fallDeaths > 3)
@@ -386,6 +400,8 @@ void Game::changeStage()
 			changeLevel = true;
 			stage = lvl3F;
 			cout << "Level 3F" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 			start = clock();
 		}
 		else if (finish->levelComplete == true && duration <= 35 && player->fallDeaths <= 3)
@@ -393,6 +409,8 @@ void Game::changeStage()
 			changeLevel = true;
 			stage = lvl3G;
 			cout << "Level 3G" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 			start = clock();
 		}
 		break;
@@ -419,23 +437,29 @@ void Game::changeStage()
 			changeLevel = false;
 		}
 		//Change to FINAL level
-		if (finish->levelComplete == true && player->enemyDeaths <= 2)
+		if (finish->levelComplete == true && player->enemyDeaths <= 1)
 		{
 			changeLevel = true;
 			stage = lvl4E_enemy;
 			cout << "Level 4E_Enemy" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 		}
-		else if (finish->levelComplete == true && player->fallDeaths <= 2 && player->enemyDeaths > 2)
+		else if (finish->levelComplete == true && player->fallDeaths <= 1 && player->enemyDeaths > 1)
 		{
 			changeLevel = true;
 			stage = lvl4E_fall;
 			cout << "Level 4E_fall" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 		}
-		else if (finish->levelComplete == true && duration <= 20 && player->fallDeaths > 2 && player->enemyDeaths > 2)
+		else if (finish->levelComplete == true && duration <= 40 && player->fallDeaths > 1 && player->enemyDeaths > 1)
 		{
 			changeLevel = true;
-			stage = lvl4E_fall;
-			cout << "Level 4E_fall" << endl;
+			stage = lvl4E_time;
+			cout << "Level 4E_time" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 		}
 		if (!player->alive)
 		{
@@ -468,9 +492,29 @@ void Game::changeStage()
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
-		if (finish->levelComplete == true)
+		//Change to FINAL level
+		if (finish->levelComplete == true && duration <= 40)
 		{
 			changeLevel = true;
+			stage = lvl4E_time;
+			cout << "Level 4E_Time" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+		}
+		else if (finish->levelComplete == true && player->fallDeaths <= 2 && duration > 40)
+		{
+			changeLevel = true;
+			stage = lvl4E_enemy;
+			cout << "Level 4E_enemy" << endl;
+			player->fallDeaths = 0;
+		}
+		else if (finish->levelComplete == true && player->fallDeaths <= 2 && player->enemyDeaths > 2 && duration > 40)
+		{
+			changeLevel = true;
+			stage = lvl4E_fall;
+			cout << "Level 4E_fall" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 		}
 		if (!player->alive)
 		{
@@ -513,9 +557,30 @@ void Game::changeStage()
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
-		if (finish->levelComplete == true)
+		//Change to FINAL level
+		if (finish->levelComplete == true && player->fallDeaths <= 2)
 		{
 			changeLevel = true;
+			stage = lvl4E_fall;
+			cout << "Level 4E_Fall" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+		}
+		else if (finish->levelComplete == true && player->enemyDeaths <= 4 && player->fallDeaths > 2)
+		{
+			changeLevel = true;
+			stage = lvl4E_enemy;
+			cout << "Level 4E_enemy" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+		}
+		else if (finish->levelComplete == true && duration <= 45 && player->enemyDeaths > 4 && player->fallDeaths > 2)
+		{
+			changeLevel = true;
+			stage = lvl4E_time;
+			cout << "Level 4E_time" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 		}
 		if (!player->alive)
 		{
@@ -548,9 +613,30 @@ void Game::changeStage()
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
-		if (finish->levelComplete == true)
+		//Change to FINAL level
+		if (finish->levelComplete == true && duration <= 40)
 		{
 			changeLevel = true;
+			stage = lvl4E_time;
+			cout << "Level 4E_Time" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+		}
+		else if (finish->levelComplete == true && player->fallDeaths <= 2 && duration > 40)
+		{
+			changeLevel = true;
+			stage = lvl4E_fall;
+			cout << "Level 4E_Fall" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+		}
+		else if (finish->levelComplete == true && player->enemyDeaths <= 3 && player->fallDeaths > 2 && duration > 40)
+		{
+			changeLevel = true;
+			stage = lvl4E_enemy;
+			cout << "Level 4E_Enemy" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 		}
 		if (!player->alive)
 		{
@@ -585,9 +671,31 @@ void Game::changeStage()
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
-		if (finish->levelComplete == true)
+		//Change to FINAL level
+		if (finish->levelComplete == true && duration <= 45)
 		{
 			changeLevel = true;
+			stage = lvl4E_time;
+			cout << "Level 4E_Time" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+		}
+		else if (finish->levelComplete == true && player->fallDeaths <= 2 && duration > 45)
+		{
+			changeLevel = true;
+			stage = lvl4E_fall;
+			cout << "Level 4E_Fall" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+
+		}
+		else if (finish->levelComplete == true && player->enemyDeaths <= 3 && player->fallDeaths > 2 && duration > 45)
+		{
+			changeLevel = true;
+			stage = lvl4E_enemy;
+			cout << "Level 4E_Enemy" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 		}
 		if (!player->alive)
 		{
@@ -613,17 +721,42 @@ void Game::changeStage()
 			enemy2 = new Enemy(Rect(-3, 0, 1, 1));
 			enemy2->color = Colour(244, 66, 66);
 
+			enemy3 = new Enemy(Rect(-6, 0, 1, 1));
+			enemy3->color = Colour(244, 66, 66);
+
 			player->ChangePos(-8, 4);
 
 			gameObjects.push_back(enemy1);
 			gameObjects.push_back(enemy2);
+			gameObjects.push_back(enemy3);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
-		if (finish->levelComplete == true)
+		//Change to FINAL level
+		if (finish->levelComplete == true && player->enemyDeaths <= 3)
 		{
 			changeLevel = true;
+			stage = lvl4E_enemy;
+			cout << "Level 4E_Enemy" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+		}
+		else if (finish->levelComplete == true && duration <= 45 && player->enemyDeaths > 3)
+		{
+			changeLevel = true;
+			stage = lvl4E_time;
+			cout << "Level 4E_Time" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+		}
+		else if (finish->levelComplete == true && player->fallDeaths <= 2 && duration > 45 && player->enemyDeaths > 3)
+		{
+			changeLevel = true;
+			stage = lvl4E_fall;
+			cout << "Level 4E_Fall" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 		}
 		if (!player->alive)
 		{
@@ -643,15 +776,48 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
+			enemy1 = new Enemy(Rect(6, -2, 1, 1));
+			enemy1->color = Colour(244, 66, 66);
+
+			enemy2 = new Enemy(Rect(-3, 0, 1, 1));
+			enemy2->color = Colour(244, 66, 66);
+
+			enemy3 = new Enemy(Rect(-6, 0, 1, 1));
+			enemy3->color = Colour(244, 66, 66);
+
 			player->ChangePos(-8, 4);
 
+			gameObjects.push_back(enemy1);
+			gameObjects.push_back(enemy2);
+			gameObjects.push_back(enemy3);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
-		if (finish->levelComplete == true)
+		//Change to FINAL level
+		if (finish->levelComplete == true && player->fallDeaths <= 2)
 		{
 			changeLevel = true;
+			stage = lvl4E_fall;
+			cout << "Level 4E_Fall" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+		}
+		else if (finish->levelComplete == true && player->enemyDeaths <= 2 && player->fallDeaths > 2)
+		{
+			changeLevel = true;
+			stage = lvl4E_enemy;
+			cout << "Level 4E_Enemy" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+		}
+		else if (finish->levelComplete == true && duration <= 40 && player->enemyDeaths > 2 && player->fallDeaths > 2)
+		{
+			changeLevel = true;
+			stage = lvl4E_time;
+			cout << "Level 4E_time" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
 		}
 		if (!player->alive)
 		{
@@ -869,7 +1035,14 @@ void Game::moveEnemy()
 	else if (stage == lvl3F)
 	{
 		enemy1->Move(3, 7, 0.015);
-		enemy2->Move(-4, -3, 0.015);
+		enemy2->Move(-4, -1, 0.015);
+		enemy3->Move(-8, -5, 0.015);
+	}
+	else if (stage == lvl3G)
+	{
+		enemy1->Move(3, 7, 0.015);
+		enemy2->Move(-4, -1, 0.015);
+		enemy3->Move(-8, -5, 0.015);
 	}
 }
 
