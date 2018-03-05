@@ -24,8 +24,8 @@ Game::~Game()
 //
 //it sets all the important standard values like the size of the window
 //or the values for the starting screen
-bool Game::init() {
-
+bool Game::init() 
+{
 	Size2D winSize(800, 600);
 
 	//creates our renderer, which looks after drawing and the window
@@ -81,7 +81,8 @@ bool Game::init() {
 void Game::destroy()
 {
 	//empty out the game object vector before quitting
-	for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) {
+	for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) 
+	{
 		delete *i;
 	}
 	gameObjects.clear();
@@ -97,32 +98,6 @@ void Game::update()
 	moveEnemy();
 	timer();
 
-	/*if (stage == lvl4E_time)
-	{
-		finish->finish.pos.y = finish->finish.pos.y - 0.025;
-	}*/
-
-	if (stage == lvl4E_time)
-	{
-		if (moveUp == true)
-		{
-			mover->mover.pos.y = mover->mover.pos.y + 0.015;
-			if (mover->mover.pos.y >= 2)
-			{
-				moveUp = false;
-			}
-		}
-		else if (moveUp == false)
-		{
-			mover->mover.pos.y = mover->mover.pos.y - 0.015;
-			if (mover->mover.pos.y <= -7)
-			{
-				moveUp = true;
-			}
-		}
-	}
-
-	
 	player->setInAir(true);
 	player->setOnPlatform(false);
 
@@ -131,12 +106,16 @@ void Game::update()
 	{
 		player->PlatformCollision(blocks[i]->floor);
 	}
-	player->MovingPlatformCollision(mover->mover);
 
 	player->enemyCollision(enemy1->enemy);
 	player->enemyCollision(enemy2->enemy);
 	player->enemyCollision(enemy3->enemy);
 	player->enemyCollision(enemy4->enemy);
+	player->enemyCollision(enemy5->enemy);
+
+	player->collectibleCollision(collectible1->collectible);
+	player->collectibleCollision(collectible2->collectible);
+
 	//millis since game started
 	unsigned int currentTime = LTimer::gameTime();
 
@@ -147,7 +126,8 @@ void Game::update()
 	//if we are not in the mainMenu we update the gameObjects
 	if (!mainMenu && !endMenu)
 	{
-		for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) {
+		for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) 
+		{
 			(*i)->Update(deltaTime);
 		}
 	}
@@ -174,7 +154,8 @@ void Game::render()
 	//if we are not in the mainMenu call the render(drawing)-function of the gameObjects
 	else
 	{
-		for (std::vector<GameObject*>::iterator i = gameObjects.begin(), e = gameObjects.end(); i != e; i++) {
+		for (std::vector<GameObject*>::iterator i = gameObjects.begin(), e = gameObjects.end(); i != e; i++) 
+		{
 			(*i)->Render(renderer);
 		}
 
@@ -216,21 +197,24 @@ void Game::loop()
 //this function handles the events
 //if a specific event happens the game should react on it
 //\param[in] we give the function the event that happens
-void Game::onEvent(EventListener::Event evt) {
+void Game::onEvent(EventListener::Event evt) 
+{
 
 	// if the event START happens we start the game and change the screen to the first level
-	if (evt == EventListener::Event::START) {
+	if (evt == EventListener::Event::START) 
+	{
 		mainMenu = false;
 		//stage = lvl1;
-		//stage = lvl2B;
+		stage = lvl2A;
 		//stage = lvl3B;
-		stage = lvl4E_time;
+		//stage = lvl4E_fall;
 		changeLevel = true;
 		start = clock();
 	}
 
 	// if the event QUIT happens we quit the game
-	if (evt == EventListener::Event::QUIT) {
+	if (evt == EventListener::Event::QUIT) 
+	{
 		quit = true;
 	}
 	if (evt == EventListener::Event::RESTART)
@@ -308,8 +292,16 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, -1.5, 1, 1));//-5
 			finish->color = Colour(255, 255, 255);
 
+			collectible1 = new Collectible(Rect(-4.75, 0.5, 0.5, 0.5));
+			collectible1->color = Colour(0, 0, 0);
+
+			collectible2 = new Collectible(Rect(-9.25, 2.5, 0.5, 0.5));
+			collectible2->color = Colour(0, 0, 0);
+			
 			player->ChangePos(-10, 0);
 
+			gameObjects.push_back(collectible1);
+			gameObjects.push_back(collectible2);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -912,12 +904,8 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, 4, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			mover = new MovingPlatform(Rect(-5, -5, 1, 0.5));
-			mover->color = Colour(200, 0, 200);
-
 			player->ChangePos(-10, 6);
 
-			gameObjects.push_back(mover);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -944,7 +932,28 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, -1, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
+			enemy1 = new Enemy(Rect(-7, -1, 1, 1));
+			enemy1->color = Colour(244, 66, 66);
+
+			enemy2 = new Enemy(Rect(-5, -1, 1, 1));
+			enemy2->color = Colour(244, 66, 66);
+
+			enemy3 = new Enemy(Rect(0, -1, 1, 1));
+			enemy3->color = Colour(244, 66, 66);
+
+			enemy4 = new Enemy(Rect(3, -1, 1, 1));
+			enemy4->color = Colour(244, 66, 66);
+
+			enemy5 = new Enemy(Rect(6, -1, 1, 1));
+			enemy5->color = Colour(244, 66, 66);
+
 			player->ChangePos(-10, 0);
+
+			gameObjects.push_back(enemy1);
+			gameObjects.push_back(enemy2);
+			gameObjects.push_back(enemy3);
+			gameObjects.push_back(enemy4);
+			gameObjects.push_back(enemy5);
 
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
@@ -1069,6 +1078,14 @@ void Game::moveEnemy()
 		enemy2->Move(-5, -3, 0.010);
 		enemy3->Move(-2, 0, 0.010);
 		enemy4->Move(2, 6, 0.010);
+	}
+	else if (stage == lvl4H_enemy)
+	{
+		enemy1->Move(-9, -7, 0.015);
+		enemy2->Move(-5, -3, 0.015);
+		enemy3->Move(-2, 0, 0.015);
+		enemy4->Move(2, 4, 0.015);
+		enemy5->Move(5, 6, 0.015);
 	}
 }
 

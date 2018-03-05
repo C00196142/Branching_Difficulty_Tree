@@ -5,7 +5,6 @@
 #include "EventListener.h"
 #include "Renderer.h"
 
-
 class Player :public GameObject, public EventListener
 {
 public:
@@ -24,11 +23,12 @@ public:
 	void CheckJumpingStatus();
 	void onEvent(EventListener::Event);
 	void ChangePos(int x, int y);
-	void PlatformCollision(Rect obj);
-	void MovingPlatformCollision(Rect obj);
-	void enemyCollision(Rect obj);
 	void setCanJump(bool jumpBool);
 	void setOnPlatform(bool platBool);
+
+	void PlatformCollision(Rect obj);
+	void enemyCollision(Rect obj);
+	void collectibleCollision(Rect obj);
 	
 	void checkFallDeath();
 	void resetPlayer(int resetX, int resetY);
@@ -37,6 +37,7 @@ public:
 
 	int fallDeaths;
 	int enemyDeaths;
+	int collectibles;
 
 private:
 

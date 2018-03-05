@@ -600,20 +600,23 @@ std::vector<Platform*> LevelManager::level4E_fall()
 	Platform* floor4EF3 = new Platform(Rect(-6, -4, 1, 3));
 	floor4EF3->color = Colour(200, 0, 200);
 
-	Platform* floor4EF4 = new Platform(Rect(0, -4, 1, 3));
+	Platform* floor4EF4 = new Platform(Rect(-3, -3.5, 1, 0.5));
 	floor4EF4->color = Colour(200, 0, 200);
 
-	Platform* floor4EF5 = new Platform(Rect(2, -4, 1, 3));
+	Platform* floor4EF5 = new Platform(Rect(0, -4, 1, 3));
 	floor4EF5->color = Colour(200, 0, 200);
 
-	Platform* floor4EF6 = new Platform(Rect(4, -4, 1, 4));
+	Platform* floor4EF6 = new Platform(Rect(2, -4, 1, 3));
 	floor4EF6->color = Colour(200, 0, 200);
 
-	Platform* floor4EF7 = new Platform(Rect(6, -4, 1, 5));
+	Platform* floor4EF7 = new Platform(Rect(4, -4, 1, 4));
 	floor4EF7->color = Colour(200, 0, 200);
 
-	Platform* floor4EF8 = new Platform(Rect(9, 1, 1, 1));
+	Platform* floor4EF8 = new Platform(Rect(6, -4, 1, 5));
 	floor4EF8->color = Colour(200, 0, 200);
+
+	Platform* floor4EF9 = new Platform(Rect(9, 1, 1, 1));
+	floor4EF9->color = Colour(200, 0, 200);
 
 	block.push_back(floor4EF1);
 	block.push_back(floor4EF2);
@@ -623,6 +626,7 @@ std::vector<Platform*> LevelManager::level4E_fall()
 	block.push_back(floor4EF6);
 	block.push_back(floor4EF7);
 	block.push_back(floor4EF8);
+	block.push_back(floor4EF9);
 
 	return block;
 }
@@ -722,20 +726,23 @@ std::vector<Platform*> LevelManager::level4H_fall()
 	Platform* floor4HF3 = new Platform(Rect(-6, -4, 0.5, 3));
 	floor4HF3->color = Colour(200, 0, 200);
 
-	Platform* floor4HF4 = new Platform(Rect(0, -4, 0.5, 3));
+	Platform* floor4HF4 = new Platform(Rect(-3, -3.5, 1, 0.5));
 	floor4HF4->color = Colour(200, 0, 200);
 
-	Platform* floor4HF5 = new Platform(Rect(2, -4, 0.5, 3));
+	Platform* floor4HF5 = new Platform(Rect(0, -4, 0.5, 3));
 	floor4HF5->color = Colour(200, 0, 200);
 
-	Platform* floor4HF6 = new Platform(Rect(4, -4, 0.5, 4));
+	Platform* floor4HF6 = new Platform(Rect(2, -4, 0.5, 3));
 	floor4HF6->color = Colour(200, 0, 200);
 
-	Platform* floor4HF7 = new Platform(Rect(6, -4, 0.5, 5));
+	Platform* floor4HF7 = new Platform(Rect(4, -4, 0.5, 4));
 	floor4HF7->color = Colour(200, 0, 200);
 
-	Platform* floor4HF8 = new Platform(Rect(9, 1, 1, 1));
+	Platform* floor4HF8 = new Platform(Rect(6, -4, 0.5, 5));
 	floor4HF8->color = Colour(200, 0, 200);
+
+	Platform* floor4HF9 = new Platform(Rect(9, 1, 1, 1));
+	floor4HF9->color = Colour(200, 0, 200);
 
 	block.push_back(floor4HF1);
 	block.push_back(floor4HF2);
@@ -745,6 +752,7 @@ std::vector<Platform*> LevelManager::level4H_fall()
 	block.push_back(floor4HF6);
 	block.push_back(floor4HF7);
 	block.push_back(floor4HF8);
+	block.push_back(floor4HF9);
 
 	return block;
 }

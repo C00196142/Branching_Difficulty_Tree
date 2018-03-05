@@ -13,8 +13,8 @@
 #include "LevelManager.h"
 #include "FinishLine.h"
 #include "Menu.h"
-#include "MovingPlatform.h"
 #include "Enemy.h"
+#include "Collectible.h"
 #include <time.h>
 
 #include <SDL.h>
@@ -42,14 +42,7 @@ class Game :public EventListener
 	Menu* startMenu = new Menu();
 	std::vector <Platform*> blocks;
 	LevelManager levels;
-	FinishLine* finish = new FinishLine(Rect(0, 0, 0, 0));
-
-	MovingPlatform* mover = new MovingPlatform(Rect(0, 0, 0, 0));
-
-	Enemy* enemy1 = new Enemy(Rect(0, 0, 0, 0));
-	Enemy* enemy2 = new Enemy(Rect(0, 0, 0, 0));
-	Enemy* enemy3 = new Enemy(Rect(0, 0, 0, 0));
-	Enemy* enemy4 = new Enemy(Rect(0, 0, 0, 0));
+	FinishLine* finish = new FinishLine(Rect(1000, 0, 0, 0));
 
 	int r, g, b, a;
 
@@ -58,6 +51,15 @@ class Game :public EventListener
 
 	clock_t start;
 	int duration;
+
+	Enemy* enemy1 = new Enemy(Rect(1000, 0, 0, 0));
+	Enemy* enemy2 = new Enemy(Rect(1000, 0, 0, 0));
+	Enemy* enemy3 = new Enemy(Rect(1000, 0, 0, 0));
+	Enemy* enemy4 = new Enemy(Rect(1000, 0, 0, 0));
+	Enemy* enemy5 = new Enemy(Rect(1000, 0, 0, 0));
+
+	Collectible* collectible1 = new Collectible(Rect(1000, 0, 0, 0));
+	Collectible* collectible2 = new Collectible(Rect(1000, 0, 0, 0));
 
 public:
 	enum gameStage { menu, lvl1, lvl2A, lvl2B, 

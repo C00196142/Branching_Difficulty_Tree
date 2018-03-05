@@ -14,6 +14,7 @@ Player::Player()
 
 	fallDeaths = 0;
 	enemyDeaths = 0;
+	collectibles = 0;
 }
 Player::~Player()
 {
@@ -292,6 +293,16 @@ void Player::enemyCollision(Rect obj)
 	}
 }
 
+void Player::collectibleCollision(Rect obj)
+{
+	//if the 2 rectangles intersect
+	if ((rect.pos.x + rect.size.w) > obj.pos.x && rect.pos.x < (obj.pos.x + obj.size.w) && rect.pos.y < (obj.pos.y + obj.size.h) && (rect.pos.y + rect.size.h) > obj.pos.y)
+	{
+		collectibles++;
+		std::cout << "Collected" << std::endl;
+	}
+}
+
 void Player::ChangePos(int x, int y)
 {
 	rect.pos.x = x;
@@ -303,47 +314,4 @@ void Player::resetPlayer(int resetX, int resetY)
 {
 	ChangePos(resetX, resetY);
 	alive = true;
-}
-
-
-
-void Player::MovingPlatformCollision(Rect obj)
-{
-	//if the 2 rectangles intersect
-	if ((rect.pos.x + rect.size.w) > obj.pos.x && rect.pos.x < (obj.pos.x + obj.size.w) && rect.pos.y < (obj.pos.y + obj.size.h) && (rect.pos.y + rect.size.h) > obj.pos.y)
-	{
-		//if minusing the x velocity
-		float lastXPos = rect.pos.x - xVel;
-		float lastYPos = rect.pos.y - yVel;
-		if (!((lastXPos + rect.size.w) > obj.pos.x && lastXPos < (obj.pos.x + obj.size.w)))
-		{
-			rect.pos.x = lastXPos;
-			xVel = 0;
-
-		}
-		else if (!(lastYPos < (obj.pos.y + obj.size.h) && (lastYPos + rect.size.h) > obj.pos.y))
-		{
-			rect.pos.y = lastYPos;
-			yVel = 0;
-
-			if (rect.pos.y >= (obj.pos.y + obj.size.h))
-			{
-				inAir = false;
-				rect.pos.y = obj.pos.y + obj.size.h;
-				onPlatform = true;
-				//rect.pos.y++;
-			}
-			else
-			{
-				rising = false;
-				timer = 60;
-			}
-		}
-	}
-	float tempY = rect.pos.y - maxXVel;
-	if ((rect.pos.x + rect.size.w) > obj.pos.x && rect.pos.x < (obj.pos.x + obj.size.w) && tempY < (obj.pos.y + obj.size.h) && (tempY + rect.size.h) > obj.pos.y)
-	{
-		falling = true;
-	}
-
 }
