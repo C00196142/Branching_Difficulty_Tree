@@ -853,3 +853,82 @@ std::vector<Collectible*> LevelManager::c2A()
 	return collectible;
 }
 
+std::vector<Collectible*> LevelManager::c2B()
+{
+	collectible.clear();
+
+	Collectible* c2B1 = new Collectible(Rect(-4.75, 0.5, 0.5, 0.5));
+	c2B1->color = Colour(0, 0, 0);
+
+	Collectible* c2B2 = new Collectible(Rect(-9.25, 2.5, 0.5, 0.5));
+	c2B2->color = Colour(0, 0, 0);
+
+	Collectible* c2B3 = new Collectible(Rect(1.75, 2.25, 0.5, 0.5));
+	c2B3->color = Colour(0, 0, 0);
+
+	Collectible* c2B4 = new Collectible(Rect(8.75, 5.5, 0.5, 0.5));
+	c2B4->color = Colour(0, 0, 0);
+
+	Collectible* c2B5 = new Collectible(Rect(4.75, 5.5, 0.5, 0.5));
+	c2B5->color = Colour(0, 0, 0);
+
+	Collectible* c2B6 = new Collectible(Rect(4.75, 0.5, 0.5, 0.5));
+	c2B6->color = Colour(0, 0, 0);
+
+	collectible.push_back(c2B1);
+	collectible.push_back(c2B2);
+	collectible.push_back(c2B3);
+	collectible.push_back(c2B4);
+	collectible.push_back(c2B5);
+	collectible.push_back(c2B6);
+
+	return collectible;
+}
+
+std::vector<Collectible*> LevelManager::c3A()
+{
+	collectible.clear();
+
+	Collectible* c3A1 = new Collectible(Rect(-3.25, 0.5, 0.5, 0.5));
+	c3A1->color = Colour(0, 0, 0);
+
+	Collectible* c3A2 = new Collectible(Rect(3.25, -1.75, 0.5, 0.5));
+	c3A2->color = Colour(0, 0, 0);
+
+	collectible.push_back(c3A1);
+	collectible.push_back(c3A2);
+
+	return collectible;
+}
+
+std::vector<Collectible*> LevelManager::c3B()
+{
+	collectible.clear();
+
+	Collectible* c3B1 = new Collectible(Rect(-3.25, 0.5, 0.5, 0.5));
+	c3B1->color = Colour(0, 0, 0);
+
+	Collectible* c3B2 = new Collectible(Rect(3.25, -1.75, 0.5, 0.5));
+	c3B2->color = Colour(0, 0, 0);
+
+	collectible.push_back(c3B1);
+	collectible.push_back(c3B2);
+
+	return collectible;
+}
+
+std::vector<Collectible*> LevelManager::c3C()
+{
+	collectible.clear();
+
+	Collectible* c3C1 = new Collectible(Rect(-3.25, 0.5, 0.5, 0.5));
+	c3C1->color = Colour(0, 0, 0);
+
+	Collectible* c3C2 = new Collectible(Rect(3.25, -1.75, 0.5, 0.5));
+	c3C2->color = Colour(0, 0, 0);
+
+	collectible.push_back(c3C1);
+	collectible.push_back(c3C2);
+
+	return collectible;
+}

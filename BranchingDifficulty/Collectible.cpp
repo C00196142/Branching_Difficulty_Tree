@@ -28,13 +28,12 @@ void Collectible::collectibleCollision(Rect obj)
 	//if the 2 rectangles intersect
 	if ((collectible.pos.x + collectible.size.w) > obj.pos.x && collectible.pos.x < (obj.pos.x + obj.size.w) && collectible.pos.y < (obj.pos.y + obj.size.h) && (collectible.pos.y + collectible.size.h) > obj.pos.y)
 	{
-		//numCollect++;
-		//std::cout << "Collected: " << numCollect << " of 4" << std::endl;
-		ChangePos(1000, 0);
+
+		CheckAlive(1000, 0);
 	}
 }
 
-void Collectible::ChangePos(int x, int y)
+void Collectible::CheckAlive(int x, int y)
 {
 	collectible.pos.x = x;
 	collectible.pos.y = y;

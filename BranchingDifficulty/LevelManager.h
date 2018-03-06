@@ -9,7 +9,7 @@ public:
 	LevelManager();
 	~LevelManager();
 
-	//Class to control the platforms and collectibles in the levels
+	//Control the platforms in each level
 	std::vector<Platform*> block;
 	std::vector<Collectible*> collectible;
 
@@ -34,8 +34,14 @@ public:
 	std::vector<Platform*> level4H_fall();
 	std::vector<Platform*> level4H_time();
 
-
+	//Control the collectibles in each level
 	std::vector<Collectible*> c2A();
+	std::vector<Collectible*> c2B();
+
+	std::vector<Collectible*> c3A();
+	std::vector<Collectible*> c3B();
+	std::vector<Collectible*> c3C();
+
 
 };
 
