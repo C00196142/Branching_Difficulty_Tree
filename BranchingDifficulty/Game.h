@@ -40,8 +40,12 @@ class Game :public EventListener
 	bool changeLevel = false;
 	Player* player = new Player();
 	Menu* startMenu = new Menu();
+
 	std::vector <Platform*> blocks;
+	std::vector <Collectible*> collectibles;
+	int numCollect = 0;
 	LevelManager levels;
+
 	FinishLine* finish = new FinishLine(Rect(1000, 0, 0, 0));
 
 	int r, g, b, a;
@@ -57,9 +61,6 @@ class Game :public EventListener
 	Enemy* enemy3 = new Enemy(Rect(1000, 0, 0, 0));
 	Enemy* enemy4 = new Enemy(Rect(1000, 0, 0, 0));
 	Enemy* enemy5 = new Enemy(Rect(1000, 0, 0, 0));
-
-	Collectible* collectible1 = new Collectible(Rect(1000, 0, 0, 0));
-	Collectible* collectible2 = new Collectible(Rect(1000, 0, 0, 0));
 
 public:
 	enum gameStage { menu, lvl1, lvl2A, lvl2B, 

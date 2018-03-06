@@ -72,7 +72,7 @@ bool Game::init()
 	inputManager.AddListener(EventListener::Event::JUMP, player);
 	inputManager.AddListener(EventListener::Event::SUPERJUMP, player);
 
-
+	//numCollect = 0;
 	return true;
 
 }
@@ -113,8 +113,17 @@ void Game::update()
 	player->enemyCollision(enemy4->enemy);
 	player->enemyCollision(enemy5->enemy);
 
-	player->collectibleCollision(collectible1->collectible);
-	player->collectibleCollision(collectible2->collectible);
+	for (int j = 0; j < collectibles.size(); j++)
+	{
+		player->collectibleCollision(collectibles[j]->collectible);
+	}
+
+	for (int j = 0; j < collectibles.size(); j++)
+	{
+		collectibles[j]->collectibleCollision(player->rect);
+	}
+	
+	
 
 	//millis since game started
 	unsigned int currentTime = LTimer::gameTime();
@@ -284,28 +293,35 @@ void Game::changeStage()
 		if (changeLevel)
 		{
 			gameObjects.clear();
+			//adds in the platforms that the player jumps on
 			blocks = levels.level2A();
 			for (int i = 0; i < blocks.size(); i++)
 			{
 				gameObjects.push_back(blocks[i]);
 			}
-			finish = new FinishLine(Rect(9, -1.5, 1, 1));//-5
-			finish->color = Colour(255, 255, 255);
+			//adds in the collectibles for the player to collect
+			player->maxCollectibles = 4;
+			collectibles = levels.c2A();
+			for (int j = 0; j < collectibles.size(); j++)
+			{
+				gameObjects.push_back(collectibles[j]);
+			}			
 
-			collectible1 = new Collectible(Rect(-4.75, 0.5, 0.5, 0.5));
-			collectible1->color = Colour(0, 0, 0);
-
-			collectible2 = new Collectible(Rect(-9.25, 2.5, 0.5, 0.5));
-			collectible2->color = Colour(0, 0, 0);
-			
 			player->ChangePos(-10, 0);
 
-			gameObjects.push_back(collectible1);
-			gameObjects.push_back(collectible2);
+			finish = new FinishLine(Rect(20, -1.5, 1, 1));//-5
+			finish->color = Colour(255, 255, 255);
 			gameObjects.push_back(finish);
+
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
+		//The finish line moves on screen when all collectibles are collected
+		if (player->collectibles >= player->maxCollectibles)
+		{
+			finish->finish.pos.x = 9;
+		}
+		//Player Dies if they fall off the world
 		if (!player->alive)
 		{
 			player->resetPlayer(-10, 0);
@@ -318,6 +334,7 @@ void Game::changeStage()
 			cout << "Level 3A" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 			start = clock();
 		}
 		else if (finish->levelComplete == true && duration > 35 && player->fallDeaths <= 3)
@@ -327,6 +344,7 @@ void Game::changeStage()
 			cout << "Level 3B" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 			start = clock();
 		}
 		else if (finish->levelComplete == true && duration <= 35 && player->fallDeaths > 3)
@@ -336,6 +354,7 @@ void Game::changeStage()
 			cout << "Level 3C" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 			start = clock();
 		}
 		else if (finish->levelComplete == true && duration <= 35 && player->fallDeaths <= 3)
@@ -345,6 +364,7 @@ void Game::changeStage()
 			cout << "Level 3D" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 			start = clock();
 		}
 		break;
@@ -1099,7 +1119,7 @@ void Game::timer()
 	else if (stage == lvl2A)
 	{
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
-		cout << duration << endl;
+		//cout << duration << endl;
 	}
 	else if (stage == lvl2B)
 	{

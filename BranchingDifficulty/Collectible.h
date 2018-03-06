@@ -19,5 +19,8 @@ public:
 	Rect collectible;
 	Colour color;
 
+	void ChangePos(int x, int y);
+	void collectibleCollision(Rect obj);
+
 };
 

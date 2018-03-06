@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Platform.h"
+#include "Collectible.h"
 
 class LevelManager
 {
@@ -8,7 +9,9 @@ public:
 	LevelManager();
 	~LevelManager();
 
+	//Class to control the platforms and collectibles in the levels
 	std::vector<Platform*> block;
+	std::vector<Collectible*> collectible;
 
 	std::vector<Platform*> level1();
 
@@ -30,6 +33,9 @@ public:
 	std::vector<Platform*> level4H_enemy();
 	std::vector<Platform*> level4H_fall();
 	std::vector<Platform*> level4H_time();
+
+
+	std::vector<Collectible*> c2A();
 
 };
 

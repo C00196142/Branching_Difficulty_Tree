@@ -829,3 +829,27 @@ std::vector<Platform*> LevelManager::level4H_time()
 	return block;
 }
 
+std::vector<Collectible*> LevelManager::c2A()
+{
+	collectible.clear();
+
+	Collectible* c2A1 = new Collectible(Rect(-4.75, 0.5, 0.5, 0.5));
+	c2A1->color = Colour(0, 0, 0);
+
+	Collectible* c2A2 = new Collectible(Rect(-9.25, 2.5, 0.5, 0.5));
+	c2A2->color = Colour(0, 0, 0);
+
+	Collectible* c2A3 = new Collectible(Rect(4.75, 3.5, 0.5, 0.5));
+	c2A3->color = Colour(0, 0, 0);
+
+	Collectible* c2A4 = new Collectible(Rect(8.75, 5.5, 0.5, 0.5));
+	c2A4->color = Colour(0, 0, 0);
+
+	collectible.push_back(c2A1);
+	collectible.push_back(c2A2);
+	collectible.push_back(c2A3);
+	collectible.push_back(c2A4);
+
+	return collectible;
+}
+

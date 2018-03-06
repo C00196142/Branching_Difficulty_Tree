@@ -15,6 +15,7 @@ Player::Player()
 	fallDeaths = 0;
 	enemyDeaths = 0;
 	collectibles = 0;
+	maxCollectibles = 0;
 }
 Player::~Player()
 {
@@ -33,6 +34,7 @@ void Player::Update(unsigned int deltaTime)
 
 	checkFallDeath();
 	falling = true;
+
 }
 
 void Player::Render(Renderer& r)
@@ -299,7 +301,8 @@ void Player::collectibleCollision(Rect obj)
 	if ((rect.pos.x + rect.size.w) > obj.pos.x && rect.pos.x < (obj.pos.x + obj.size.w) && rect.pos.y < (obj.pos.y + obj.size.h) && (rect.pos.y + rect.size.h) > obj.pos.y)
 	{
 		collectibles++;
-		std::cout << "Collected" << std::endl;
+		std::cout << "Collected: " << collectibles << " of " << maxCollectibles << std::endl;
+
 	}
 }
 

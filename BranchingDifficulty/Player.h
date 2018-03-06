@@ -4,6 +4,7 @@
 #include "BasicTypes.h"
 #include "EventListener.h"
 #include "Renderer.h"
+#include "Collectible.h"
 
 class Player :public GameObject, public EventListener
 {
@@ -22,7 +23,6 @@ public:
 	void MaxSpeed();
 	void CheckJumpingStatus();
 	void onEvent(EventListener::Event);
-	void ChangePos(int x, int y);
 	void setCanJump(bool jumpBool);
 	void setOnPlatform(bool platBool);
 
@@ -31,13 +31,17 @@ public:
 	void collectibleCollision(Rect obj);
 	
 	void checkFallDeath();
+	void ChangePos(int x, int y);
 	void resetPlayer(int resetX, int resetY);
 	bool alive = true;
+	bool allCollected = false;
 	Rect rect;
+	Collectible c;
 
 	int fallDeaths;
 	int enemyDeaths;
 	int collectibles;
+	int maxCollectibles;
 
 private:
 
