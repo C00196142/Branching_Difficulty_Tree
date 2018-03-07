@@ -50,7 +50,6 @@ class Game :public EventListener
 	LevelManager levels;
 
 	FinishLine* finish = new FinishLine(Rect(1000, 0, 0, 0));
-
 	Boss* boss;
 
 	int r, g, b, a;
@@ -60,12 +59,6 @@ class Game :public EventListener
 
 	clock_t start;
 	int duration;
-
-	Enemy* enemy1 = new Enemy(Rect(1000, 0, 0, 0));
-	Enemy* enemy2 = new Enemy(Rect(1000, 0, 0, 0));
-	Enemy* enemy3 = new Enemy(Rect(1000, 0, 0, 0));
-	Enemy* enemy4 = new Enemy(Rect(1000, 0, 0, 0));
-	Enemy* enemy5 = new Enemy(Rect(1000, 0, 0, 0));
 
 public:
 	enum gameStage { menu, lvl1, lvl2A, lvl2B, 

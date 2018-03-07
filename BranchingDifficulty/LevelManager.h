@@ -51,5 +51,13 @@ public:
 	//Control the enemies in each level
 	std::vector<Enemy*> enemy3A();
 	std::vector<Enemy*> enemy3B();
+	std::vector<Enemy*> enemy3C();
+	std::vector<Enemy*> enemy3D();
+	std::vector<Enemy*> enemy3E();
+	std::vector<Enemy*> enemy3F();
+	std::vector<Enemy*> enemy3G();
+
+	std::vector<Enemy*> enemy4E_enemy();
+	std::vector<Enemy*> enemy4H_enemy();
 };
 

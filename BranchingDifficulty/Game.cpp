@@ -6,6 +6,7 @@ using namespace std;
 const int SCREEN_FPS = 100;
 const int SCREEN_TICKS_PER_FRAME = 1000 / SCREEN_FPS;
 
+
 //The Constructor for the game
 Game::Game()
 {
@@ -72,7 +73,6 @@ bool Game::init()
 	inputManager.AddListener(EventListener::Event::JUMP, player);
 	inputManager.AddListener(EventListener::Event::SUPERJUMP, player);
 
-	//numCollect = 0;
 	return true;
 
 }
@@ -101,23 +101,19 @@ void Game::update()
 	player->setInAir(true);
 	player->setOnPlatform(false);
 
-	//these for loops check if there is any collision with gameObjects (like platforms or water) and thomas 
+	//Check collision between player and Platforms
 	for (int i = 0; i < blocks.size(); i++)
 	{
 		player->PlatformCollision(blocks[i]->floor);
 	}
 
+	//Check collision between player and enemy
 	for (int e = 0; e < enemies.size(); e++)
 	{
 		player->enemyCollision(enemies[e]->enemy);
 	}
 
-	player->enemyCollision(enemy1->enemy);
-	player->enemyCollision(enemy2->enemy);
-	player->enemyCollision(enemy3->enemy);
-	player->enemyCollision(enemy4->enemy);
-	player->enemyCollision(enemy5->enemy);
-
+	//Check collision between player and collectibles
 	for (int j = 0; j < collectibles.size(); j++)
 	{
 		player->collectibleCollision(collectibles[j]->collectible);
@@ -220,8 +216,8 @@ void Game::onEvent(EventListener::Event evt)
 		mainMenu = false;
 		//stage = lvl1;
 		//stage = lvl2A;
-		stage = lvl3A;
-		//stage = lvl4E_enemy;
+		//stage = lvl3G;
+		stage = lvl4E_fall;
 		changeLevel = true;
 		start = clock();
 	}
@@ -604,27 +600,17 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(collectibles[j]);
 			}
+			//Loads in enemies from the level Manager
+			enemies = levels.enemy3C();
+			for (int e = 0; e < enemies.size(); e++)
+			{
+				gameObjects.push_back(enemies[e]);
+			}
+
 			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			enemy1 = new Enemy(Rect(6, -2, 1, 1));
-			enemy1->color = Colour(244, 66, 66);
-
-			enemy2 = new Enemy(Rect(-2, 2, 1, 1));
-			enemy2->color = Colour(244, 66, 66);
-
-			enemy3 = new Enemy(Rect(-3, 0, 1, 1));
-			enemy3->color = Colour(244, 66, 66);
-
-			enemy4 = new Enemy(Rect(-5, 2, 1, 1));
-			enemy4->color = Colour(244, 66, 66);
-
 			player->ChangePos(-8, 4);
-
-			gameObjects.push_back(enemy1);
-			gameObjects.push_back(enemy2);
-			gameObjects.push_back(enemy3);
-			gameObjects.push_back(enemy4);
 
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
@@ -681,20 +667,18 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(collectibles[j]);
 			}
+			//Loads in enemies from the level Manager
+			enemies = levels.enemy3D();
+			for (int e = 0; e < enemies.size(); e++)
+			{
+				gameObjects.push_back(enemies[e]);
+			}
 
 			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			enemy1 = new Enemy(Rect(6, -2, 1, 1));
-			enemy1->color = Colour(244, 66, 66);
-
-			enemy2 = new Enemy(Rect(-3, 0, 1, 1));
-			enemy2->color = Colour(244, 66, 66);
-
 			player->ChangePos(-8, 4);
 
-			gameObjects.push_back(enemy1);
-			gameObjects.push_back(enemy2);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -754,20 +738,17 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(collectibles[j]);
 			}
+			//Loads in enemies from the level Manager
+			enemies = levels.enemy3E();
+			for (int e = 0; e < enemies.size(); e++)
+			{
+				gameObjects.push_back(enemies[e]);
+			}
 			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			enemy1 = new Enemy(Rect(6, -2, 1, 1));
-			enemy1->color = Colour(244, 66, 66);
-
-			enemy2 = new Enemy(Rect(-3, 0, 1, 1));
-			enemy2->color = Colour(244, 66, 66);
-
-
 			player->ChangePos(-8, 4);
 
-			gameObjects.push_back(enemy1);
-			gameObjects.push_back(enemy2);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -826,23 +807,17 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(collectibles[j]);
 			}
+			//Loads in enemies from the level Manager
+			enemies = levels.enemy3F();
+			for (int e = 0; e < enemies.size(); e++)
+			{
+				gameObjects.push_back(enemies[e]);
+			}
 			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			enemy1 = new Enemy(Rect(6, -2, 1, 1));
-			enemy1->color = Colour(244, 66, 66);
-
-			enemy2 = new Enemy(Rect(-3, 0, 1, 1));
-			enemy2->color = Colour(244, 66, 66);
-
-			enemy3 = new Enemy(Rect(-6, 0, 1, 1));
-			enemy3->color = Colour(244, 66, 66);
-
 			player->ChangePos(-8, 4);
 
-			gameObjects.push_back(enemy1);
-			gameObjects.push_back(enemy2);
-			gameObjects.push_back(enemy3);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -901,24 +876,18 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(collectibles[j]);
 			}
+			//Loads in enemies from the level Manager
+			enemies = levels.enemy3G();
+			for (int e = 0; e < enemies.size(); e++)
+			{
+				gameObjects.push_back(enemies[e]);
+			}
 
 			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			enemy1 = new Enemy(Rect(6, -2, 1, 1));
-			enemy1->color = Colour(244, 66, 66);
-
-			enemy2 = new Enemy(Rect(-3, 0, 1, 1));
-			enemy2->color = Colour(244, 66, 66);
-
-			enemy3 = new Enemy(Rect(-6, 0, 1, 1));
-			enemy3->color = Colour(244, 66, 66);
-
 			player->ChangePos(-8, 4);
 
-			gameObjects.push_back(enemy1);
-			gameObjects.push_back(enemy2);
-			gameObjects.push_back(enemy3);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -970,31 +939,20 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(blocks[i]);
 			}
+			//Loads in enemies from the level Manager
+			enemies = levels.enemy4E_enemy();
+			for (int e = 0; e < enemies.size(); e++)
+			{
+				gameObjects.push_back(enemies[e]);
+			}
 
 			finish = new FinishLine(Rect(9, -1, 1, 1));
 			finish->color = Colour(255, 255, 255);
-
-			enemy1 = new Enemy(Rect(-7, -1, 1, 1));
-			enemy1->color = Colour(244, 66, 66);
-
-			enemy2 = new Enemy(Rect(-5, -1, 1, 1));
-			enemy2->color = Colour(244, 66, 66);
-
-			enemy3 = new Enemy(Rect(0, -1, 1, 1));
-			enemy3->color = Colour(244, 66, 66);
-
-			enemy4 = new Enemy(Rect(5, -1, 1, 1));
-			enemy4->color = Colour(244, 66, 66);
 
 			boss = new Boss(Rect(0, 5, 2, 2));
 			boss->color = Colour(255, 0, 0);
 
 			player->ChangePos(-10, 0);
-
-			gameObjects.push_back(enemy1);
-			gameObjects.push_back(enemy2);
-			gameObjects.push_back(enemy3);
-			gameObjects.push_back(enemy4);
 
 			gameObjects.push_back(boss);
 			gameObjects.push_back(finish);
@@ -1075,32 +1033,17 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(blocks[i]);
 			}
+			//Loads in enemies from the level Manager
+			enemies = levels.enemy4H_enemy();
+			for (int e = 0; e < enemies.size(); e++)
+			{
+				gameObjects.push_back(enemies[e]);
+			}
 
 			finish = new FinishLine(Rect(9, -1, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			enemy1 = new Enemy(Rect(-7, -1, 1, 1));
-			enemy1->color = Colour(244, 66, 66);
-
-			enemy2 = new Enemy(Rect(-5, -1, 1, 1));
-			enemy2->color = Colour(244, 66, 66);
-
-			enemy3 = new Enemy(Rect(0, -1, 1, 1));
-			enemy3->color = Colour(244, 66, 66);
-
-			enemy4 = new Enemy(Rect(3, -1, 1, 1));
-			enemy4->color = Colour(244, 66, 66);
-
-			enemy5 = new Enemy(Rect(6, -1, 1, 1));
-			enemy5->color = Colour(244, 66, 66);
-
 			player->ChangePos(-10, 0);
-
-			gameObjects.push_back(enemy1);
-			gameObjects.push_back(enemy2);
-			gameObjects.push_back(enemy3);
-			gameObjects.push_back(enemy4);
-			gameObjects.push_back(enemy5);
 
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
@@ -1182,10 +1125,9 @@ void Game::moveEnemy()
 {
 	if (stage == lvl3A)
 	{
-				//(xMin, xMax, speed)
-		//enemy1->Move(4, 7, 0.015);
 		for (int e = 0; e < enemies.size(); e++)
 		{
+							//(xMin, xMax, speed)
 			enemies.at(0)->Move(4, 7, 0.015);
 		}
 	}
@@ -1199,49 +1141,71 @@ void Game::moveEnemy()
 	}
 	else if (stage == lvl3C)
 	{
-		enemy1->Move(3, 7, 0.010);
-		enemy2->Move(-2, -1, 0.015);
-		enemy3->Move(-4, 0, 0.010);
-		enemy4->Move(-6, -5, 0.015);
+		for (int e = 0; e < enemies.size(); e++)
+		{
+			enemies.at(0)->Move(3, 7, 0.0025);
+			enemies.at(1)->Move(-2, -1, 0.005);
+			enemies.at(2)->Move(-4, 0, 0.0025);
+			enemies.at(3)->Move(-6, -5, 0.005);
+		}
 	}
 	else if (stage == lvl3D)
 	{
-		enemy1->Move(5, 8, 0.010);
-		enemy2->Move(-4, -1, 0.010);
+		for (int e = 0; e < enemies.size(); e++)
+		{
+			enemies.at(0)->Move(5, 8, 0.010);
+			enemies.at(1)->Move(-4, -1, 0.010);
+
+		}
 	}
 	else if (stage == lvl3E)
 	{
-		enemy1->Move(3, 7, 0.015);
-		enemy2->Move(-4, -1, 0.010);
+		for (int e = 0; e < enemies.size(); e++)
+		{
+			enemies.at(0)->Move(3, 7, 0.015);
+			enemies.at(1)->Move(-4, -1, 0.010);
+		}
 	}
 	else if (stage == lvl3F)
 	{
-		enemy1->Move(3, 7, 0.015);
-		enemy2->Move(-4, -1, 0.015);
-		enemy3->Move(-8, -5, 0.015);
+		for (int e = 0; e < enemies.size(); e++)
+		{
+			enemies.at(0)->Move(3, 7, 0.010);
+			enemies.at(1)->Move(-4, -1, 0.010);
+			enemies.at(2)->Move(-8, -5, 0.010);
+		}
 	}
 	else if (stage == lvl3G)
 	{
-		enemy1->Move(3, 7, 0.015);
-		enemy2->Move(-4, -1, 0.015);
-		enemy3->Move(-8, -5, 0.015);
+		for (int e = 0; e < enemies.size(); e++)
+		{
+			enemies.at(0)->Move(3, 7, 0.010);
+			enemies.at(1)->Move(-4, -1, 0.010);
+			enemies.at(2)->Move(-8, -5, 0.010);
+		}
 	}
 	else if (stage == lvl4E_enemy)
 	{
-		enemy1->Move(-9, -7, 0.010);
-		enemy2->Move(-5, -3, 0.010);
-		enemy3->Move(-2, 0, 0.010);
-		enemy4->Move(2, 6, 0.010);
+		for (int e = 0; e < enemies.size(); e++)
+		{
+			enemies.at(0)->Move(-9, -7, 0.005);
+			enemies.at(1)->Move(-5, -3, 0.005);
+			enemies.at(2)->Move(-2, 0, 0.005);
+			enemies.at(3)->Move(2, 6, 0.005);
+		}
 
 		boss->Move(-5, 5, 0.005);
 	}
 	else if (stage == lvl4H_enemy)
 	{
-		enemy1->Move(-9, -7, 0.015);
-		enemy2->Move(-5, -3, 0.015);
-		enemy3->Move(-2, 0, 0.015);
-		enemy4->Move(2, 4, 0.015);
-		enemy5->Move(5, 6, 0.015);
+		for (int e = 0; e < enemies.size(); e++)
+		{
+			enemies.at(0)->Move(-9, -7, 0.005);
+			enemies.at(1)->Move(-5, -3, 0.005);
+			enemies.at(2)->Move(-2, 0, 0.005);
+			enemies.at(3)->Move(2, 4, 0.005);
+			enemies.at(4)->Move(5, 6, 0.005);
+		}
 	}
 }
 

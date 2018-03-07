@@ -10,6 +10,8 @@ LevelManager::~LevelManager()
 {
 }
 
+//PLATFORMS
+//Draw and give positions
 std::vector<Platform*> LevelManager::level1() //Complete
 {
 	block.clear();
@@ -829,6 +831,8 @@ std::vector<Platform*> LevelManager::level4H_time()
 	return block;
 }
 
+//COLLECTIBLES
+//Draw and give positions
 std::vector<Collectible*> LevelManager::c2A()
 {
 	collectible.clear();
@@ -1053,6 +1057,8 @@ std::vector<Collectible*> LevelManager::c3G()
 	return collectible;
 }
 
+//ENEMIES
+//Draw and give positions
 std::vector<Enemy*> LevelManager::enemy3A()
 {
 	enemy.clear();
@@ -1077,6 +1083,154 @@ std::vector<Enemy*> LevelManager::enemy3B()
 
 	enemy.push_back(e3B1);
 	enemy.push_back(e3B2);
+
+	return enemy;
+}
+
+std::vector<Enemy*> LevelManager::enemy3C()
+{
+	enemy.clear();
+
+	Enemy* e3C1 = new Enemy(Rect(6, -2, 1, 1));
+	e3C1->color = Colour(244, 66, 66);
+
+	Enemy* e3C2 = new Enemy(Rect(-2, 2, 1, 1));
+	e3C2->color = Colour(244, 66, 66);
+
+	Enemy* e3C3 = new Enemy(Rect(-3, 0, 1, 1));
+	e3C3->color = Colour(244, 66, 66);
+
+	Enemy* e3C4 = new Enemy(Rect(-5, 2, 1, 1));
+	e3C4->color = Colour(244, 66, 66);
+
+	enemy.push_back(e3C1);
+	enemy.push_back(e3C2);
+	enemy.push_back(e3C3);
+	enemy.push_back(e3C4);
+
+	return enemy;
+}
+
+std::vector<Enemy*> LevelManager::enemy3D()
+{
+	enemy.clear();
+
+	Enemy* e3D1 = new Enemy(Rect(6, -2, 1, 1));
+	e3D1->color = Colour(244, 66, 66);
+
+	Enemy* e3D2 = new Enemy(Rect(-3, 0, 1, 1));
+	e3D2->color = Colour(244, 66, 66);
+
+	enemy.push_back(e3D1);
+	enemy.push_back(e3D2);
+
+	return enemy;
+}
+
+std::vector<Enemy*> LevelManager::enemy3E()
+{
+	enemy.clear();
+
+	Enemy* e3E1 = new Enemy(Rect(6, -2, 1, 1));
+	e3E1->color = Colour(244, 66, 66);
+
+	Enemy* e3E2 = new Enemy(Rect(-3, 0, 1, 1));
+	e3E2->color = Colour(244, 66, 66);
+
+	enemy.push_back(e3E1);
+	enemy.push_back(e3E2);
+
+	return enemy;
+}
+
+std::vector<Enemy*> LevelManager::enemy3F()
+{
+	enemy.clear();
+
+	Enemy* e3F1 = new Enemy(Rect(6, -2, 1, 1));
+	e3F1->color = Colour(244, 66, 66);
+
+	Enemy* e3F2 = new Enemy(Rect(-3, 0, 1, 1));
+	e3F2->color = Colour(244, 66, 66);
+
+	Enemy* e3F3 = new Enemy(Rect(-6, 0, 1, 1));
+	e3F3->color = Colour(244, 66, 66);
+
+	enemy.push_back(e3F1);
+	enemy.push_back(e3F2);
+	enemy.push_back(e3F3);
+
+	return enemy;
+}
+
+std::vector<Enemy*> LevelManager::enemy3G()
+{
+	enemy.clear();
+
+	Enemy* e3G1 = new Enemy(Rect(6, -2, 1, 1));
+	e3G1->color = Colour(244, 66, 66);
+
+	Enemy* e3G2 = new Enemy(Rect(-3, 0, 1, 1));
+	e3G2->color = Colour(244, 66, 66);
+
+	Enemy* e3G3 = new Enemy(Rect(-6, 0, 1, 1));
+	e3G3->color = Colour(244, 66, 66);
+
+	enemy.push_back(e3G1);
+	enemy.push_back(e3G2);
+	enemy.push_back(e3G3);
+
+	return enemy;
+}
+
+std::vector<Enemy*> LevelManager::enemy4E_enemy()
+{
+	enemy.clear();
+
+	Enemy* e4Ee1 = new Enemy(Rect(-7, -1, 1, 1));
+	e4Ee1->color = Colour(244, 66, 66);
+
+	Enemy* e4Ee2 = new Enemy(Rect(-5, -1, 1, 1));
+	e4Ee2->color = Colour(244, 66, 66);
+
+	Enemy* e4Ee3 = new Enemy(Rect(0, -1, 1, 1));
+	e4Ee3->color = Colour(244, 66, 66);
+
+	Enemy* e4Ee4 = new Enemy(Rect(5, -1, 1, 1));
+	e4Ee4->color = Colour(244, 66, 66);
+
+	enemy.push_back(e4Ee1);
+	enemy.push_back(e4Ee2);
+	enemy.push_back(e4Ee3);
+	enemy.push_back(e4Ee4);
+
+	return enemy;
+}
+
+std::vector<Enemy*> LevelManager::enemy4H_enemy()
+{
+	enemy.clear();
+
+	Enemy* e4He1 = new Enemy(Rect(-7, -1, 1, 1));
+	e4He1->color = Colour(244, 66, 66);
+
+	Enemy* e4He2 = new Enemy(Rect(-5, -1, 1, 1));
+	e4He2->color = Colour(244, 66, 66);
+
+	Enemy* e4He3 = new Enemy(Rect(0, -1, 1, 1));
+	e4He3->color = Colour(244, 66, 66);
+
+	Enemy* e4He4 = new Enemy(Rect(3, -1, 1, 1));
+	e4He4->color = Colour(244, 66, 66);
+
+	Enemy* e4He5 = new Enemy(Rect(6, -1, 1, 1));
+	e4He5->color = Colour(244, 66, 66);
+
+	enemy.push_back(e4He1);
+	enemy.push_back(e4He2);
+	enemy.push_back(e4He3);
+	enemy.push_back(e4He4);
+	enemy.push_back(e4He5);
 
 	return enemy;
 }
