@@ -300,7 +300,7 @@ std::vector<Platform*> LevelManager::level3D()
 	Platform* floor3D2 = new Platform(Rect(-7, -1, 2, 1));
 	floor3D2->color = Colour(200, 0, 200);
 
-	Platform* floor3D3 = new Platform(Rect(-4, -1, 2, 1));
+	Platform* floor3D3 = new Platform(Rect(-4, -1, 4, 1));
 	floor3D3->color = Colour(200, 0, 200);
 
 	Platform* floor3D4 = new Platform(Rect(1, -8, 2, 2));
@@ -368,7 +368,7 @@ std::vector<Platform*> LevelManager::level3E()
 	Platform* floor3E2 = new Platform(Rect(-7, -1, 2, 1));
 	floor3E2->color = Colour(200, 0, 200);
 
-	Platform* floor3E3 = new Platform(Rect(-4, -1, 2, 1));
+	Platform* floor3E3 = new Platform(Rect(-4, -1, 4, 1));
 	floor3E3->color = Colour(200, 0, 200);
 
 	Platform* floor3E4 = new Platform(Rect(1, -8, 2, 2));
@@ -931,4 +931,152 @@ std::vector<Collectible*> LevelManager::c3C()
 	collectible.push_back(c3C2);
 
 	return collectible;
+}
+
+std::vector<Collectible*> LevelManager::c3D()
+{
+	collectible.clear();
+
+	Collectible* c3D1 = new Collectible(Rect(-9.5, 0.5, 0.5, 0.5));
+	c3D1->color = Colour(0, 0, 0);
+
+	Collectible* c3D2 = new Collectible(Rect(-3.5, 0.5, 0.5, 0.5));
+	c3D2->color = Colour(0, 0, 0);
+
+	Collectible* c3D3 = new Collectible(Rect(-3.75, -5.5, 0.5, 0.5));
+	c3D3->color = Colour(0, 0, 0);
+
+	Collectible* c3D4 = new Collectible(Rect(2, -5.5, 0.5, 0.5));
+	c3D4->color = Colour(0, 0, 0);
+
+	Collectible* c3D5 = new Collectible(Rect(3.25, -1.5, 0.5, 0.5));
+	c3D5->color = Colour(0, 0, 0);
+
+	Collectible* c3D6 = new Collectible(Rect(9, -1.5, 0.5, 0.5));
+	c3D6->color = Colour(0, 0, 0);
+
+	collectible.push_back(c3D1);
+	collectible.push_back(c3D2);
+	collectible.push_back(c3D3);
+	collectible.push_back(c3D4);
+	collectible.push_back(c3D5);
+	collectible.push_back(c3D6);
+
+	return collectible;
+}
+
+std::vector<Collectible*> LevelManager::c3E()
+{
+	collectible.clear();
+
+	Collectible* c3E1 = new Collectible(Rect(-9.75, -4.5, 0.5, 0.5));
+	c3E1->color = Colour(0, 0, 0);
+
+	Collectible* c3E2 = new Collectible(Rect(-3.5, 0.5, 0.5, 0.5));
+	c3E2->color = Colour(0, 0, 0);
+
+	Collectible* c3E3 = new Collectible(Rect(-3.75, -5.5, 0.5, 0.5));
+	c3E3->color = Colour(0, 0, 0);
+
+	Collectible* c3E4 = new Collectible(Rect(2, -5.5, 0.5, 0.5));
+	c3E4->color = Colour(0, 0, 0);
+
+	Collectible* c3E5 = new Collectible(Rect(3.25, -1.5, 0.5, 0.5));
+	c3E5->color = Colour(0, 0, 0);
+
+	collectible.push_back(c3E1);
+	collectible.push_back(c3E2);
+	collectible.push_back(c3E3);
+	collectible.push_back(c3E4);
+	collectible.push_back(c3E5);
+
+	return collectible;
+}
+
+std::vector<Collectible*> LevelManager::c3F()
+{
+	collectible.clear();
+
+	Collectible* c3F1 = new Collectible(Rect(-4, 0.5, 0.5, 0.5));
+	c3F1->color = Colour(0, 0, 0);
+
+	Collectible* c3F2 = new Collectible(Rect(-3.75, -5.75, 0.5, 0.5));
+	c3F2->color = Colour(0, 0, 0);
+
+	Collectible* c3F3 = new Collectible(Rect(1.5, -5.75, 0.5, 0.5));
+	c3F3->color = Colour(0, 0, 0);
+
+	Collectible* c3F4 = new Collectible(Rect(3, -1.5, 0.5, 0.5));
+	c3F4->color = Colour(0, 0, 0);
+
+	Collectible* c3F5 = new Collectible(Rect(9, -1.5, 0.5, 0.5));
+	c3F5->color = Colour(0, 0, 0);
+
+	collectible.push_back(c3F1);
+	collectible.push_back(c3F2);
+	collectible.push_back(c3F3);
+	collectible.push_back(c3F4);
+	collectible.push_back(c3F5);
+
+	return collectible;
+}
+
+std::vector<Collectible*> LevelManager::c3G()
+{
+	collectible.clear();
+
+	Collectible* c3G1 = new Collectible(Rect(-4, 0.5, 0.5, 0.5));
+	c3G1->color = Colour(0, 0, 0);
+
+	Collectible* c3G2 = new Collectible(Rect(-3.75, -5.75, 0.5, 0.5));
+	c3G2->color = Colour(0, 0, 0);
+
+	Collectible* c3G3 = new Collectible(Rect(1.5, -5.75, 0.5, 0.5));
+	c3G3->color = Colour(0, 0, 0);
+
+	Collectible* c3G4 = new Collectible(Rect(3, -1.5, 0.5, 0.5));
+	c3G4->color = Colour(0, 0, 0);
+
+	Collectible* c3G5 = new Collectible(Rect(9, -1.5, 0.5, 0.5));
+	c3G5->color = Colour(0, 0, 0);
+
+	Collectible* c3G6 = new Collectible(Rect(-9.75, -5.75, 0.5, 0.5));
+	c3G6->color = Colour(0, 0, 0);
+
+	collectible.push_back(c3G1);
+	collectible.push_back(c3G2);
+	collectible.push_back(c3G3);
+	collectible.push_back(c3G4);
+	collectible.push_back(c3G5);
+	collectible.push_back(c3G6);
+
+	return collectible;
+}
+
+std::vector<Enemy*> LevelManager::enemy3A()
+{
+	enemy.clear();
+
+	Enemy* e3A1 = new Enemy(Rect(6, -2, 1, 1));
+	e3A1->color = Colour(244, 66, 66);
+
+	enemy.push_back(e3A1);
+
+	return enemy;
+}
+
+std::vector<Enemy*> LevelManager::enemy3B()
+{
+	enemy.clear();
+
+	Enemy* e3B1 = new Enemy(Rect(6, -2, 1, 1));
+	e3B1->color = Colour(244, 66, 66);
+
+	Enemy* e3B2 = new Enemy(Rect(-2, 2, 1, 1));
+	e3B2->color = Colour(244, 66, 66);
+
+	enemy.push_back(e3B1);
+	enemy.push_back(e3B2);
+
+	return enemy;
 }

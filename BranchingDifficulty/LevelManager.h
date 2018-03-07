@@ -2,6 +2,7 @@
 
 #include "Platform.h"
 #include "Collectible.h"
+#include "Enemy.h"
 
 class LevelManager
 {
@@ -12,6 +13,7 @@ public:
 	//Control the platforms in each level
 	std::vector<Platform*> block;
 	std::vector<Collectible*> collectible;
+	std::vector<Enemy*> enemy;
 
 	std::vector<Platform*> level1();
 
@@ -41,7 +43,13 @@ public:
 	std::vector<Collectible*> c3A();
 	std::vector<Collectible*> c3B();
 	std::vector<Collectible*> c3C();
+	std::vector<Collectible*> c3D();
+	std::vector<Collectible*> c3E();
+	std::vector<Collectible*> c3F();
+	std::vector<Collectible*> c3G();
 
-
+	//Control the enemies in each level
+	std::vector<Enemy*> enemy3A();
+	std::vector<Enemy*> enemy3B();
 };
 

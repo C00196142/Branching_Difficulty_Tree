@@ -107,6 +107,11 @@ void Game::update()
 		player->PlatformCollision(blocks[i]->floor);
 	}
 
+	for (int e = 0; e < enemies.size(); e++)
+	{
+		player->enemyCollision(enemies[e]->enemy);
+	}
+
 	player->enemyCollision(enemy1->enemy);
 	player->enemyCollision(enemy2->enemy);
 	player->enemyCollision(enemy3->enemy);
@@ -215,8 +220,8 @@ void Game::onEvent(EventListener::Event evt)
 		mainMenu = false;
 		//stage = lvl1;
 		//stage = lvl2A;
-		stage = lvl3D;
-		//stage = lvl4E_fall;
+		stage = lvl3A;
+		//stage = lvl4E_enemy;
 		changeLevel = true;
 		start = clock();
 	}
@@ -461,16 +466,18 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(collectibles[j]);
 			}
+			//Loads in enemies from the level Manager
+			enemies = levels.enemy3A();
+			for (int e = 0; e < enemies.size(); e++)
+			{
+				gameObjects.push_back(enemies[e]);
+			}
 
 			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			enemy1 = new Enemy(Rect(6, -2, 1, 1));
-			enemy1->color = Colour(244, 66, 66);
-
 			player->ChangePos(-8, 4);
 
-			gameObjects.push_back(enemy1);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -529,19 +536,16 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(collectibles[j]);
 			}
-			finish = new FinishLine(Rect(20, 5, 1, 1));
-			finish->color = Colour(255, 255, 255);
 
-			enemy1 = new Enemy(Rect(6, -2, 1, 1));
-			enemy1->color = Colour(244, 66, 66);
-
-			enemy2 = new Enemy(Rect(-2, 2, 1, 1));
-			enemy2->color = Colour(244, 66, 66);
+			//Loads in enemies from the level Manager
+			enemies = levels.enemy3B();
+			for (int e = 0; e < enemies.size(); e++)
+			{
+				gameObjects.push_back(enemies[e]);
+			}
 
 			player->ChangePos(-8, 4);
 
-			gameObjects.push_back(enemy1);
-			gameObjects.push_back(enemy2);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -595,12 +599,12 @@ void Game::changeStage()
 			}
 			//adds in the collectibles for the player to collect
 			player->maxCollectibles = 2;
-			collectibles = levels.c3B();
+			collectibles = levels.c3C();
 			for (int j = 0; j < collectibles.size(); j++)
 			{
 				gameObjects.push_back(collectibles[j]);
 			}
-			finish = new FinishLine(Rect(9, 5, 1, 1));
+			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
 			enemy1 = new Enemy(Rect(6, -2, 1, 1));
@@ -625,6 +629,11 @@ void Game::changeStage()
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
+		}
+		//The finish line moves on screen when all collectibles are collected
+		if (player->collectibles >= player->maxCollectibles)
+		{
+			finish->finish.pos.x = 9;
 		}
 		//Change to FINAL level
 		if (finish->levelComplete == true && player->fallDeaths <= 2)
@@ -665,7 +674,15 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(blocks[i]);
 			}
-			finish = new FinishLine(Rect(9, 5, 1, 1));
+			//adds in the collectibles for the player to collect
+			player->maxCollectibles = 6;
+			collectibles = levels.c3D();
+			for (int j = 0; j < collectibles.size(); j++)
+			{
+				gameObjects.push_back(collectibles[j]);
+			}
+
+			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
 			enemy1 = new Enemy(Rect(6, -2, 1, 1));
@@ -682,6 +699,11 @@ void Game::changeStage()
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
+		//The finish line moves on screen when all collectibles are collected
+		if (player->collectibles >= player->maxCollectibles)
+		{
+			finish->finish.pos.x = 9;
+		}
 		//Change to FINAL level
 		if (finish->levelComplete == true && duration <= 40)
 		{
@@ -690,6 +712,7 @@ void Game::changeStage()
 			cout << "Level 4E_Time" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		else if (finish->levelComplete == true && player->fallDeaths <= 2 && duration > 40)
 		{
@@ -698,6 +721,7 @@ void Game::changeStage()
 			cout << "Level 4E_Fall" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		else if (finish->levelComplete == true && player->enemyDeaths <= 3 && player->fallDeaths > 2 && duration > 40)
 		{
@@ -706,6 +730,7 @@ void Game::changeStage()
 			cout << "Level 4E_Enemy" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		if (!player->alive)
 		{
@@ -722,7 +747,14 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(blocks[i]);
 			}
-			finish = new FinishLine(Rect(9, 5, 1, 1));
+			//adds in the collectibles for the player to collect
+			player->maxCollectibles = 5;
+			collectibles = levels.c3E();
+			for (int j = 0; j < collectibles.size(); j++)
+			{
+				gameObjects.push_back(collectibles[j]);
+			}
+			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
 			enemy1 = new Enemy(Rect(6, -2, 1, 1));
@@ -740,6 +772,11 @@ void Game::changeStage()
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
+		//The finish line moves on screen when all collectibles are collected
+		if (player->collectibles >= player->maxCollectibles)
+		{
+			finish->finish.pos.x = 9;
+		}
 		//Change to FINAL level
 		if (finish->levelComplete == true && duration <= 45)
 		{
@@ -748,6 +785,7 @@ void Game::changeStage()
 			cout << "Level 4E_Time" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		else if (finish->levelComplete == true && player->fallDeaths <= 2 && duration > 45)
 		{
@@ -756,7 +794,7 @@ void Game::changeStage()
 			cout << "Level 4E_Fall" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
-
+			player->collectibles = 0;
 		}
 		else if (finish->levelComplete == true && player->enemyDeaths <= 3 && player->fallDeaths > 2 && duration > 45)
 		{
@@ -765,6 +803,7 @@ void Game::changeStage()
 			cout << "Level 4E_Enemy" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		if (!player->alive)
 		{
@@ -780,8 +819,14 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(blocks[i]);
 			}
-
-			finish = new FinishLine(Rect(9, 5, 1, 1));
+			//adds in the collectibles for the player to collect
+			player->maxCollectibles = 5;
+			collectibles = levels.c3F();
+			for (int j = 0; j < collectibles.size(); j++)
+			{
+				gameObjects.push_back(collectibles[j]);
+			}
+			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
 			enemy1 = new Enemy(Rect(6, -2, 1, 1));
@@ -802,6 +847,11 @@ void Game::changeStage()
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
+		//The finish line moves on screen when all collectibles are collected
+		if (player->collectibles >= player->maxCollectibles)
+		{
+			finish->finish.pos.x = 9;
+		}
 		//Change to FINAL level
 		if (finish->levelComplete == true && player->enemyDeaths <= 3)
 		{
@@ -810,6 +860,7 @@ void Game::changeStage()
 			cout << "Level 4E_Enemy" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		else if (finish->levelComplete == true && duration <= 45 && player->enemyDeaths > 3)
 		{
@@ -818,6 +869,7 @@ void Game::changeStage()
 			cout << "Level 4E_Time" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		else if (finish->levelComplete == true && player->fallDeaths <= 2 && duration > 45 && player->enemyDeaths > 3)
 		{
@@ -826,6 +878,7 @@ void Game::changeStage()
 			cout << "Level 4E_Fall" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		if (!player->alive)
 		{
@@ -841,8 +894,15 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(blocks[i]);
 			}
+			//adds in the collectibles for the player to collect
+			player->maxCollectibles = 6;
+			collectibles = levels.c3G();
+			for (int j = 0; j < collectibles.size(); j++)
+			{
+				gameObjects.push_back(collectibles[j]);
+			}
 
-			finish = new FinishLine(Rect(9, 5, 1, 1));
+			finish = new FinishLine(Rect(20, 5, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
 			enemy1 = new Enemy(Rect(6, -2, 1, 1));
@@ -863,6 +923,11 @@ void Game::changeStage()
 			gameObjects.push_back(player);
 			changeLevel = false;
 		}
+		//The finish line moves on screen when all collectibles are collected
+		if (player->collectibles >= player->maxCollectibles)
+		{
+			finish->finish.pos.x = 9;
+		}
 		//Change to FINAL level
 		if (finish->levelComplete == true && player->fallDeaths <= 2)
 		{
@@ -871,6 +936,7 @@ void Game::changeStage()
 			cout << "Level 4E_Fall" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		else if (finish->levelComplete == true && player->enemyDeaths <= 2 && player->fallDeaths > 2)
 		{
@@ -879,6 +945,7 @@ void Game::changeStage()
 			cout << "Level 4E_Enemy" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		else if (finish->levelComplete == true && duration <= 40 && player->enemyDeaths > 2 && player->fallDeaths > 2)
 		{
@@ -887,6 +954,7 @@ void Game::changeStage()
 			cout << "Level 4E_time" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
+			player->collectibles = 0;
 		}
 		if (!player->alive)
 		{
@@ -918,6 +986,9 @@ void Game::changeStage()
 			enemy4 = new Enemy(Rect(5, -1, 1, 1));
 			enemy4->color = Colour(244, 66, 66);
 
+			boss = new Boss(Rect(0, 5, 2, 2));
+			boss->color = Colour(255, 0, 0);
+
 			player->ChangePos(-10, 0);
 
 			gameObjects.push_back(enemy1);
@@ -925,6 +996,7 @@ void Game::changeStage()
 			gameObjects.push_back(enemy3);
 			gameObjects.push_back(enemy4);
 
+			gameObjects.push_back(boss);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -1111,12 +1183,19 @@ void Game::moveEnemy()
 	if (stage == lvl3A)
 	{
 				//(xMin, xMax, speed)
-		enemy1->Move(4, 7, 0.015);
+		//enemy1->Move(4, 7, 0.015);
+		for (int e = 0; e < enemies.size(); e++)
+		{
+			enemies.at(0)->Move(4, 7, 0.015);
+		}
 	}
 	else if (stage == lvl3B)
 	{
-		enemy1->Move(4, 7, 0.015);
-		enemy2->Move(-2, -1, 0.015);
+		for (int e = 0; e < enemies.size(); e++)
+		{
+			enemies.at(0)->Move(4, 7, 0.005);
+			enemies.at(1)->Move(-2, -1, 0.005);
+		}
 	}
 	else if (stage == lvl3C)
 	{
@@ -1128,12 +1207,12 @@ void Game::moveEnemy()
 	else if (stage == lvl3D)
 	{
 		enemy1->Move(5, 8, 0.010);
-		enemy2->Move(-4, -3, 0.010);
+		enemy2->Move(-4, -1, 0.010);
 	}
 	else if (stage == lvl3E)
 	{
 		enemy1->Move(3, 7, 0.015);
-		enemy2->Move(-4, -3, 0.010);
+		enemy2->Move(-4, -1, 0.010);
 	}
 	else if (stage == lvl3F)
 	{
@@ -1153,6 +1232,8 @@ void Game::moveEnemy()
 		enemy2->Move(-5, -3, 0.010);
 		enemy3->Move(-2, 0, 0.010);
 		enemy4->Move(2, 6, 0.010);
+
+		boss->Move(-5, 5, 0.005);
 	}
 	else if (stage == lvl4H_enemy)
 	{

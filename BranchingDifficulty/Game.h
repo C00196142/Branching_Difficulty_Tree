@@ -14,6 +14,7 @@
 #include "FinishLine.h"
 #include "Menu.h"
 #include "Enemy.h"
+#include "Boss.h"
 #include "Collectible.h"
 #include <time.h>
 
@@ -43,10 +44,14 @@ class Game :public EventListener
 
 	std::vector <Platform*> blocks;
 	std::vector <Collectible*> collectibles;
+	std::vector<Enemy*> enemies;
+
 	int numCollect = 0;
 	LevelManager levels;
 
 	FinishLine* finish = new FinishLine(Rect(1000, 0, 0, 0));
+
+	Boss* boss;
 
 	int r, g, b, a;
 
