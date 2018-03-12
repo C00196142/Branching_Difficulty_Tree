@@ -215,9 +215,9 @@ void Game::onEvent(EventListener::Event evt)
 	{
 		mainMenu = false;
 		//stage = lvl1;
-		//stage = lvl2A;
+		stage = lvl2A;
 		//stage = lvl3G;
-		stage = lvl4E_fall;
+		//stage = lvl4E_fall;
 		changeLevel = true;
 		start = clock();
 	}
@@ -949,12 +949,8 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, -1, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			boss = new Boss(Rect(0, 5, 2, 2));
-			boss->color = Colour(255, 0, 0);
-
 			player->ChangePos(-10, 0);
 
-			gameObjects.push_back(boss);
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
 			changeLevel = false;
@@ -1194,7 +1190,6 @@ void Game::moveEnemy()
 			enemies.at(3)->Move(2, 6, 0.005);
 		}
 
-		boss->Move(-5, 5, 0.005);
 	}
 	else if (stage == lvl4H_enemy)
 	{
