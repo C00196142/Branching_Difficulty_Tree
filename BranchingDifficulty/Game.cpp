@@ -124,7 +124,11 @@ void Game::update()
 		collectibles[j]->collectibleCollision(player->rect);
 	}
 	
-	
+	if (stage == lvl4E_enemy || stage == lvl4H_enemy)
+	{
+		spiketime++;
+		//cout << "spikeTime" << spiketime << endl;
+	}
 
 	//millis since game started
 	unsigned int currentTime = LTimer::gameTime();
@@ -215,9 +219,9 @@ void Game::onEvent(EventListener::Event evt)
 	{
 		mainMenu = false;
 		//stage = lvl1;
-		stage = lvl2A;
-		//stage = lvl3G;
-		//stage = lvl4E_fall;
+		//stage = lvl2A;
+		//stage = lvl3B;
+		stage = lvl4E_enemy;
 		changeLevel = true;
 		start = clock();
 	}
@@ -940,6 +944,13 @@ void Game::changeStage()
 				gameObjects.push_back(blocks[i]);
 			}
 			//Loads in enemies from the level Manager
+			spikes = levels.spikes4E();
+			for (int s = 0; s < spikes.size(); s++)
+			{
+				gameObjects.push_back(spikes[s]);
+			}
+
+			//Loads in spikes from the level Manager
 			enemies = levels.enemy4E_enemy();
 			for (int e = 0; e < enemies.size(); e++)
 			{
@@ -1188,6 +1199,12 @@ void Game::moveEnemy()
 			enemies.at(1)->Move(-5, -3, 0.005);
 			enemies.at(2)->Move(-2, 0, 0.005);
 			enemies.at(3)->Move(2, 6, 0.005);
+		}
+
+		for (int s = 0; s < spikes.size(); s++)
+		{
+			spikes.at(0)->Move(-10, 10.5, 0.05);
+			spikes.at(1)->Move(-12, 10.5, 0.075);
 		}
 
 	}

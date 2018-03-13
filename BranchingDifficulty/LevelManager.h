@@ -3,6 +3,7 @@
 #include "Platform.h"
 #include "Collectible.h"
 #include "Enemy.h"
+#include "Spikes.h"
 
 class LevelManager
 {
@@ -14,6 +15,7 @@ public:
 	std::vector<Platform*> block;
 	std::vector<Collectible*> collectible;
 	std::vector<Enemy*> enemy;
+	std::vector<Spikes*> spikes;
 
 	std::vector<Platform*> level1();
 
@@ -58,6 +60,8 @@ public:
 	std::vector<Enemy*> enemy3G();
 
 	std::vector<Enemy*> enemy4E_enemy();
+	std::vector<Spikes*> spikes4E();
 	std::vector<Enemy*> enemy4H_enemy();
+	std::vector<Spikes*> spikes4H();
 };
 

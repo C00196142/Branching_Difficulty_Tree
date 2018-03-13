@@ -1207,6 +1207,23 @@ std::vector<Enemy*> LevelManager::enemy4E_enemy()
 	return enemy;
 }
 
+std::vector<Spikes*> LevelManager::spikes4E()
+{
+	spikes.clear();
+
+	Spikes* spike4E1 = new Spikes(Rect(-6, 10, 1, 20));
+	spike4E1->color = Colour(244, 66, 66);
+
+	Spikes* spike4E2 = new Spikes(Rect(1, 10, 1, 20));
+	spike4E2->color = Colour(244, 66, 66);
+
+	spikes.push_back(spike4E1);
+	spikes.push_back(spike4E2);
+
+	return spikes;
+
+}
+
 std::vector<Enemy*> LevelManager::enemy4H_enemy()
 {
 	enemy.clear();

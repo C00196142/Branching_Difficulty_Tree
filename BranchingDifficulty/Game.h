@@ -44,6 +44,7 @@ class Game :public EventListener
 	std::vector <Platform*> blocks;
 	std::vector <Collectible*> collectibles;
 	std::vector<Enemy*> enemies;
+	std::vector<Spikes*> spikes;
 
 	int numCollect = 0;
 	LevelManager levels;
@@ -57,6 +58,7 @@ class Game :public EventListener
 
 	clock_t start;
 	int duration;
+	float spiketime;
 
 public:
 	enum gameStage { menu, lvl1, lvl2A, lvl2B, 
