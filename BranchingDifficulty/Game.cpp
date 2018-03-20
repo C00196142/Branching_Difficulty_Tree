@@ -111,9 +111,17 @@ void Game::update()
 	{
 		player->PlatformCollision(fallingBlocks[i]->fallFloor);
 	}
+
 	for (int i = 0; i < fallingBlocks.size(); i++)
 	{
-		fallingBlocks[i]->PlayerCollision(player->rect);
+		if (stage == lvl4E_fall)
+		{
+			fallingBlocks[i]->PlayerCollision(player->rect, 200, 250);
+		}
+		else if (stage == lvl4H_fall)
+		{
+			fallingBlocks[i]->PlayerCollision(player->rect, 100, 150);
+		}
 	}
 
 	//Check collision between player and enemy
@@ -236,8 +244,8 @@ void Game::onEvent(EventListener::Event evt)
 		//stage = lvl1;
 		//stage = lvl2A;
 		//stage = lvl3B;
-		//stage = lvl4H_fall;
-		stage = lvl4H_enemy;
+		stage = lvl4E_fall;
+		//stage = lvl4H_enemy;
 		changeLevel = true;
 		start = clock();
 	}

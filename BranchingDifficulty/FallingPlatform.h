@@ -17,7 +17,7 @@ public:
 	FallingPlatform(Rect r) :fallFloor(r) { angVel = .0f; };
 	void Render(Renderer & r);
 	void Update(unsigned int deltaTime);
-	void PlayerCollision(Rect obj);
+	void PlayerCollision(Rect obj, int minTimer, int maxTimer);
 
 	Rect fallFloor;
 	Colour color;
