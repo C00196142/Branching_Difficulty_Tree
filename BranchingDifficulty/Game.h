@@ -42,6 +42,7 @@ class Game :public EventListener
 	Menu* startMenu = new Menu();
 
 	std::vector <Platform*> blocks;
+	std::vector <FallingPlatform*> fallingBlocks;
 	std::vector <Collectible*> collectibles;
 	std::vector<Enemy*> enemies;
 	std::vector<Spikes*> spikes;

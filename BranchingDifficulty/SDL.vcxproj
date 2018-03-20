@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="Collectible.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="FallingPlatform.cpp" />
     <ClCompile Include="FinishLine.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="InputManager.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Collectible.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EventListener.h" />
+    <ClInclude Include="FallingPlatform.h" />
     <ClInclude Include="FinishLine.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />

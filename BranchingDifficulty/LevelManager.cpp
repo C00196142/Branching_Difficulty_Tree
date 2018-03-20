@@ -596,41 +596,41 @@ std::vector<Platform*> LevelManager::level4E_fall()
 	Platform* floor4EF1 = new Platform(Rect(-10, -4, 1, 3));
 	floor4EF1->color = Colour(200, 0, 200);
 
-	Platform* floor4EF2 = new Platform(Rect(-8, -4, 1, 3));
+	Platform* floor4EF2 = new Platform(Rect(-3, -3.5, 1, 3));
 	floor4EF2->color = Colour(200, 0, 200);
 
-	Platform* floor4EF3 = new Platform(Rect(-6, -4, 1, 3));
+	Platform* floor4EF3 = new Platform(Rect(4, -4, 1, 4));
 	floor4EF3->color = Colour(200, 0, 200);
 
-	Platform* floor4EF4 = new Platform(Rect(-3, -3.5, 1, 0.5));
+	Platform* floor4EF4 = new Platform(Rect(9, 1, 1, 1));
 	floor4EF4->color = Colour(200, 0, 200);
-
-	Platform* floor4EF5 = new Platform(Rect(0, -4, 1, 3));
-	floor4EF5->color = Colour(200, 0, 200);
-
-	Platform* floor4EF6 = new Platform(Rect(2, -4, 1, 3));
-	floor4EF6->color = Colour(200, 0, 200);
-
-	Platform* floor4EF7 = new Platform(Rect(4, -4, 1, 4));
-	floor4EF7->color = Colour(200, 0, 200);
-
-	Platform* floor4EF8 = new Platform(Rect(6, -4, 1, 5));
-	floor4EF8->color = Colour(200, 0, 200);
-
-	Platform* floor4EF9 = new Platform(Rect(9, 1, 1, 1));
-	floor4EF9->color = Colour(200, 0, 200);
 
 	block.push_back(floor4EF1);
 	block.push_back(floor4EF2);
 	block.push_back(floor4EF3);
 	block.push_back(floor4EF4);
-	block.push_back(floor4EF5);
-	block.push_back(floor4EF6);
-	block.push_back(floor4EF7);
-	block.push_back(floor4EF8);
-	block.push_back(floor4EF9);
 
 	return block;
+}
+
+std::vector<FallingPlatform*> LevelManager::level4E_fallBlock()
+{
+	fallBlock.clear();
+
+	FallingPlatform* floor4EFB1 = new FallingPlatform(Rect(-7, -1, 1, 0.5));
+	floor4EFB1->color = Colour(200, 200, 0);
+
+	FallingPlatform* floor4EFB2 = new FallingPlatform(Rect(0, -1, 1, 0.5));
+	floor4EFB2->color = Colour(200, 200, 0);
+
+	FallingPlatform* floor4EFB3 = new FallingPlatform(Rect(7, 0, 1, 0.5));
+	floor4EFB3->color = Colour(200, 200, 0);
+
+	fallBlock.push_back(floor4EFB1);
+	fallBlock.push_back(floor4EFB2);
+	fallBlock.push_back(floor4EFB3);
+
+	return fallBlock;
 }
 
 std::vector<Platform*> LevelManager::level4E_time()

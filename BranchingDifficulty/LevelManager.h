@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Platform.h"
+#include "FallingPlatform.h"
 #include "Collectible.h"
 #include "Enemy.h"
 #include "Spikes.h"
@@ -13,6 +14,7 @@ public:
 
 	//Control the platforms in each level
 	std::vector<Platform*> block;
+	std::vector<FallingPlatform*> fallBlock;
 	std::vector<Collectible*> collectible;
 	std::vector<Enemy*> enemy;
 	std::vector<Spikes*> spikes;
@@ -32,6 +34,7 @@ public:
 
 	std::vector<Platform*> level4E_enemy();
 	std::vector<Platform*> level4E_fall();
+	std::vector<FallingPlatform*> level4E_fallBlock();
 	std::vector<Platform*> level4E_time();
 
 	std::vector<Platform*> level4H_enemy();

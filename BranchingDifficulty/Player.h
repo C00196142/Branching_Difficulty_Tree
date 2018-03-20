@@ -4,7 +4,6 @@
 #include "BasicTypes.h"
 #include "EventListener.h"
 #include "Renderer.h"
-#include "Collectible.h"
 
 class Player :public GameObject, public EventListener
 {
@@ -36,7 +35,6 @@ public:
 	bool alive = true;
 	bool allCollected = false;
 	Rect rect;
-	Collectible c;
 
 	int fallDeaths;
 	int enemyDeaths;

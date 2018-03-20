@@ -107,6 +107,15 @@ void Game::update()
 		player->PlatformCollision(blocks[i]->floor);
 	}
 
+	for (int i = 0; i < fallingBlocks.size(); i++)
+	{
+		player->PlatformCollision(fallingBlocks[i]->fallFloor);
+	}
+	for (int i = 0; i < fallingBlocks.size(); i++)
+	{
+		fallingBlocks[i]->PlayerCollision(player->rect);
+	}
+
 	//Check collision between player and enemy
 	for (int e = 0; e < enemies.size(); e++)
 	{
@@ -221,7 +230,8 @@ void Game::onEvent(EventListener::Event evt)
 		//stage = lvl1;
 		//stage = lvl2A;
 		//stage = lvl3B;
-		stage = lvl4E_enemy;
+		stage = lvl4E_fall;
+		//stage = lvl4E_enemy;
 		changeLevel = true;
 		start = clock();
 	}
@@ -983,6 +993,12 @@ void Game::changeStage()
 			for (int i = 0; i < blocks.size(); i++)
 			{
 				gameObjects.push_back(blocks[i]);
+			}
+
+			fallingBlocks = levels.level4E_fallBlock();
+			for (int i = 0; i < fallingBlocks.size(); i++)
+			{
+				gameObjects.push_back(fallingBlocks[i]);
 			}
 
 			finish = new FinishLine(Rect(9, 2, 1, 1));
