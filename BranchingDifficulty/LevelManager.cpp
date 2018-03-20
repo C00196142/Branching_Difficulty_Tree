@@ -722,41 +722,45 @@ std::vector<Platform*> LevelManager::level4H_fall()
 	Platform* floor4HF1 = new Platform(Rect(-10, -4, 1, 3));
 	floor4HF1->color = Colour(200, 0, 200);
 
-	Platform* floor4HF2 = new Platform(Rect(-8, -4, 0.5, 3));
+	Platform* floor4HF2 = new Platform(Rect(0, -4, 0.5, 3));
 	floor4HF2->color = Colour(200, 0, 200);
 
-	Platform* floor4HF3 = new Platform(Rect(-6, -4, 0.5, 3));
+	Platform* floor4HF3 = new Platform(Rect(6, -4, 0.5, 5));
 	floor4HF3->color = Colour(200, 0, 200);
 
-	Platform* floor4HF4 = new Platform(Rect(-3, -3.5, 1, 0.5));
+	Platform* floor4HF4 = new Platform(Rect(9, 1, 1, 1));
 	floor4HF4->color = Colour(200, 0, 200);
-
-	Platform* floor4HF5 = new Platform(Rect(0, -4, 0.5, 3));
-	floor4HF5->color = Colour(200, 0, 200);
-
-	Platform* floor4HF6 = new Platform(Rect(2, -4, 0.5, 3));
-	floor4HF6->color = Colour(200, 0, 200);
-
-	Platform* floor4HF7 = new Platform(Rect(4, -4, 0.5, 4));
-	floor4HF7->color = Colour(200, 0, 200);
-
-	Platform* floor4HF8 = new Platform(Rect(6, -4, 0.5, 5));
-	floor4HF8->color = Colour(200, 0, 200);
-
-	Platform* floor4HF9 = new Platform(Rect(9, 1, 1, 1));
-	floor4HF9->color = Colour(200, 0, 200);
 
 	block.push_back(floor4HF1);
 	block.push_back(floor4HF2);
 	block.push_back(floor4HF3);
 	block.push_back(floor4HF4);
-	block.push_back(floor4HF5);
-	block.push_back(floor4HF6);
-	block.push_back(floor4HF7);
-	block.push_back(floor4HF8);
-	block.push_back(floor4HF9);
 
 	return block;
+}
+
+std::vector<FallingPlatform*> LevelManager::level4H_fallBlock()
+{
+	fallBlock.clear();
+
+	FallingPlatform* floor4HFB1 = new FallingPlatform(Rect(-8, -1, 1, 0.5));
+	floor4HFB1->color = Colour(200, 200, 0);
+
+	FallingPlatform* floor4HFB2 = new FallingPlatform(Rect(-5, -1, 1, 0.5));
+	floor4HFB2->color = Colour(200, 200, 0);
+
+	FallingPlatform* floor4HFB3 = new FallingPlatform(Rect(-2, -1, 1, 0.5));
+	floor4HFB3->color = Colour(200, 200, 0);
+
+	FallingPlatform* floor4HFB4 = new FallingPlatform(Rect(3, -1, 1, 0.5));
+	floor4HFB4->color = Colour(200, 200, 0);
+
+	fallBlock.push_back(floor4HFB1);
+	fallBlock.push_back(floor4HFB2);
+	fallBlock.push_back(floor4HFB3);
+	fallBlock.push_back(floor4HFB4);
+
+	return fallBlock;
 }
 
 std::vector<Platform*> LevelManager::level4H_time()
@@ -1250,4 +1254,21 @@ std::vector<Enemy*> LevelManager::enemy4H_enemy()
 	enemy.push_back(e4He5);
 
 	return enemy;
+}
+
+std::vector<Spikes*> LevelManager::spikes4H()
+{
+	spikes.clear();
+
+	Spikes* spike4H1 = new Spikes(Rect(-6, 10, 1, 20));
+	spike4H1->color = Colour(244, 66, 66);
+
+	Spikes* spike4H2 = new Spikes(Rect(1, 10, 1, 20));
+	spike4H2->color = Colour(244, 66, 66);
+
+	spikes.push_back(spike4H1);
+	spikes.push_back(spike4H2);
+
+	return spikes;
+
 }

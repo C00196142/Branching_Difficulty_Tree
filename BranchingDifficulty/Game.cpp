@@ -122,6 +122,12 @@ void Game::update()
 		player->enemyCollision(enemies[e]->enemy);
 	}
 
+	//Check collision between player and spikes
+	for (int s = 0; s < spikes.size(); s++)
+	{
+		player->enemyCollision(spikes[s]->spikes);
+	}
+
 	//Check collision between player and collectibles
 	for (int j = 0; j < collectibles.size(); j++)
 	{
@@ -230,8 +236,8 @@ void Game::onEvent(EventListener::Event evt)
 		//stage = lvl1;
 		//stage = lvl2A;
 		//stage = lvl3B;
-		stage = lvl4E_fall;
-		//stage = lvl4E_enemy;
+		//stage = lvl4H_fall;
+		stage = lvl4H_enemy;
 		changeLevel = true;
 		start = clock();
 	}
@@ -953,14 +959,14 @@ void Game::changeStage()
 			{
 				gameObjects.push_back(blocks[i]);
 			}
-			//Loads in enemies from the level Manager
+			//Loads in spikes from the level Manager
 			spikes = levels.spikes4E();
 			for (int s = 0; s < spikes.size(); s++)
 			{
 				gameObjects.push_back(spikes[s]);
 			}
 
-			//Loads in spikes from the level Manager
+			//Loads in enemies from the level Manager
 			enemies = levels.enemy4E_enemy();
 			for (int e = 0; e < enemies.size(); e++)
 			{
@@ -1063,6 +1069,13 @@ void Game::changeStage()
 				gameObjects.push_back(enemies[e]);
 			}
 
+			//Loads in spikes from the level Manager
+			spikes = levels.spikes4H();
+			for (int s = 0; s < spikes.size(); s++)
+			{
+				gameObjects.push_back(spikes[s]);
+			}
+
 			finish = new FinishLine(Rect(9, -1, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
@@ -1089,6 +1102,12 @@ void Game::changeStage()
 			for (int i = 0; i < blocks.size(); i++)
 			{
 				gameObjects.push_back(blocks[i]);
+			}
+
+			fallingBlocks = levels.level4H_fallBlock();
+			for (int i = 0; i < fallingBlocks.size(); i++)
+			{
+				gameObjects.push_back(fallingBlocks[i]);
 			}
 
 			finish = new FinishLine(Rect(9, 2, 1, 1));
@@ -1233,6 +1252,11 @@ void Game::moveEnemy()
 			enemies.at(2)->Move(-2, 0, 0.005);
 			enemies.at(3)->Move(2, 4, 0.005);
 			enemies.at(4)->Move(5, 6, 0.005);
+		}
+		for (int s = 0; s < spikes.size(); s++)
+		{
+			spikes.at(0)->Move(-10, 10.5, 0.1);
+			spikes.at(1)->Move(-12, 10.5, 0.125);
 		}
 	}
 }

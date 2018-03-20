@@ -38,6 +38,7 @@ public:
 	std::vector<Platform*> level4E_time();
 
 	std::vector<Platform*> level4H_enemy();
+	std::vector<FallingPlatform*> level4H_fallBlock();
 	std::vector<Platform*> level4H_fall();
 	std::vector<Platform*> level4H_time();
 

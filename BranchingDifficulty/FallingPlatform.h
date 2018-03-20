@@ -22,6 +22,7 @@ public:
 	Rect fallFloor;
 	Colour color;
 	int count = 0;
+	bool falling = false;
 
 	//control rate of spin
 	float angVel;
