@@ -241,13 +241,15 @@ void Game::onEvent(EventListener::Event evt)
 	if (evt == EventListener::Event::START) 
 	{
 		mainMenu = false;
+		stage = tutorial;
 		//stage = lvl1;
 		//stage = lvl2A;
 		//stage = lvl3B;
-		stage = lvl4E_fall;
+		//stage = lvl4E_fall;
 		//stage = lvl4H_enemy;
 		changeLevel = true;
 		start = clock();
+		cout << "Tutorial" << endl;
 	}
 
 	// if the event QUIT happens we quit the game
@@ -274,10 +276,44 @@ void Game::changeStage()
 	{
 	case menu:
 		break;
+	case tutorial:
+		if (changeLevel)
+		{
+			blocks = levels.tutorial();
+
+			for (int i = 0; i < blocks.size(); i++)
+			{
+				gameObjects.push_back(blocks[i]);
+			}
+			finish = new FinishLine(Rect(9, -3, 1, 1));
+			finish->color = Colour(255, 255, 255);
+
+			player->ChangePos(-9.5, 0);
+
+			gameObjects.push_back(finish);
+			gameObjects.push_back(player);
+
+			changeLevel = false;
+		}
+		if (!player->alive)
+		{
+			player->resetPlayer(-9.5, 0);
+		}
+		//Change to SECOND level
+		if (finish->levelComplete == true)
+		{
+			changeLevel = true;
+			stage = lvl1;
+			cout << "Level 1" << endl;
+			player->fallDeaths = 0;
+			start = clock();
+		}
+		break;
 	case lvl1:
 		//if the player reaches the portal we set somewhere else in the code the variable changeLevel to true
 		if (changeLevel)
 		{
+			gameObjects.clear();
 			blocks = levels.level1();
 
 			for (int i = 0; i < blocks.size(); i++)

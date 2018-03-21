@@ -19,6 +19,8 @@ public:
 	std::vector<Enemy*> enemy;
 	std::vector<Spikes*> spikes;
 
+	std::vector<Platform*> tutorial();
+
 	std::vector<Platform*> level1();
 
 	std::vector<Platform*> level2A();

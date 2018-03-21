@@ -12,6 +12,26 @@ LevelManager::~LevelManager()
 
 //PLATFORMS
 //Draw and give positions
+std::vector<Platform*> LevelManager::tutorial()
+{
+	block.clear();
+
+	Platform* floorT1 = new Platform(Rect(-10, -8, 5, 5));
+	floorT1->color = Colour(200, 0, 0);
+
+	Platform* floorT2 = new Platform(Rect(-4, -8, 7, 5));
+	floorT2->color = Colour(200, 0, 0);
+
+	Platform* floorT3 = new Platform(Rect(5, -8, 5, 5));
+	floorT3->color = Colour(200, 0, 0);
+
+	block.push_back(floorT1);
+	block.push_back(floorT2);
+	block.push_back(floorT3);
+
+	return block;
+}
+
 std::vector<Platform*> LevelManager::level1() //Complete
 {
 	block.clear();

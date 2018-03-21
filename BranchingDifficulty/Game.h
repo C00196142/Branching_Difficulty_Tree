@@ -62,7 +62,7 @@ class Game :public EventListener
 	float spiketime;
 
 public:
-	enum gameStage { menu, lvl1, lvl2A, lvl2B, 
+	enum gameStage { menu, tutorial, lvl1, lvl2A, lvl2B, 
 					lvl3A, lvl3B, lvl3C, lvl3D, lvl3E, lvl3F, lvl3G,
 					lvl4E_enemy, lvl4E_fall, lvl4E_time, lvl4H_enemy, lvl4H_fall, lvl4H_time, end };
 	int stage = 0;

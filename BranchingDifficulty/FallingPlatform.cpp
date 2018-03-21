@@ -31,14 +31,18 @@ void FallingPlatform::PlayerCollision(Rect obj, int minTimer, int maxTimer)
 		}
 		if (count > maxTimer)
 		{
-			fallFloor.pos.y--;
+			falling = true;
 		}
-		if (fallFloor.pos.y <= -9)
-		{
-			falling = false;
-			fallFloor.pos.y = -1;
-			count = 0;
-			color = Colour(200, 200, 0);
-		}
+	}
+	if (falling == true)
+	{
+		fallFloor.pos.y -= 0.1;
+	}
+	if (fallFloor.pos.y <= -9)
+	{
+		falling = false;
+		fallFloor.pos.y = -1;
+		count = 0;
+		color = Colour(200, 200, 0);
 	}
 }
