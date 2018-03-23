@@ -16,6 +16,9 @@ public:
 	void Destroy();
 
 private:
+	TTF_Font* headerFont;
+	TTF_Font* nameFont;
+	TTF_Font* keyFont;
 
 	SDL_Texture* imageTexture;
 	SDL_Texture* headerTexture;

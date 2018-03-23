@@ -1,21 +1,140 @@
-﻿  Skipping... (no relevant changes detected)
+﻿  Spikes.cpp
   Renderer.cpp
   Player.cpp
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(52): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(61): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(65): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(174): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(203): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(207): warning C4244: '-=': conversion from 'const double' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(216): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(220): warning C4244: '+=': conversion from 'const double' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(228): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(238): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(242): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(313): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\player.cpp(314): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Platform.cpp
   Menu.cpp
   Main.cpp
   LTimer.cpp
   LevelManager.cpp
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(349): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(352): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(417): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(420): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(486): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(489): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(546): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\levelmanager.cpp(549): warning C4305: 'argument': truncation from 'double' to 'float'
   InputManager.cpp
   Game.cpp
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(105): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(110): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(115): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(128): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(134): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(140): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(145): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(284): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(291): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(300): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(319): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(326): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(335): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(363): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(370): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(441): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(448): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(518): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(525): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(531): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(588): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(595): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(602): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(656): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(663): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(669): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(723): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(730): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(736): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(794): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(801): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(807): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(863): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(870): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(876): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(932): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(939): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(945): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1002): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1008): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1015): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1043): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1049): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1077): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1105): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1111): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1118): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1146): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1152): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1180): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1214): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1217): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1222): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1224): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1225): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1230): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1232): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1233): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1234): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1235): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1240): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1242): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1243): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1249): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1251): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1252): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1257): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1259): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1260): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1261): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1266): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1268): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1269): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1270): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1275): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1277): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1278): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1279): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1280): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1283): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1285): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1286): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1292): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1294): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1295): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1296): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1297): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1298): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1300): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1302): warning C4305: 'argument': truncation from 'double' to 'float'
   FinishLine.cpp
+  FallingPlatform.cpp
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\fallingplatform.cpp(39): warning C4305: '-=': truncation from 'double' to 'float'
+  Enemy.cpp
+  Collectible.cpp
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\collectible.cpp(38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\collectible.cpp(39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  LINK : C:\Users\gameuser\Documents\P4Github\Branching_Difficulty_Tree\BranchingDifficulty\Debug\SDL.exe not found or not built by the last incremental link; performing full link
 Game.obj : error LNK2019: unresolved external symbol _SDL_GetTicks referenced in function "public: static unsigned int __cdecl LTimer::gameTime(void)" (?gameTime@LTimer@@SAIXZ)
 LTimer.obj : error LNK2001: unresolved external symbol _SDL_GetTicks
 Game.obj : error LNK2019: unresolved external symbol _SDL_Delay referenced in function "public: void __thiscall Game::loop(void)" (?loop@Game@@QAEXXZ)
 InputManager.obj : error LNK2019: unresolved external symbol _SDL_GetKeyboardState referenced in function "public: void __thiscall InputManager::ProcessInput(void)" (?ProcessInput@InputManager@@QAEXXZ)
 InputManager.obj : error LNK2019: unresolved external symbol _SDL_PollEvent referenced in function "public: void __thiscall InputManager::ProcessInput(void)" (?ProcessInput@InputManager@@QAEXXZ)
-Menu.obj : error LNK2019: unresolved external symbol _SDL_QueryTexture referenced in function "public: void __thiscall Menu::LoadTextStart(class Renderer &)" (?LoadTextStart@Menu@@QAEXAAVRenderer@@@Z)
-Renderer.obj : error LNK2019: unresolved external symbol _SDL_GetError referenced in function "public: bool __thiscall Renderer::init(class Size2D const &,char const *)" (?init@Renderer@@QAE_NABVSize2D@@PBD@Z)
+Menu.obj : error LNK2019: unresolved external symbol _SDL_GetError referenced in function "public: void __thiscall Menu::LoadTextStart(class Renderer &)" (?LoadTextStart@Menu@@QAEXAAVRenderer@@@Z)
+Renderer.obj : error LNK2001: unresolved external symbol _SDL_GetError
 Renderer.obj : error LNK2019: unresolved external symbol _SDL_FreeSurface referenced in function "public: struct SDL_Texture * __thiscall Renderer::SurfaceToTexture(struct SDL_Surface *)" (?SurfaceToTexture@Renderer@@QAEPAUSDL_Texture@@PAUSDL_Surface@@@Z)
 Renderer.obj : error LNK2019: unresolved external symbol _SDL_CreateWindow referenced in function "public: bool __thiscall Renderer::init(class Size2D const &,char const *)" (?init@Renderer@@QAE_NABVSize2D@@PBD@Z)
 Renderer.obj : error LNK2019: unresolved external symbol _SDL_DestroyWindow referenced in function "public: void __thiscall Renderer::destroy(void)" (?destroy@Renderer@@QAEXXZ)
@@ -27,12 +146,11 @@ Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderClear refere
 Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderDrawRect referenced in function "public: void __thiscall Renderer::drawRectOutline(class Rect const &,class Colour const &)" (?drawRectOutline@Renderer@@QAEXABVRect@@ABVColour@@@Z)
 Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderFillRect referenced in function "public: void __thiscall Renderer::drawRect(class Rect const &,class Colour const &)" (?drawRect@Renderer@@QAEXABVRect@@ABVColour@@@Z)
 Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderCopy referenced in function "public: void __thiscall Renderer::drawText(struct SDL_Texture *,struct SDL_Rect)" (?drawText@Renderer@@QAEXPAUSDL_Texture@@USDL_Rect@@@Z)
-Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderCopyEx referenced in function "public: void __thiscall Renderer::drawRotateableImage(struct SDL_Texture *,double,struct SDL_Point *,bool,struct SDL_Rect *)" (?drawRotateableImage@Renderer@@QAEXPAUSDL_Texture@@NPAUSDL_Point@@_NPAUSDL_Rect@@@Z)
 Renderer.obj : error LNK2019: unresolved external symbol _SDL_RenderPresent referenced in function "public: void __thiscall Renderer::present(void)" (?present@Renderer@@QAEXXZ)
 Renderer.obj : error LNK2019: unresolved external symbol _SDL_DestroyRenderer referenced in function "public: void __thiscall Renderer::destroy(void)" (?destroy@Renderer@@QAEXXZ)
 Renderer.obj : error LNK2019: unresolved external symbol _SDL_Init referenced in function "public: bool __thiscall Renderer::init(class Size2D const &,char const *)" (?init@Renderer@@QAE_NABVSize2D@@PBD@Z)
 Renderer.obj : error LNK2019: unresolved external symbol _IMG_LoadTexture referenced in function "public: bool __thiscall Renderer::init(class Size2D const &,char const *)" (?init@Renderer@@QAE_NABVSize2D@@PBD@Z)
-SDL2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
-SDL2_image.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
-SDL2main.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
-C:\Users\theto\Desktop\temp\Branching_Difficulty_Tree\BranchingDifficulty\Debug\SDL.exe : fatal error LNK1120: 22 unresolved externals
+SDL2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'X86'
+SDL2_image.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'X86'
+SDL2main.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'X86'
+C:\Users\gameuser\Documents\P4Github\Branching_Difficulty_Tree\BranchingDifficulty\Debug\SDL.exe : fatal error LNK1120: 20 unresolved externals

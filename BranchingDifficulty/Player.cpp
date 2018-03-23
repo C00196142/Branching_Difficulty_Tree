@@ -191,15 +191,16 @@ void Player::setCanJump(bool jumpBool)
 
 void Player::StartMove(bool left)
 {
-	if (!rising)
-	{
+	//if (!rising)
+	//{
 		inAir = true;
 		rising = false;
 		if (left)
 		{
 			if (inAir)
 			{
-				xVel -= (xAccel / 2);
+				//xVel -= (xAccel / 2);
+				xVel -= (xAccel / 1.5);
 			}
 			else
 			{
@@ -211,14 +212,15 @@ void Player::StartMove(bool left)
 		{
 			if (inAir)
 			{
-				xVel += (xAccel / 2);
+				//xVel += (xAccel / 2);
+				xVel += (xAccel / 1.5);
 			}
 			else
 			{
 				xVel += xAccel;
 			}
 		}
-	}
+	//}
 }
 void Player::Fall()
 {

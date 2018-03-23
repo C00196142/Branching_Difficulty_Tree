@@ -30,7 +30,7 @@ bool Game::init()
 	Size2D winSize(800, 600);
 
 	//creates our renderer, which looks after drawing and the window
-	renderer.init(winSize, "Simple SDL App");
+	renderer.init(winSize, "Branching Difficulty Tree");
 
 	//set up the viewport
 	//we want the vp centred on origin and 20 units wide
@@ -44,7 +44,8 @@ bool Game::init()
 	Size2D vpSize(vpWidth, vpWidth / aspectRatio);
 	Point2D vpBottomLeft(-vpSize.w / 2, -vpSize.h / 2);
 
-	mainMenu = true;
+	splashScreen = true;
+	mainMenu = false;
 	Rect vpRect(vpBottomLeft, vpSize);
 	renderer.setViewPort(vpRect);
 
@@ -159,9 +160,21 @@ void Game::update()
 	//time since last update
 	unsigned int deltaTime = currentTime - lastTime;
 
+	if (splashScreen == true)
+	{
+		mainMenu = false;
+		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
+		cout << duration << endl;
+		if (duration >= 3)
+		{
+			splashScreen = false;
+			mainMenu = true;
+		}
+	}
+
 
 	//if we are not in the mainMenu we update the gameObjects
-	if (!mainMenu && !endMenu)
+	if (!mainMenu && !endMenu && !splashScreen)
 	{
 		for (std::vector<GameObject*>::iterator i = gameObjects.begin(); i != gameObjects.end(); i++) 
 		{
@@ -181,11 +194,16 @@ void Game::render()
 	// prepare for new frame
 	renderer.clear(Colour(r, g, b, a));
 
-	//if we are in the mainMenu draw the mainMenu
-	if (mainMenu)
+	if (splashScreen)
 	{
-		renderer.loadImage();
-		startMenu->Render(renderer);
+		renderer.loadSplashImage();
+	}
+
+	//if we are in the mainMenu draw the mainMenu
+	else if (mainMenu)
+	{
+		renderer.loadMenuImage();
+		//startMenu->Render(renderer);
 	}
 
 	//if we are not in the mainMenu call the render(drawing)-function of the gameObjects
@@ -238,7 +256,8 @@ void Game::onEvent(EventListener::Event evt)
 {
 
 	// if the event START happens we start the game and change the screen to the first level
-	if (evt == EventListener::Event::START) 
+
+	if (evt == EventListener::Event::START && mainMenu) 
 	{
 		mainMenu = false;
 		stage = tutorial;
@@ -252,6 +271,8 @@ void Game::onEvent(EventListener::Event evt)
 		cout << "Tutorial" << endl;
 	}
 
+
+
 	// if the event QUIT happens we quit the game
 	if (evt == EventListener::Event::QUIT) 
 	{
@@ -259,9 +280,9 @@ void Game::onEvent(EventListener::Event evt)
 	}
 	if (evt == EventListener::Event::RESTART)
 	{
-		mainMenu = true;
+		splashScreen = true;
 		endMenu = false;
-		stage = menu;
+		stage = splash;
 
 	}
 
@@ -274,6 +295,8 @@ void Game::changeStage()
 	//checking which stage we are on
 	switch (stage)
 	{
+	case splash:
+		break;
 	case menu:
 		break;
 	case tutorial:

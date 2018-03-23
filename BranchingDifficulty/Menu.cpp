@@ -22,7 +22,32 @@ Menu::~Menu()
 }
 void Menu::LoadTextStart(Renderer& r)
 {
-	SDL_QueryTexture(headerTexture, NULL, NULL, &headerRect.w, &headerRect.h);
+	/*if (TTF_Init() == -1)
+	{
+		std::cout << " Failed to initialize TTF : " << SDL_GetError() << std::endl;
+	}*/
+
+	//headerFont = TTF_OpenFont("Amatic-Bold.ttf", 300);
+	//keyFont = TTF_OpenFont("Amatic-Bold.ttf", 600);
+	//nameFont = TTF_OpenFont("Amatic-Bold.ttf", 140);
+
+	//// Load our fonts, with a huge size
+	//// Error check
+	//if (headerFont == nullptr)
+	//{
+	//	std::cout << " Failed to load font : " << SDL_GetError() << std::endl;
+	//}
+	//if (keyFont == nullptr)
+	//{
+	//	std::cout << " Failed to load font : " << SDL_GetError() << std::endl;
+	//}
+	//if (nameFont == nullptr)
+	//{
+	//	std::cout << " Failed to load font : " << SDL_GetError() << std::endl;
+	//}
+
+
+	/*SDL_QueryTexture(headerTexture, NULL, NULL, &headerRect.w, &headerRect.h);
 	SDL_QueryTexture(keyTexture, NULL, NULL, &keyRect.w, &keyRect.h);
 	SDL_QueryTexture(nameTexture, NULL, NULL, &nameRect.w, &nameRect.h);
 
@@ -44,7 +69,7 @@ void Menu::LoadTextStart(Renderer& r)
 	nameRect.w = 520;
 	nameRect.h = 35;
 	nameRect.x = 0;
-	nameRect.y = 565;
+	nameRect.y = 565;*/
 }
 void Menu::LoadTextEnd(Renderer& r)
 {

@@ -65,10 +65,8 @@ bool Renderer::init(const Size2D& winSize, const char* title) {
 		return false;
 	}
 
-	arrowTexture = IMG_LoadTexture(sdl_renderer, "checkpoint.png");
-
-	back = IMG_LoadTexture(sdl_renderer, "red.bmp");
-	image = IMG_LoadTexture(sdl_renderer, "Image.bmp");
+	back = IMG_LoadTexture(sdl_renderer, "summer.bmp");
+	itImage = IMG_LoadTexture(sdl_renderer, "Image.bmp");
 	endBack = IMG_LoadTexture(sdl_renderer, "blue.bmp");
 
 	SDL_SetRenderDrawBlendMode(sdl_renderer, SDL_BLENDMODE_BLEND);
@@ -109,21 +107,12 @@ void Renderer::drawWorldRect(const Rect &r, const Colour &c)
 }
 
 
-
-
-
 void Renderer::drawText(SDL_Texture* texture, SDL_Rect rect)
 {
-
 	SDL_RenderCopy(sdl_renderer, texture, nullptr, &rect);
 }
-void Renderer::loadImage()
+void Renderer::loadMenuImage()
 {
-	SDL_Rect rect;
-	rect.x = 540;
-	rect.y = 460;
-	rect.w = 267;
-	rect.h = 140;
 
 	SDL_Rect backRect;
 	backRect.x = 0;
@@ -132,16 +121,27 @@ void Renderer::loadImage()
 	backRect.h = 600;
 
 
-	if (image == nullptr)
-	{
-		//std::cout << "image failed to load" << std::endl;
-	}
 	if (back == nullptr)
 	{
 		//std::cout << "image failed to load" << std::endl;
 	}
 	SDL_RenderCopy(sdl_renderer, back, NULL, &backRect);
-	SDL_RenderCopy(sdl_renderer, image, NULL, &rect);
+
+}
+void Renderer::loadSplashImage()
+{
+	SDL_Rect rect;
+	rect.x = 540;
+	rect.y = 460;
+	rect.w = 267;
+	rect.h = 140;
+
+	if (itImage == nullptr)
+	{
+		//std::cout << "image failed to load" << std::endl;
+	}
+
+	SDL_RenderCopy(sdl_renderer, itImage, NULL, &rect);
 
 }
 void Renderer::loadImageEnd()
@@ -196,22 +196,6 @@ void Renderer::setViewPort(const Rect &r)
 	viewportSize = r.size;
 }
 
-void Renderer::drawRotateableImage(SDL_Texture * surface, double rotation, SDL_Point* origin, bool flip, SDL_Rect* pos)
-{
-	SDL_Rect tempR = {};
-	tempR.x = pos->x + 10;
-	tempR.y = pos->y + 11;
-	tempR.x = tempR.x * 40;
-	tempR.y = tempR.y * 40;
-	tempR.w = pos->w * 40;
-	tempR.h = pos->h * 10;
-	SDL_Point tempOrigin;
-	tempOrigin = (*origin);
-	tempOrigin.x = tempR.w / 2;
-	tempOrigin.y = tempR.h / 2;
-	double tempRotate = rotation *-1;
-	SDL_RenderCopyEx(sdl_renderer, arrowTexture, NULL, (&tempR), tempRotate, (&tempOrigin), SDL_RendererFlip::SDL_FLIP_NONE);
-}
 
 SDL_Texture*Renderer::SurfaceToTexture(SDL_Surface* surf)
 {

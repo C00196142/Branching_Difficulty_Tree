@@ -5,7 +5,7 @@
 #elif defined(_WIN64) || defined(_WIN32)
 #include "SDL.h"
 #include "SDL_image.h"
-//#include "SDL_ttf.h"
+#include "SDL_ttf.h"
 #include <string>
 #endif
 
@@ -29,7 +29,6 @@ class Renderer {
 	SDL_Window *window;
 	SDL_Renderer *sdl_renderer;
 	SDL_Texture *img;
-	SDL_Texture* arrowTexture;
 
 
 public:
@@ -41,7 +40,8 @@ public:
 	void drawRectOutline(const Rect&, const Colour&);
 	void drawWorldRectOutline(const Rect&, const Colour&);
 	void drawText(SDL_Texture * texture, SDL_Rect rect);
-	void loadImage();
+	void loadSplashImage();
+	void loadMenuImage();
 	void loadImageEnd();
 	void present();
 	void clear(const Colour&);
@@ -50,8 +50,7 @@ public:
 	Rect worldToScreen(const Rect&);
 	bool startLoaded = true;
 	void setViewPort(const Rect&);
-	void drawRotateableImage(SDL_Texture * surface, double rotation, SDL_Point * origin, bool flip, SDL_Rect * pos);
-	SDL_Texture* image;
+	SDL_Texture* itImage;
 	SDL_Texture* back;
 	SDL_Texture* endImage;
 	SDL_Texture* endBack;
