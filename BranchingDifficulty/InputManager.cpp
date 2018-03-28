@@ -39,7 +39,7 @@ void InputManager::Dispatch(EventListener::Event evt)
 
 
 //Generate events
-void InputManager::ProcessInput()
+void InputManager::ProcessInput(bool menu)
 {
 	events.clear();
 	SDL_Event e;
@@ -47,7 +47,7 @@ void InputManager::ProcessInput()
 
 	while (SDL_PollEvent(&e) != 0)
 	{
-		if (start == 0)
+		if (start == 0 && menu == true)
 		{
 			switch (e.type) {
 				//Keyboard event

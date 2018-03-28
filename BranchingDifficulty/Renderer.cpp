@@ -65,8 +65,11 @@ bool Renderer::init(const Size2D& winSize, const char* title) {
 		return false;
 	}
 
-	back = IMG_LoadTexture(sdl_renderer, "summer.bmp");
+	menuImage = IMG_LoadTexture(sdl_renderer, "summer.bmp");
 	itImage = IMG_LoadTexture(sdl_renderer, "Image.bmp");
+	splashImage = IMG_LoadTexture(sdl_renderer, "splash.bmp");
+
+
 	endBack = IMG_LoadTexture(sdl_renderer, "blue.bmp");
 
 	SDL_SetRenderDrawBlendMode(sdl_renderer, SDL_BLENDMODE_BLEND);
@@ -121,26 +124,38 @@ void Renderer::loadMenuImage()
 	backRect.h = 600;
 
 
-	if (back == nullptr)
+	if (menuImage == nullptr)
 	{
 		//std::cout << "image failed to load" << std::endl;
 	}
-	SDL_RenderCopy(sdl_renderer, back, NULL, &backRect);
+	SDL_RenderCopy(sdl_renderer, menuImage, NULL, &backRect);
 
 }
 void Renderer::loadSplashImage()
 {
+	SDL_Rect splashRect;
+	splashRect.x = 0;
+	splashRect.y = 0;
+	splashRect.w = 820;
+	splashRect.h = 600;
+
 	SDL_Rect rect;
 	rect.x = 540;
 	rect.y = 460;
 	rect.w = 267;
 	rect.h = 140;
 
+	if (splashImage == nullptr)
+	{
+		//std::cout << "image failed to load" << std::endl;
+	}
+
 	if (itImage == nullptr)
 	{
 		//std::cout << "image failed to load" << std::endl;
 	}
 
+	SDL_RenderCopy(sdl_renderer, splashImage, NULL, &splashRect);
 	SDL_RenderCopy(sdl_renderer, itImage, NULL, &rect);
 
 }

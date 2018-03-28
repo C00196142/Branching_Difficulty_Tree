@@ -34,7 +34,7 @@ public:
 	std::vector<EventListener::Event> events;
 	std::vector<EventListener::Event> getEventList();
 
-	void ProcessInput();
+	void ProcessInput(bool menu);
 
 	int start = 0;
 };

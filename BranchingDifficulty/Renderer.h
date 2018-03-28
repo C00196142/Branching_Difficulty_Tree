@@ -50,8 +50,11 @@ public:
 	Rect worldToScreen(const Rect&);
 	bool startLoaded = true;
 	void setViewPort(const Rect&);
+	SDL_Texture* splashImage;
 	SDL_Texture* itImage;
-	SDL_Texture* back;
+	SDL_Texture* menuImage;
+
+
 	SDL_Texture* endImage;
 	SDL_Texture* endBack;
 	SDL_Texture* background;

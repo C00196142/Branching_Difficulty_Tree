@@ -235,7 +235,7 @@ void Game::loop()
 	while (!quit) {
 		capTimer.start();
 
-		inputManager.ProcessInput();
+		inputManager.ProcessInput(mainMenu);
 		update();
 		render();
 
