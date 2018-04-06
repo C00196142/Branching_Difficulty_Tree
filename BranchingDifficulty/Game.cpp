@@ -194,6 +194,7 @@ void Game::render()
 	// prepare for new frame
 	renderer.clear(Colour(r, g, b, a));
 
+	
 	if (splashScreen)
 	{
 		renderer.loadSplashImage();
@@ -205,6 +206,10 @@ void Game::render()
 		renderer.loadMenuImage();
 		//startMenu->Render(renderer);
 	}
+	/*if (stage == tutorial)
+	{
+		renderer.loadImageTut();
+	}*/
 
 	//if we are not in the mainMenu call the render(drawing)-function of the gameObjects
 	else
@@ -302,6 +307,7 @@ void Game::changeStage()
 	case tutorial:
 		if (changeLevel)
 		{
+			
 			blocks = levels.tutorial();
 
 			for (int i = 0; i < blocks.size(); i++)
@@ -315,6 +321,7 @@ void Game::changeStage()
 
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
+			
 
 			changeLevel = false;
 		}

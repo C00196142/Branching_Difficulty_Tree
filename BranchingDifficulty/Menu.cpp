@@ -22,6 +22,8 @@ Menu::~Menu()
 }
 void Menu::LoadTextStart(Renderer& r)
 {
+	
+	
 	/*if (TTF_Init() == -1)
 	{
 		std::cout << " Failed to initialize TTF : " << SDL_GetError() << std::endl;
@@ -46,30 +48,31 @@ void Menu::LoadTextStart(Renderer& r)
 	//	std::cout << " Failed to load font : " << SDL_GetError() << std::endl;
 	//}
 
+	//solidHeader = TTF_RenderText_Solid(headerFont, "Thomas Was Alone", textColor);
 
-	/*SDL_QueryTexture(headerTexture, NULL, NULL, &headerRect.w, &headerRect.h);
-	SDL_QueryTexture(keyTexture, NULL, NULL, &keyRect.w, &keyRect.h);
-	SDL_QueryTexture(nameTexture, NULL, NULL, &nameRect.w, &nameRect.h);
+	//SDL_QueryTexture(headerTexture, NULL, NULL, &headerRect.w, &headerRect.h);
+	//SDL_QueryTexture(keyTexture, NULL, NULL, &keyRect.w, &keyRect.h);
+	//SDL_QueryTexture(nameTexture, NULL, NULL, &nameRect.w, &nameRect.h);
 
-	headerTexture = r.SurfaceToTexture(solidHeader);
-	keyTexture = r.SurfaceToTexture(solidKey);
-	nameTexture = r.SurfaceToTexture(solidName);
+	//headerTexture = r.SurfaceToTexture(solidHeader);
+	//keyTexture = r.SurfaceToTexture(solidKey);
+	//nameTexture = r.SurfaceToTexture(solidName);
 
 
-	headerRect.w = 700;
-	headerRect.h = 150;
-	headerRect.x = 60;
-	headerRect.y = 0;
+	//headerRect.w = 700;
+	//headerRect.h = 150;
+	//headerRect.x = 60;
+	//headerRect.y = 0;
 
-	keyRect.w = 400;
-	keyRect.h = 100;
-	keyRect.x = 180;
-	keyRect.y = 240;
+	//keyRect.w = 400;
+	//keyRect.h = 100;
+	//keyRect.x = 180;
+	//keyRect.y = 240;
 
-	nameRect.w = 520;
-	nameRect.h = 35;
-	nameRect.x = 0;
-	nameRect.y = 565;*/
+	//nameRect.w = 520;
+	//nameRect.h = 35;
+	//nameRect.x = 0;
+	//nameRect.y = 565;
 }
 void Menu::LoadTextEnd(Renderer& r)
 {

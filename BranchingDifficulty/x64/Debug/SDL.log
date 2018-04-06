@@ -1,2 +1,36 @@
-﻿  SDL.vcxproj -> C:\Users\gameuser\Documents\P4Github\Branching_Difficulty_Tree\BranchingDifficulty\x64\Debug\SDL.exe
+﻿  Game.cpp
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(320): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(330): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(356): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(365): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1247): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1254): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1255): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1262): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1263): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1264): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1265): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1272): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1273): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1281): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1282): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1289): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1290): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1291): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1298): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1299): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1300): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1307): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1308): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1309): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1310): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1315): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1316): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1324): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1325): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1326): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1327): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1328): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\gameuser\documents\p4github\branching_difficulty_tree\branchingdifficulty\game.cpp(1332): warning C4305: 'argument': truncation from 'double' to 'float'
+  SDL.vcxproj -> C:\Users\gameuser\Documents\P4Github\Branching_Difficulty_Tree\BranchingDifficulty\x64\Debug\SDL.exe
   SDL.vcxproj -> C:\Users\gameuser\Documents\P4Github\Branching_Difficulty_Tree\BranchingDifficulty\x64\Debug\SDL.pdb (Partial PDB)

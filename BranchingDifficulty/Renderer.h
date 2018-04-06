@@ -54,6 +54,8 @@ public:
 	SDL_Texture* itImage;
 	SDL_Texture* menuImage;
 
+	void loadImageTut();
+	SDL_Texture*tutImage;
 
 	SDL_Texture* endImage;
 	SDL_Texture* endBack;

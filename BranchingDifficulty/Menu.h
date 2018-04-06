@@ -1,6 +1,7 @@
 #pragma once
 #include "Renderer.h"
 #include <iostream>
+#include "SDL_ttf.h"
 
 class Menu
 {

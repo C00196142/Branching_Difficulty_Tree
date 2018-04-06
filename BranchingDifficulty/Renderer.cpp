@@ -65,9 +65,11 @@ bool Renderer::init(const Size2D& winSize, const char* title) {
 		return false;
 	}
 
-	menuImage = IMG_LoadTexture(sdl_renderer, "summer.bmp");
-	itImage = IMG_LoadTexture(sdl_renderer, "Image.bmp");
-	splashImage = IMG_LoadTexture(sdl_renderer, "splash.bmp");
+	menuImage = IMG_LoadTexture(sdl_renderer, "Resources/Menu/summer.bmp");
+	itImage = IMG_LoadTexture(sdl_renderer, "Resources/Menu/Image.bmp");
+	splashImage = IMG_LoadTexture(sdl_renderer, "Resources/Menu/splash.bmp");
+
+	tutImage = IMG_LoadTexture(sdl_renderer, "Resources/Background/bgTutorial.bmp");
 
 
 	endBack = IMG_LoadTexture(sdl_renderer, "blue.bmp");
@@ -173,6 +175,23 @@ void Renderer::loadImageEnd()
 		
 	}
 	SDL_RenderCopy(sdl_renderer, endBack, NULL, &backRect);
+
+}
+
+void Renderer::loadImageTut()
+{
+
+	SDL_Rect tutRect;
+	tutRect.x = 0;
+	tutRect.y = 0;
+	tutRect.w = 800;
+	tutRect.h = 600;
+
+	if (tutImage == nullptr)
+	{
+
+	}
+	SDL_RenderCopy(sdl_renderer, tutImage, NULL, &tutRect);
 
 }
 //function to load all text
