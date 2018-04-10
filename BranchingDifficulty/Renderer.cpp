@@ -72,7 +72,7 @@ bool Renderer::init(const Size2D& winSize, const char* title) {
 	tutImage = IMG_LoadTexture(sdl_renderer, "Resources/Background/bgTutorial.bmp");
 
 
-	endBack = IMG_LoadTexture(sdl_renderer, "blue.bmp");
+	endBack = IMG_LoadTexture(sdl_renderer, "Resources/Menu/gameFinished.bmp");
 
 	SDL_SetRenderDrawBlendMode(sdl_renderer, SDL_BLENDMODE_BLEND);
 

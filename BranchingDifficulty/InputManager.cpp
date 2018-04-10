@@ -124,13 +124,6 @@ void InputManager::ProcessInput(bool menu)
 						Dispatch(EventListener::Event::QUIT);
 						break;
 					}
-					else
-					{
-						start = 0;
-						Dispatch(EventListener::Event::RESTART);
-						keyPressed = true;
-						break;
-					}
 				}
 			}
 		}

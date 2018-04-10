@@ -206,6 +206,12 @@ void Game::render()
 		renderer.loadMenuImage();
 		//startMenu->Render(renderer);
 	}
+	else if (endMenu)
+	{
+		renderer.loadImageEnd();
+		//startMenu->RenderEnd(renderer);
+
+	}
 	/*if (stage == tutorial)
 	{
 		renderer.loadImageTut();
@@ -265,11 +271,11 @@ void Game::onEvent(EventListener::Event evt)
 	if (evt == EventListener::Event::START && mainMenu) 
 	{
 		mainMenu = false;
-		stage = tutorial;
+		//stage = tutorial;
 		//stage = lvl1;
 		//stage = lvl2A;
 		//stage = lvl3B;
-		//stage = lvl4E_fall;
+		stage = lvl4E_enemy;
 		//stage = lvl4H_enemy;
 		changeLevel = true;
 		start = clock();
@@ -1050,7 +1056,9 @@ void Game::changeStage()
 			finish = new FinishLine(Rect(9, -1, 1, 1));
 			finish->color = Colour(255, 255, 255);
 
-			player->ChangePos(-10, 0);
+			//player->ChangePos(-10, 0);
+			//TESTING/////////////////////////////////////////////////////////////
+			player->ChangePos(8, 0);
 
 			gameObjects.push_back(finish);
 			gameObjects.push_back(player);
@@ -1058,7 +1066,9 @@ void Game::changeStage()
 		}
 		if (finish->levelComplete == true)
 		{
+			inputManager.start = 2;
 			changeLevel = true;
+			stage = end;
 		}
 		if (!player->alive)
 		{
@@ -1092,7 +1102,9 @@ void Game::changeStage()
 		}
 		if (finish->levelComplete == true)
 		{
+			inputManager.start = 2;
 			changeLevel = true;
+			stage = end;
 		}
 		if (!player->alive)
 		{
@@ -1120,7 +1132,9 @@ void Game::changeStage()
 		}
 		if (finish->levelComplete == true)
 		{
+			inputManager.start = 2;
 			changeLevel = true;
+			stage = end;
 		}
 		if (!player->alive)
 		{
@@ -1161,7 +1175,9 @@ void Game::changeStage()
 		}
 		if (finish->levelComplete == true)
 		{
+			inputManager.start = 2;
 			changeLevel = true;
+			stage = end;
 		}
 		if (!player->alive)
 		{
@@ -1195,7 +1211,9 @@ void Game::changeStage()
 		}
 		if (finish->levelComplete == true)
 		{
+			inputManager.start = 2;
 			changeLevel = true;
+			stage = end;
 		}
 		if (!player->alive)
 		{
@@ -1223,12 +1241,23 @@ void Game::changeStage()
 		}
 		if (finish->levelComplete == true)
 		{
+			inputManager.start = 2;
 			changeLevel = true;
+			stage = end;
 		}
 		if (!player->alive)
 		{
 			player->resetPlayer(-10, 6);
 		}
+		break;
+	case end:
+		if (changeLevel)
+		{
+			gameObjects.clear();
+			endMenu = true;
+			changeLevel = false;
+		}
+
 		break;
 
 	default:
@@ -1304,10 +1333,10 @@ void Game::moveEnemy()
 	{
 		for (int e = 0; e < enemies.size(); e++)
 		{
-			enemies.at(0)->Move(-9, -7, 0.005);
-			enemies.at(1)->Move(-5, -3, 0.005);
-			enemies.at(2)->Move(-2, 0, 0.005);
-			enemies.at(3)->Move(2, 6, 0.005);
+			enemies.at(0)->Move(-9, -7, 0.0025);
+			enemies.at(1)->Move(-5, -3, 0.0025);
+			enemies.at(2)->Move(-2, 0, 0.0025);
+			enemies.at(3)->Move(2, 6, 0.0025);
 		}
 
 		for (int s = 0; s < spikes.size(); s++)

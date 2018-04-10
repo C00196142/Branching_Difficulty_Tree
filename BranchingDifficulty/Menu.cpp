@@ -23,8 +23,8 @@ Menu::~Menu()
 void Menu::LoadTextStart(Renderer& r)
 {
 	
-	
-	/*if (TTF_Init() == -1)
+	/*
+	if (TTF_Init() == -1)
 	{
 		std::cout << " Failed to initialize TTF : " << SDL_GetError() << std::endl;
 	}*/
