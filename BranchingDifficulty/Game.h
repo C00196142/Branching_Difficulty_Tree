@@ -60,7 +60,10 @@ class Game :public EventListener
 
 	clock_t start;
 	int duration;
+	int timeToComplete;
 	float spiketime;
+
+	string levelString = " ";
 
 public:
 	enum gameStage { splash, menu, tutorial, lvl1, lvl2A, lvl2B, 
@@ -79,4 +82,6 @@ public:
 	void onEvent(EventListener::Event);
 	void moveEnemy();
 	void timer();
+	void Record();
+	void levelToString();
 };
