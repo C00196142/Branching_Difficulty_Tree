@@ -693,6 +693,9 @@ std::vector<Platform*> LevelManager::level4E_time()
 	Platform* floor4ET10 = new Platform(Rect(9, 3, 2, 1));
 	floor4ET10->color = Colour(200, 0, 200);
 
+	Platform* floor4ET11 = new Platform(Rect(9, -5.5, 2, 1));
+	floor4ET11->color = Colour(200, 0, 200);
+
 
 	block.push_back(wall);
 	block.push_back(ground);
@@ -706,7 +709,7 @@ std::vector<Platform*> LevelManager::level4E_time()
 	block.push_back(floor4ET8);
 	block.push_back(floor4ET9);
 	block.push_back(floor4ET10);
-
+	block.push_back(floor4ET11);
 
 	return block;
 }
@@ -805,7 +808,7 @@ std::vector<Platform*> LevelManager::level4H_time()
 	Platform* floor4HT4 = new Platform(Rect(-10, -8, 3, 2));
 	floor4HT4->color = Colour(200, 0, 200);
 
-	Platform* floor4HT5 = new Platform(Rect(-3, -2, 10, 1));
+	Platform* floor4HT5 = new Platform(Rect(-2, -2, 8, 1));
 	floor4HT5->color = Colour(200, 0, 200);
 
 	Platform* floor4HT6 = new Platform(Rect(-2, -7, 1, 1.5));
@@ -823,13 +826,13 @@ std::vector<Platform*> LevelManager::level4H_time()
 	Platform* floor4HT10 = new Platform(Rect(9, 4, 2, 1));
 	floor4HT10->color = Colour(200, 0, 200);
 
-	Platform* floor4HT11 = new Platform(Rect(7, -4, 3, 0.5));
+	Platform* floor4HT11 = new Platform(Rect(7, -6, 3, 0.5));
 	floor4HT11->color = Colour(200, 0, 200);
 
-	Platform* floor4HT12 = new Platform(Rect(8, -3, 2, 0.5));
+	Platform* floor4HT12 = new Platform(Rect(8, -4.5, 2, 0.5));
 	floor4HT12->color = Colour(200, 0, 200);
 
-	Platform* floor4HT13 = new Platform(Rect(9, -2, 1, 0.5));
+	Platform* floor4HT13 = new Platform(Rect(9, -3, 1, 0.5));
 	floor4HT13->color = Colour(200, 0, 200);
 
 	Platform* moving = new Platform(Rect(1, 0, 1, 0.5));

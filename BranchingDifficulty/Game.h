@@ -61,6 +61,8 @@ class Game :public EventListener
 	clock_t start;
 	int duration;
 	int timeToComplete;
+	int enemyDeathsAllowed;
+	int fallDeathsAllowed;
 	float spiketime;
 
 	string levelString = " ";
@@ -81,7 +83,7 @@ public:
 	void changeStage();
 	void onEvent(EventListener::Event);
 	void moveEnemy();
-	void timer();
+	void levelVariables();
 	void Record();
-	void levelToString();
+	
 };
