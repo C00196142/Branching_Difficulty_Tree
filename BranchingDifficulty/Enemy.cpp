@@ -21,6 +21,8 @@ void Enemy::Update(unsigned int deltaTime)
 	Point2D p = enemy.pos;
 }
 
+//Move the enemies 
+//Each is given a min and max position and a speed to move between the points
 void Enemy::Move(float xMin, float xMax, float speed)
 {
 	if (moveRight == true)

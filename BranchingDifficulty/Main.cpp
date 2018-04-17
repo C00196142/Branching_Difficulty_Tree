@@ -1,3 +1,6 @@
+//Thomas Butler
+//C00196142
+
 #include <iostream>
 using namespace std;
 #include "Game.h"

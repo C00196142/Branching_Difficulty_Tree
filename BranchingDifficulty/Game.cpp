@@ -70,15 +70,10 @@ bool Game::init()
 	b = 102;
 
 	lastTime = LTimer::gameTime();
-	//time = 0;
 
-	startMenu->LoadTextStart(renderer);
-	startMenu->LoadTextEnd(renderer);
 	//All the Events we need in the game
-	//the first two are events regarding to the game (window)
-	//the other five are events regarding the main character (interaction with the keyboard for moving and jumping)
-
-
+	//the first are events regarding to the game (window)
+	//the others are events regarding the main character (interaction with the keyboard for moving and jumping)
 	inputManager.AddListener(EventListener::Event::RESTART, this);
 	inputManager.AddListener(EventListener::Event::START, this);
 	inputManager.AddListener(EventListener::Event::QUIT, this);
@@ -131,11 +126,11 @@ void Game::update()
 	{
 		if (stage == lvl4E_fall)
 		{
-			fallingBlocks[i]->PlayerCollision(player->rect, 200, 250);
+			fallingBlocks[i]->PlayerCollision(player->rect, 125, 175);
 		}
 		else if (stage == lvl4H_fall)
 		{
-			fallingBlocks[i]->PlayerCollision(player->rect, 100, 150);
+			fallingBlocks[i]->PlayerCollision(player->rect, 75, 125);
 		}
 	}
 
@@ -170,7 +165,6 @@ void Game::update()
 	if (stage == lvl4E_enemy || stage == lvl4H_enemy)
 	{
 		spiketime++;
-		//cout << "spikeTime" << spiketime << endl;
 	}
 
 	//millis since game started
@@ -179,6 +173,7 @@ void Game::update()
 	//time since last update
 	unsigned int deltaTime = currentTime - lastTime;
 
+	//Convert each variable to a logRecord to be recorded
 	logRecords.levelS = levelString;
 	logRecords.time = duration;
 	logRecords.enemyDeaths = player->enemyDeaths;
@@ -231,18 +226,11 @@ void Game::render()
 	else if (mainMenu)
 	{
 		renderer.loadMenuImage();
-		//startMenu->Render(renderer);
 	}
 	else if (endMenu)
 	{
 		renderer.loadImageEnd();
-		//startMenu->RenderEnd(renderer);
-
 	}
-	/*if (stage == tutorial)
-	{
-		renderer.loadImageTut();
-	}*/
 
 	//if we are not in the mainMenu call the render(drawing)-function of the gameObjects
 	else
@@ -293,17 +281,13 @@ void Game::loop()
 void Game::onEvent(EventListener::Event evt) 
 {
 
-	// if the event START happens we start the game and change the screen to the first level
+	// if the event START happens we start the game and change the screen to the tutorial level
 
 	if (evt == EventListener::Event::START && mainMenu) 
 	{
 		mainMenu = false;
+
 		stage = tutorial;
-		//stage = lvl1;
-		//stage = lvl2A;
-		//stage = lvl3B;
-		//stage = lvl4H_time;
-		//stage = lvl4H_enemy;
 		changeLevel = true;
 		start = clock();
 		cout << "Tutorial" << endl;
@@ -375,7 +359,7 @@ void Game::changeStage()
 		}
 		break;
 	case lvl1:
-		//if the player reaches the portal we set somewhere else in the code the variable changeLevel to true
+		//if the player reaches the finish level we set somewhere else in the code the variable changeLevel to true
 		if (changeLevel)
 		{
 			gameObjects.clear();
@@ -395,6 +379,7 @@ void Game::changeStage()
 
 			changeLevel = false;
 		}
+		// If player dies move them back to the start level
 		if (!player->alive)
 		{
 			player->resetPlayer(-9.5, 0);
@@ -403,6 +388,7 @@ void Game::changeStage()
 		//Change to SECOND level
 		if (finish->levelComplete == true && duration > timeToComplete)
 		{
+			//Add stats at the end of the level
 			if (record)
 			{
 				logs.push_back(logRecords);
@@ -689,6 +675,19 @@ void Game::changeStage()
 			changeLevel = true;
 			stage = lvl4E_time;
 			cout << "Level 4E_time" << endl;
+			player->fallDeaths = 0;
+			player->enemyDeaths = 0;
+			player->collectibles = 0;
+		}
+		else if (finish->levelComplete == true && duration <= timeToComplete && player->fallDeaths > fallDeathsAllowed && player->enemyDeaths > enemyDeathsAllowed)
+		{
+			if (record)
+			{
+				logs.push_back(logRecords);
+			}
+			changeLevel = true;
+			stage = lvl4E_enemy;
+			cout << "Level 4E_Enemy" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
 			player->collectibles = 0;
@@ -984,8 +983,8 @@ void Game::changeStage()
 				logs.push_back(logRecords);
 			}
 			changeLevel = true;
-			stage = lvl4E_time;
-			cout << "Level 4E_Time" << endl;
+			stage = lvl4H_time;
+			cout << "Level 4H_Time" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
 			player->collectibles = 0;
@@ -997,8 +996,8 @@ void Game::changeStage()
 				logs.push_back(logRecords);
 			}
 			changeLevel = true;
-			stage = lvl4E_fall;
-			cout << "Level 4E_Fall" << endl;
+			stage = lvl4H_fall;
+			cout << "Level 4H_Fall" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
 			player->collectibles = 0;
@@ -1065,8 +1064,8 @@ void Game::changeStage()
 				logs.push_back(logRecords);
 			}
 			changeLevel = true;
-			stage = lvl4E_enemy;
-			cout << "Level 4E_Enemy" << endl;
+			stage = lvl4H_enemy;
+			cout << "Level 4H_Enemy" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
 			player->collectibles = 0;
@@ -1078,8 +1077,8 @@ void Game::changeStage()
 				logs.push_back(logRecords);
 			}
 			changeLevel = true;
-			stage = lvl4E_time;
-			cout << "Level 4E_Time" << endl;
+			stage = lvl4H_time;
+			cout << "Level 4H_Time" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
 			player->collectibles = 0;
@@ -1091,8 +1090,8 @@ void Game::changeStage()
 				logs.push_back(logRecords);
 			}
 			changeLevel = true;
-			stage = lvl4E_fall;
-			cout << "Level 4E_Fall" << endl;
+			stage = lvl4H_fall;
+			cout << "Level 4H_Fall" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
 			player->collectibles = 0;
@@ -1147,8 +1146,8 @@ void Game::changeStage()
 				logs.push_back(logRecords);
 			}
 			changeLevel = true;
-			stage = lvl4E_fall;
-			cout << "Level 4E_Fall" << endl;
+			stage = lvl4H_fall;
+			cout << "Level 4H_Fall" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
 			player->collectibles = 0;
@@ -1160,8 +1159,8 @@ void Game::changeStage()
 				logs.push_back(logRecords);
 			}
 			changeLevel = true;
-			stage = lvl4E_enemy;
-			cout << "Level 4E_Enemy" << endl;
+			stage = lvl4H_enemy;
+			cout << "Level 4H_Enemy" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
 			player->collectibles = 0;
@@ -1173,8 +1172,8 @@ void Game::changeStage()
 				logs.push_back(logRecords);
 			}
 			changeLevel = true;
-			stage = lvl4E_time;
-			cout << "Level 4E_time" << endl;
+			stage = lvl4H_time;
+			cout << "Level 4H_time" << endl;
 			player->fallDeaths = 0;
 			player->enemyDeaths = 0;
 			player->collectibles = 0;
@@ -1444,6 +1443,7 @@ void Game::changeStage()
 	finish->NextLevel(player->rect);
 }
 
+//Sets the positions and speeds of the enemies
 void Game::moveEnemy()
 {
 	if (stage == lvl3A)
@@ -1542,12 +1542,13 @@ void Game::moveEnemy()
 	}
 }
 
+// Sets the variables for each level
 void Game::levelVariables()
 {
 	if (stage == lvl1)
 	{
 		levelString = "Level 1";
-		timeToComplete = 20;
+		timeToComplete = 25;
 		fallDeathsAllowed = 0;
 		enemyDeathsAllowed = 0;
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
@@ -1556,7 +1557,7 @@ void Game::levelVariables()
 	else if (stage == lvl2A)
 	{
 		levelString = "Level 2A";
-		timeToComplete = 35;
+		timeToComplete = 50;
 		fallDeathsAllowed = 2;
 		enemyDeathsAllowed = 0;
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
@@ -1565,7 +1566,7 @@ void Game::levelVariables()
 	else if (stage == lvl2B)
 	{
 		levelString = "Level 2B";
-		timeToComplete = 35;
+		timeToComplete = 50;
 		fallDeathsAllowed = 2;
 		enemyDeathsAllowed = 0;
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
@@ -1575,8 +1576,8 @@ void Game::levelVariables()
 	{
 		levelString = "Level 3A";
 		timeToComplete = 40;
-		fallDeathsAllowed = 1;
-		enemyDeathsAllowed = 1;
+		fallDeathsAllowed = 3;
+		enemyDeathsAllowed = 3;
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
 		cout << duration << endl;
 	}
@@ -1610,7 +1611,7 @@ void Game::levelVariables()
 	else if (stage == lvl3E)
 	{
 		levelString = "Level 3E";
-		timeToComplete = 45;
+		timeToComplete = 50;
 		fallDeathsAllowed = 2;
 		enemyDeathsAllowed = 3;
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
@@ -1619,18 +1620,18 @@ void Game::levelVariables()
 	else if (stage == lvl3F)
 	{
 		levelString = "Level 3F";
-		timeToComplete = 45;
+		timeToComplete = 50;
 		fallDeathsAllowed = 2;
-		enemyDeathsAllowed = 3;
+		enemyDeathsAllowed = 4;
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
 		cout << duration << endl;
 	}
 	else if (stage == lvl3G)
 	{
 		levelString = "Level 3G";
-		timeToComplete = 40;
+		timeToComplete = 60;
 		fallDeathsAllowed = 2;
-		enemyDeathsAllowed = 2;
+		enemyDeathsAllowed = 5;
 		duration = (clock() - start) / (int)CLOCKS_PER_SEC;
 		cout << duration << endl;
 	}
@@ -1681,7 +1682,7 @@ void Game::levelVariables()
 		levelString = "Level 4H Enemy";
 	}
 }
-
+//Outputs the stats to an excel file
 void Game::Record()
 {
 	//Start recording

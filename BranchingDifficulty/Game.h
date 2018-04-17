@@ -1,3 +1,6 @@
+//Thomas Butler
+//C00196142
+
 #pragma once
 
 #include <vector>
@@ -12,7 +15,6 @@
 #include "Player.h"
 #include "LevelManager.h"
 #include "FinishLine.h"
-#include "Menu.h"
 #include "Enemy.h"
 #include "Collectible.h"
 #include <time.h>
@@ -40,7 +42,6 @@ class Game :public EventListener
 	bool endMenu;
 	bool changeLevel = false;
 	Player* player = new Player();
-	Menu* startMenu = new Menu();
 
 	std::vector <Platform*> blocks;
 	std::vector <FallingPlatform*> fallingBlocks;
